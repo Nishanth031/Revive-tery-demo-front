@@ -1,0 +1,91 @@
+{
+  "provenance": "modelled",
+  "note": "All projection parameters are assumed (configs/physics.yaml). Temperature and C-rate trends follow wang2011 by construction; these checks verify the implementation and magnitudes, they are not independent validation against measured second-life data.",
+  "all_pass": true,
+  "checks": {
+    "continuity_at_reference": {
+      "cases": [
+        {
+          "soh0": 0.95,
+          "ml_rul_ref": 400.0,
+          "physics_cycles_to_80": 400.0,
+          "pass": true
+        },
+        {
+          "soh0": 0.9,
+          "ml_rul_ref": 150.0,
+          "physics_cycles_to_80": 150.0,
+          "pass": true
+        },
+        {
+          "soh0": 0.99,
+          "ml_rul_ref": 1500.0,
+          "physics_cycles_to_80": 1500.0,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    "starts_at_measured_soh": {
+      "soh_at_t0": 0.9299999999999999,
+      "pass": true
+    },
+    "temperature": {
+      "cycles_to_80_by_ambient_c": {
+        "15.0": 3847.0,
+        "25.0": 2446.0,
+        "35.0": 1601.0,
+        "45.0": 1076.0
+      },
+      "life_ratio_25_vs_45c": 2.274,
+      "ratio_range_over_Ea_prior": [
+        1.696,
+        3.172
+      ],
+      "ten_degree_doubling_rule_would_give": 4.0,
+      "reference": "wang2011 (Ea = 31.7 kJ/mol)",
+      "pass": true
+    },
+    "depth_of_discharge": {
+      "cycles_to_80_by_dod": {
+        "0.2": 16871.0,
+        "0.5": 5618.0,
+        "0.8": 3196.0,
+        "1.0": 2446.0
+      },
+      "full_equivalent_cycles_by_dod": {
+        "0.2": 3374.0,
+        "0.5": 2809.0,
+        "0.8": 2557.0,
+        "1.0": 2446.0
+      },
+      "life_ratio_50_vs_100": 2.297,
+      "expected_range_from_k_dod_prior": [
+        2.0,
+        2.828
+      ],
+      "reference": "charge-throughput equivalence (k=1) as lower bound; naumann2020 (qualitative)",
+      "pass": true
+    },
+    "c_rate": {
+      "cycles_to_80_by_c_rate": {
+        "0.2": 2957.0,
+        "0.5": 2753.0,
+        "1.0": 2446.0,
+        "2.0": 1934.0,
+        "4.0": 1222.0
+      },
+      "reference": "wang2011 (370.3 J/mol per C)",
+      "pass": true
+    },
+    "knee_and_band": {
+      "knee_not_later_than_base": true,
+      "band_brackets_central_fraction": 1.0,
+      "pass": true
+    }
+  },
+  "stress_factor_examples": {
+    "residential_25c_0.3c_0.8dod": 0.265,
+    "reference_30c_4c_1.0dod": 1.0
+  }
+}

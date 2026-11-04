@@ -1,0 +1,18 @@
+field,value
+asset_id,DEMO-EV-PACK-001
+vehicle_id,DEMO-EV-001
+battery_type,Lithium-ion traction battery
+chemistry,NMC (nickel manganese cobalt)
+cell_format,21700 cylindrical (illustrative)
+series_parallel_configuration,96s40p
+cell_count,3840
+nominal_voltage_V,355.2
+max_voltage_V,403.2
+min_voltage_V,288.0
+nominal_capacity_Ah,200
+nominal_energy_kWh,71.04
+pack_mass_kg,450
+manufacture_date,2024-01-15
+commissioning_date,2024-02-01
+warranty_end_date,2032-02-01
+demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification

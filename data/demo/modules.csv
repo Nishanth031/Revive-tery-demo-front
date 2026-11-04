@@ -1,0 +1,5 @@
+module_id,asset_id,series_groups,parallel_cells_per_group,cell_count,nominal_voltage_V,nominal_capacity_Ah,chemistry,notes
+MOD-01,DEMO-EV-PACK-001,24,40,960,88.8,200,NMC,Illustrative module grouping
+MOD-02,DEMO-EV-PACK-001,24,40,960,88.8,200,NMC,Illustrative module grouping
+MOD-03,DEMO-EV-PACK-001,24,40,960,88.8,200,NMC,Illustrative module grouping
+MOD-04,DEMO-EV-PACK-001,24,40,960,88.8,200,NMC,Illustrative module grouping

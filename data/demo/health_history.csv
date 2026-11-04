@@ -1,0 +1,6 @@
+assessment_date,asset_id,cycle_count,measured_capacity_Ah,rated_capacity_Ah,soh_pct,internal_resistance_mOhm,estimated_rul_cycles,assessment_method,data_class
+2024-06-30,DEMO-EV-PACK-001,120,198.8,200,99.4,1.82,1800,Illustrative capacity check,SYNTHETIC
+2024-12-31,DEMO-EV-PACK-001,310,197.2,200,98.6,1.91,1600,Illustrative capacity check,SYNTHETIC
+2025-06-30,DEMO-EV-PACK-001,520,195.4,200,97.7,2.03,1400,Illustrative capacity check,SYNTHETIC
+2025-12-31,DEMO-EV-PACK-001,740,194.0,200,97.0,2.14,1200,Illustrative capacity check,SYNTHETIC
+2026-06-30,DEMO-EV-PACK-001,960,193.6,200,96.8,2.2,1050,Illustrative capacity check,SYNTHETIC

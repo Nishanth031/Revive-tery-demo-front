@@ -1,0 +1,54 @@
+{
+  "missing_batches": [],
+  "merges": [
+    {
+      "into": "b1c0",
+      "from": "b2c7",
+      "policy": "3.6C(80%)-3.6C",
+      "capacity_gap_fraction": 0.0031
+    },
+    {
+      "into": "b1c1",
+      "from": "b2c8",
+      "policy": "3.6C(80%)-3.6C",
+      "capacity_gap_fraction": 0.0109
+    },
+    {
+      "into": "b1c2",
+      "from": "b2c9",
+      "policy": "3.6C(80%)-3.6C",
+      "capacity_gap_fraction": 0.0105
+    },
+    {
+      "into": "b1c3",
+      "from": "b2c15",
+      "policy": "4C(80%)-4C",
+      "capacity_gap_fraction": 0.0005
+    },
+    {
+      "into": "b1c4",
+      "from": "b2c16",
+      "policy": "4C(80%)-4C",
+      "capacity_gap_fraction": 0.0107
+    }
+  ],
+  "excluded": {
+    "b1c8": "censored: recorded cycle life not supported by capacity data",
+    "b1c10": "censored: recorded cycle life not supported by capacity data",
+    "b1c12": "censored: recorded cycle life not supported by capacity data",
+    "b1c13": "censored: recorded cycle life not supported by capacity data",
+    "b1c22": "censored: recorded cycle life not supported by capacity data",
+    "b3c23": "censored: never reaches 0.88 Ah",
+    "b3c32": "censored: never reaches 0.88 Ah"
+  },
+  "unpaired_groups": [
+    "5.4C(40%)-3.6C",
+    "5.4C(50%)-3.6C",
+    "5.4C(50%)-3C",
+    "6C(30%)-3.6C"
+  ],
+  "cells_read": 140,
+  "cells_after_merge": 135,
+  "cells_usable": 128,
+  "eol_vs_recorded_cycle_life_median_abs_diff": 1.0
+}

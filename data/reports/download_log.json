@@ -1,0 +1,34 @@
+{
+  "calce_cs2_35": {
+    "status": "ok",
+    "time_utc": "2026-11-03T07:38:12+00:00"
+  },
+  "calce_cs2_36": {
+    "status": "ok",
+    "time_utc": "2026-11-03T07:38:31+00:00"
+  },
+  "calce_cs2_37": {
+    "status": "ok",
+    "time_utc": "2026-11-03T07:38:47+00:00"
+  },
+  "calce_cs2_38": {
+    "status": "ok",
+    "time_utc": "2026-11-03T07:39:03+00:00"
+  },
+  "nasa_pcoe_battery": {
+    "status": "ok",
+    "time_utc": "2026-11-03T07:37:14+00:00"
+  },
+  "severson_batch1": {
+    "status": "ok",
+    "time_utc": "2026-11-03T07:31:51+00:00"
+  },
+  "severson_batch2": {
+    "status": "ok",
+    "time_utc": "2026-11-03T07:34:12+00:00"
+  },
+  "severson_batch3": {
+    "status": "ok",
+    "time_utc": "2026-11-03T07:35:13+00:00"
+  }
+}

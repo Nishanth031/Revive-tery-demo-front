@@ -1,0 +1,6 @@
+asset_id,component,material,estimated_mass_kg,mass_fraction_pct,recovery_route,recovery_potential_note,data_class
+DEMO-EV-PACK-001,Cathode active material,NMC oxide,72,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-001,Anode active material,Graphite,54,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-001,Current collectors,Copper and aluminium,63,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-001,Electrolyte and separator,Electrolyte salts/solvents and polymer,36,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-001,"Housing, busbars and cooling","Steel, aluminium, polymers",225,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE

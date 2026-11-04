@@ -1,0 +1,737 @@
+{
+  "families": {
+    "measured_cells": {
+      "trained_on": "NASA PCoE B0005-7, B0018, B0025-32, cycles >= 1.6 Ah (measured)",
+      "train_windows": 28921,
+      "grouped_cv": {
+        "folds": 12,
+        "segments": 529,
+        "groups": 12,
+        "clean_quarantine_rate": {
+          "value": 0.0019,
+          "provenance": "measured",
+          "note": "held-out clean segments quarantined"
+        },
+        "clean_quarantine_rate_by_group": {
+          "B0005": {
+            "value": 0.0167,
+            "provenance": "measured"
+          },
+          "B0006": {
+            "value": 0.0,
+            "provenance": "measured"
+          },
+          "B0007": {
+            "value": 0.0,
+            "provenance": "measured"
+          },
+          "B0018": {
+            "value": 0.0,
+            "provenance": "measured"
+          },
+          "B0025": {
+            "value": 0.0,
+            "provenance": "measured"
+          },
+          "B0026": {
+            "value": 0.0,
+            "provenance": "measured"
+          },
+          "B0027": {
+            "value": 0.0,
+            "provenance": "measured"
+          },
+          "B0028": {
+            "value": 0.0,
+            "provenance": "measured"
+          },
+          "B0029": {
+            "value": 0.0,
+            "provenance": "measured"
+          },
+          "B0030": {
+            "value": 0.0,
+            "provenance": "measured"
+          },
+          "B0031": {
+            "value": 0.0,
+            "provenance": "measured"
+          },
+          "B0032": {
+            "value": 0.0,
+            "provenance": "measured"
+          }
+        },
+        "clean_window_flag_rate": {
+          "value": 0.0109,
+          "provenance": "measured"
+        },
+        "detection_rate": {
+          "voltage_spikes": {
+            "value": 0.0189,
+            "provenance": "measured",
+            "note": "held-out segments quarantined after injection"
+          },
+          "voltage_dropout": {
+            "value": 0.5974,
+            "provenance": "measured",
+            "note": "held-out segments quarantined after injection"
+          },
+          "voltage_drift": {
+            "value": 0.0019,
+            "provenance": "measured",
+            "note": "held-out segments quarantined after injection"
+          },
+          "temperature_drift": {
+            "value": 0.0038,
+            "provenance": "measured",
+            "note": "held-out segments quarantined after injection"
+          }
+        }
+      }
+    },
+    "synthetic_packs": {
+      "trained_on": "revive_ml.synth clean LFP/NMC packs, 150 seeds (synthetic)",
+      "train_windows": 54998,
+      "grouped_cv": {
+        "folds": 5,
+        "segments": 150,
+        "groups": 150,
+        "clean_quarantine_rate": {
+          "value": 0.0,
+          "provenance": "synthetic",
+          "note": "held-out clean segments quarantined"
+        },
+        "clean_quarantine_rate_by_group": {
+          "synth-0": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-1": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-10": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-100": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-101": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-102": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-103": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-104": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-105": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-106": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-107": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-108": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-109": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-11": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-110": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-111": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-112": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-113": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-114": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-115": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-116": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-117": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-118": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-119": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-12": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-120": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-121": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-122": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-123": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-124": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-125": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-126": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-127": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-128": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-129": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-13": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-130": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-131": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-132": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-133": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-134": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-135": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-136": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-137": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-138": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-139": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-14": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-140": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-141": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-142": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-143": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-144": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-145": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-146": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-147": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-148": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-149": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-15": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-16": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-17": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-18": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-19": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-2": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-20": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-21": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-22": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-23": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-24": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-25": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-26": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-27": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-28": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-29": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-3": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-30": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-31": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-32": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-33": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-34": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-35": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-36": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-37": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-38": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-39": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-4": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-40": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-41": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-42": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-43": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-44": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-45": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-46": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-47": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-48": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-49": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-5": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-50": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-51": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-52": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-53": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-54": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-55": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-56": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-57": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-58": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-59": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-6": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-60": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-61": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-62": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-63": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-64": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-65": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-66": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-67": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-68": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-69": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-7": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-70": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-71": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-72": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-73": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-74": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-75": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-76": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-77": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-78": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-79": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-8": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-80": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-81": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-82": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-83": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-84": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-85": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-86": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-87": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-88": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-89": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-9": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-90": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-91": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-92": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-93": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-94": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-95": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-96": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-97": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-98": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          },
+          "synth-99": {
+            "value": 0.0,
+            "provenance": "synthetic"
+          }
+        },
+        "clean_window_flag_rate": {
+          "value": 0.0101,
+          "provenance": "synthetic"
+        },
+        "detection_rate": {
+          "voltage_spikes": {
+            "value": 1.0,
+            "provenance": "synthetic",
+            "note": "held-out segments quarantined after injection"
+          },
+          "voltage_dropout": {
+            "value": 0.9733,
+            "provenance": "synthetic",
+            "note": "held-out segments quarantined after injection"
+          },
+          "voltage_drift": {
+            "value": 0.1,
+            "provenance": "synthetic",
+            "note": "held-out segments quarantined after injection"
+          },
+          "temperature_drift": {
+            "value": 0.0,
+            "provenance": "synthetic",
+            "note": "held-out segments quarantined after injection"
+          }
+        }
+      }
+    }
+  },
+  "note": "Grouped K-fold: cells (NASA) or seeds (synthetic) never cross train/test. 'measured' rates come from real NASA cell data; 'synthetic' rates from simulated packs. Injections: 3 voltage spikes of 0.15-0.4 V/cell; a 1-3 row voltage dropout to 0 V; a voltage ramp of 50-150 mV/cell over the record; a temperature ramp of 5-15 degC over the record. The filter is an out-of-distribution and sensor-noise screen, not a fault detector."
+}

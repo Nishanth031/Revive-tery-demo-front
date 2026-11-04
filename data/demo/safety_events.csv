@@ -1,0 +1,4 @@
+event_id,asset_id,timestamp_utc,event_type,severity,observed_value,threshold_value,status,operator_action,data_class
+EVT-001,DEMO-EV-PACK-001,2026-08-04T14:22:00Z,CELL_TEMPERATURE_WARNING,LOW,43.2 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-002,DEMO-EV-PACK-001,2026-09-12T09:10:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,38 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-003,DEMO-EV-PACK-001,2026-10-02T17:40:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.8 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
