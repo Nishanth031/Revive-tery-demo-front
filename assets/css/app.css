@@ -83,6 +83,7 @@ small, .muted { color: var(--text-3); }
 .banner.bad { background: var(--bad-soft); border-color: color-mix(in srgb, var(--bad) 35%, transparent); }
 .banner.good { background: var(--good-soft); border-color: color-mix(in srgb, var(--good) 35%, transparent); }
 .banner b { white-space: nowrap; }
+.banner span { min-width: 0; overflow-wrap: anywhere; }
 
 /* ---------------------------------------------------------------- cards and grids */
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px; min-width: 0; }
@@ -152,8 +153,8 @@ th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--bor
 th { position: sticky; top: 0; background: var(--surface-2); font-weight: 600; color: var(--text-2); white-space: nowrap; z-index: 1; }
 tr:last-child td { border-bottom: 0; }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
-.kv { display: grid; grid-template-columns: minmax(120px, max-content) 1fr; gap: 6px 16px; font-size: 13px; }
-.kv dt { color: var(--text-3); } .kv dd { margin: 0; overflow-wrap: anywhere; }
+.kv { display: grid; grid-template-columns: minmax(120px, max-content) minmax(0, 1fr); gap: 6px 16px; font-size: 13px; }
+.kv dt { color: var(--text-3); } .kv dd { margin: 0; overflow-wrap: anywhere; min-width: 0; }
 
 /* ---------------------------------------------------------------- checks list */
 .checks { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
@@ -258,4 +259,4 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
   .check summary > :last-child { display: none; }
   .check .body { padding: 4px 12px 12px; }
 }
-@media (max-width: 560px) { .g4 { grid-template-columns: minmax(0, 1fr); } .stepper { grid-template-columns: repeat(2, minmax(0, 1fr)); } .kpi .value { font-size: 20px; } }
+@media (max-width: 560px) { .kv { grid-template-columns: minmax(0, 1fr); gap: 2px 0; } .kv dd { margin-bottom: 6px; } .g4 { grid-template-columns: minmax(0, 1fr); } .stepper { grid-template-columns: repeat(2, minmax(0, 1fr)); } .kpi .value { font-size: 20px; } }

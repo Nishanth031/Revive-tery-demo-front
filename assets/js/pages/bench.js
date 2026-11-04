@@ -11,7 +11,7 @@ const WIRE_STYLE = {
 };
 const WIRE_LABEL = { power: "Power", ground: "Ground", logic: "Sensor power", i2c: "I²C", onewire: "1-Wire", usb: "USB (read-only)" };
 
-function circuitSvg(circuit, running, onBattery) {
+export function circuitSvg(circuit, running, onBattery = null) {
   const pins = {};
   const root = svg("svg", { viewBox: "0 0 1100 470", role: "img", "aria-label": "Bench wiring diagram" });
   const comps = svg("g");
@@ -25,7 +25,7 @@ function circuitSvg(circuit, running, onBattery) {
     const g = svg("g", { class: `comp ${c.kind === "battery" ? "battery" : ""}` });
     g.append(svg("rect", { x: x0, y: y0, width: x1 - x0, height: y1 - y0, rx: 8 }));
     g.append(svg("text", { x: (x0 + x1) / 2, y: y0 + 18, "text-anchor": "middle" }, c.title));
-    if (c.kind === "battery") {
+    if (c.kind === "battery" && onBattery) {
       g.append(svg("text", { x: (x0 + x1) / 2, y: y1 - 6, "text-anchor": "middle", style: "font-size:10px;font-weight:400;fill:var(--text-3)" }, "tap to switch battery"));
       g.addEventListener("click", onBattery);
       g.setAttribute("tabindex", "0");
@@ -155,6 +155,7 @@ export function render(root, app) {
         gauge(last ? last.soc_pct : NaN, 100, "engine SOC", " %"), gauge(s && s.reported_soc_pct !== null ? s.reported_soc_pct : NaN, 100, "reported SOC", " %", "--c2"))),
       card("Live SOH", h("div", {}, gauge(last ? last.soh_live_pct : NaN, 120, "live SOH", " %", "--c4"),
         h("p", { class: "muted", style: { fontSize: "12px", textAlign: "center", margin: 0 } }, last ? last.soh_basis : "Waiting for readings")))));
+    if (!rs.length && !ctl.running) live.append(h("div", { class: "empty" }, "No readings yet. Pick a source and press ", h("b", {}, "Start test"), "."));
     if (rs.length) {
       const t0 = rs[0].sample.timestamp;
       const x = rs.map((r) => (r.sample.timestamp - t0) / 60);

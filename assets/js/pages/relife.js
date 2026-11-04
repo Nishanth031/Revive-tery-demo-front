@@ -1,5 +1,5 @@
 // ReLife BMS Studio (the PySide6 prototype's engine): catalog, adapters, scenario evaluation and the virtual pulse test.
-import { h, clear, card, kpi, banner, field, select, numberInput, num, table, pill, decisionCard, kv, icon, download } from "../ui/dom.js";
+import { h, clear, card, kpi, banner, field, select, numberInput, num, table, pill, decisionCard, kv, icon, download, collapsible } from "../ui/dom.js";
 import { lineChart } from "../ui/charts.js";
 import * as R from "../engines/relife.js";
 import { storage } from "../app.js";
@@ -54,7 +54,8 @@ export function render(root, app) {
       { label: "Fits this profile", render: (a) => { const [ok, err, warn] = R.checkCompatibility(p, a); return h("span", {}, pill(ok ? "compatible" : "blocked", ok ? "good" : "bad"), " ", h("small", { class: "muted" }, [...err, ...warn].join("; "))); } },
       { label: "", render: (a) => h("button", { class: `btn small ${a.id === adapterId ? "primary" : ""}`, onclick: () => { adapterId = a.id; drawRight(); } }, a.id === adapterId ? "Selected" : "Use") }], R.ADAPTERS)));
     const ad = R.ADAPTERS.find((a) => a.id === adapterId);
-    const ev = R.evaluate(p, ad, evalScenario);
+    let ev;
+    try { ev = R.evaluate(p, ad, evalScenario); } catch (e) { console.error(e); right.append(banner("bad", "Monitor evaluation failed.", e.message)); return; }
     right.append(card("Monitor evaluation", [h("div", { class: "row mb" }, field("Scenario", select(R.EVALUATE_SCENARIOS, evalScenario, (v) => { evalScenario = v; drawRight(); })),
       pill(ev.status, { READY: "good", REVIEW: "warn", FAULT: "bad", BLOCKED: "bad" }[ev.status]), pill(ev.state, "neutral"), pill(ev.protection, "neutral")),
       kv([["SOC (illustrative)", ev.soc_pct === null ? "—" : `${ev.soc_pct} %`], ["Profile SOH", ev.soh_pct === null ? "—" : `${ev.soh_pct} %`],
@@ -78,5 +79,5 @@ export function render(root, app) {
   }
   drawLeft();
   drawRight();
-  if (app.relife.research_note) root.append(card("About the catalog", h("p", { class: "muted", style: { margin: 0 } }, app.relife.research_note), null, "mt"));
+  if (app.relife.research_note) root.append(collapsible("About the catalog", h("p", { class: "muted", style: { margin: 0 } }, app.relife.research_note), false, "mt"));
 }

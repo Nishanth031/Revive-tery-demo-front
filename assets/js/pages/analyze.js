@@ -1,6 +1,6 @@
 // Analyze batteries (port of the Circuit Studio ML panel): uploads -> lite analyzer and, when the data allow it,
 // the full ML engine through the upload adapter; contract-bundle zips go straight to the full engine.
-import { h, clear, card, banner, field, select, numberInput, seg, icon, toast, pill, toneOfDecision } from "../ui/dom.js";
+import { h, clear, card, banner, field, select, numberInput, seg, icon, toast, pill, toneOfDecision, collapsible } from "../ui/dom.js";
 import { renderFullReport, renderLiteReport, mappingTable } from "../ui/report.js";
 import * as lite from "../engines/lite.js";
 import { bundleFromRows, bundleFromContractFiles, isContractFileSet, convertDemo, AdapterError, ContractError } from "../engines/contract.js";
@@ -73,8 +73,10 @@ export function render(root, app) {
     const resp = await fetch(`data/samples/${name}`);
     run([new File([await resp.arrayBuffer()], name)]);
   }
-  function runDemo() {
+  async function runDemo() {
     clear(messages); results = {};
+    clear(out).append(h("div", { class: "empty" }, h("span", { class: "spinner" }), " Running the full ML engine on the demo pack…"));
+    await new Promise((r) => setTimeout(r, 20));
     try {
       const b = convertDemo(app.demo);
       const report = assess(b, app.assets);
@@ -149,7 +151,7 @@ export function render(root, app) {
           } else results[id] = { engine: "lite", report: liteReport, mapping: mine, notes: ["Lite analyzer chosen in the Engine menu."] };
           record(id, results[id]);
         }
-        if (Object.keys(mappings).length) messages.append(card("Column mapping", mappingTable(mappings)));
+        if (Object.keys(mappings).length) messages.append(collapsible("Column mapping", mappingTable(mappings)));
       }
     }
     show();
@@ -158,4 +160,9 @@ export function render(root, app) {
     void toneOfDecision;
   }
   show();
+  // "Run demo assessment" on the dashboard links here as #/analyze?demo=1
+  if (/[?&]demo=1\b/.test(location.hash)) {
+    history.replaceState(null, "", "#/analyze");
+    runDemo();
+  }
 }

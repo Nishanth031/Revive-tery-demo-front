@@ -1,5 +1,5 @@
 // Physics projection sandbox: the ML hand-over (SOH now, remaining reference cycles) projected under a workload.
-import { h, clear, card, kpi, banner, field, select, num, prov, table } from "../ui/dom.js";
+import { h, clear, card, kpi, banner, field, select, num, prov, table, collapsible } from "../ui/dom.js";
 import { project, stressFactor, nominalParams } from "../engines/physics.js";
 import { projectionChart } from "../ui/report.js";
 
@@ -35,7 +35,10 @@ export function render(root, app) {
   }
   function draw() {
     clear(out);
-    const p = project(ph, app.assets.mcParams, st.soh, { point: st.point, lower: st.lower, upper: st.upper }, st.w, app.assets.stateModel.validation.measured_coverage);
+    let p;
+    try { p = project(ph, app.assets.mcParams, st.soh, { point: st.point, lower: st.lower, upper: st.upper }, st.w, app.assets.stateModel.validation.measured_coverage); } catch (e) {
+      console.error(e); out.append(banner("bad", "The physics projection failed.", e.message)); return;
+    }
     const life = p.years_to_application_limit;
     const yrs = (t) => (t.value === null ? "> 20 y" : `${num(t.value, 1)} y`);
     out.append(h("div", { class: "grid g4" },
@@ -50,12 +53,12 @@ export function render(root, app) {
       ["Depth of discharge", (st.w.daily_dod / ref.daily_dod) ** p0.k_dod],
       ["C-rate", Math.exp(p0.c_rate_coefficient_j_mol * (st.w.c_rate - ref.c_rate) / (8.314 * (st.w.ambient_c + 273.15 + p0.cell_temperature_rise_c_per_c_rate * st.w.c_rate)))],
     ];
-    out.append(h("div", { class: "grid g2" },
-      card("Stress factors (nominal parameters)", [table([{ key: 0, label: "Factor" }, { label: "Multiplier", render: (r) => num(r[1], 4), num: true }], parts),
-        h("p", { class: "muted mt", style: { fontSize: "12px" } }, `Product = ${num(stressFactor(ph, p0, st.w), 4)}.`)]),
-      card("Years to the application limit", table([{ key: "k", label: "Path" }, { label: "Years", render: (r) => yrs(r.v), num: true }],
-        Object.entries(life).map(([k, v]) => ({ k: k.replace(/_/g, " "), v }))))));
-    out.append(card("Parameters and sources", table([{ key: "k", label: "Parameter" }, { key: "n", label: "Nominal", num: true }, { key: "prior", label: "Monte Carlo prior" }, { key: "src", label: "Source" }],
+    out.append(collapsible("Stress factors and years per path", h("div", { class: "grid g2" },
+      h("div", {}, h("h3", {}, "Stress factors (nominal parameters)"), table([{ key: 0, label: "Factor" }, { label: "Multiplier", render: (r) => num(r[1], 4), num: true }], parts),
+        h("p", { class: "muted mt", style: { fontSize: "12px" } }, `Product = ${num(stressFactor(ph, p0, st.w), 4)}.`)),
+      h("div", {}, h("h3", {}, "Years to the application limit"), table([{ key: "k", label: "Path" }, { label: "Years", render: (r) => yrs(r.v), num: true }],
+        Object.entries(life).map(([k, v]) => ({ k: k.replace(/_/g, " "), v })))))));
+    out.append(collapsible("Parameters and sources", table([{ key: "k", label: "Parameter" }, { key: "n", label: "Nominal", num: true }, { key: "prior", label: "Monte Carlo prior" }, { key: "src", label: "Source" }],
       Object.entries(ph.parameters).map(([k, v]) => ({ k, n: v.nominal, prior: `${v.prior.dist} ${JSON.stringify(Object.fromEntries(Object.entries(v.prior).filter(([q]) => q !== "dist")))}`, src: v.source })))));
   }
   drawControls();

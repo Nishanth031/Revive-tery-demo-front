@@ -117,6 +117,15 @@ export function download(name, content, type = "application/json") {
   setTimeout(() => URL.revokeObjectURL(a.href), 2000);
 }
 export function details(summary, body, open = false) { return h("details", { open }, h("summary", {}, summary), body); }
+/** a card whose body folds away: secondary information stays one click away */
+export function collapsible(title, body, open = false, cls = "") {
+  return h("details", { class: `card ${cls}`, open }, h("summary", { style: { cursor: "pointer", fontWeight: 650, fontSize: "15px" } }, title), h("div", { class: "mt" }, body));
+}
+/** run an engine call; on failure return a red banner instead of leaving the page blank */
+export function attempt(label, fn) {
+  try { return fn(); } catch (e) { console.error(e); return banner("bad", `${label} failed.`, String((e && e.message) || e)); }
+}
+export const spinnerBox = (text = "Working…") => h("div", { class: "empty" }, h("span", { class: "spinner" }), ` ${text}`);
 
 // ---------------------------------------------------------------- icons (stroke icons, 24x24)
 const ICONS = {

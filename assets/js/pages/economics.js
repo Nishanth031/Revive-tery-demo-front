@@ -1,5 +1,5 @@
 // Economics: what-if for one pack and the illustrative price-sensitivity sweep.
-import { h, clear, card, kpi, banner, field, select, num, usd, table, tabs, pill } from "../ui/dom.js";
+import { h, clear, card, kpi, banner, field, select, num, usd, table, tabs, pill, collapsible } from "../ui/dom.js";
 import { bars } from "../ui/charts.js";
 import { recycleValue, secondLifeValue, sweep, referenceProjection, metalPricesUsdPerKg } from "../engines/econ.js";
 
@@ -22,10 +22,13 @@ export function render(root, app) {
 
   function draw() {
     clear(out);
-    const ref = referenceProjection(ph, wl, { soh: st.soh / 100, rul: st.rul });
-    const m = { nickel: st.metalMult, cobalt: st.metalMult, lithium: st.metalMult };
-    const rec = recycleValue(st.chem, st.kwh, cfg, m);
-    const sl = secondLifeValue(st.kwh, st.soh / 100, ref.sohByYear, ref.life, ref.w, rec.net_usd, cfg, st.valueMult);
+    let rec, sl;
+    try {
+      const ref = referenceProjection(ph, wl, { soh: st.soh / 100, rul: st.rul });
+      const m = { nickel: st.metalMult, cobalt: st.metalMult, lithium: st.metalMult };
+      rec = recycleValue(st.chem, st.kwh, cfg, m);
+      sl = secondLifeValue(st.kwh, st.soh / 100, ref.sohByYear, ref.life, ref.w, rec.net_usd, cfg, st.valueMult);
+    } catch (e) { console.error(e); out.append(banner("bad", "The economics engine failed.", e.message)); return; }
     const win = sl.net_usd > rec.net_usd;
     out.append(h("div", { class: "grid g4" },
       kpi("Second-life net", usd(sl.net_usd), `${num(sl.years_used, 1)} years of service`), kpi("Recycle now", usd(rec.net_usd), `${num(rec.pack_kg, 0)} kg pack`),
@@ -39,14 +42,15 @@ export function render(root, app) {
   draw();
   const prices = metalPricesUsdPerKg(cfg);
   const p = cfg.recycling.prices_usd_per_tonne;
-  root.append(card("Sourced prices", table([{ key: "k", label: "Input" }, { key: "v", label: "Value", num: true }, { key: "s", label: "Source" }], [
+  root.append(collapsible("Sourced prices", table([{ key: "k", label: "Input" }, { key: "v", label: "Value", num: true }, { key: "s", label: "Source" }], [
     { k: "Nickel", v: `$${num(p.nickel.value, 0)}/t (${num(prices.nickel, 2)} $/kg)`, s: p.nickel.source },
     { k: "Cobalt", v: `$${num(p.cobalt.value, 0)}/t`, s: p.cobalt.source },
     { k: "Lithium carbonate", v: `$${num(p.lithium_carbonate.value, 0)}/t`, s: p.lithium_carbonate.source },
     { k: "New storage, installed", v: `$${cfg.buy_new_benchmark.installed_system_usd_per_kwh.value}/kWh`, s: cfg.buy_new_benchmark.installed_system_usd_per_kwh.source },
-    { k: "Stationary pack price", v: `$${cfg.buy_new_benchmark.stationary_pack_usd_per_kwh.value}/kWh`, s: cfg.buy_new_benchmark.stationary_pack_usd_per_kwh.source }]), null, "mt"));
+    { k: "Stationary pack price", v: `$${cfg.buy_new_benchmark.stationary_pack_usd_per_kwh.value}/kWh`, s: cfg.buy_new_benchmark.stationary_pack_usd_per_kwh.source }]), false, "mt"));
 
-  const sw = sweep(cfg, ph, wl);
+  let sw;
+  try { sw = sweep(cfg, ph, wl); } catch (e) { console.error(e); root.append(banner("bad", "The price-sensitivity sweep failed.", e.message)); return; }
   root.append(card("Price sensitivity: where does the decision flip?", [
     banner("info", "Illustrative.", `${sw.label}. Reference: ${sw.reference_battery.pack_kwh} kWh, SOH ${sw.reference_battery.soh_pct} %, residential workload, ${sw.reference_battery.projected_years} projected years.`),
     tabs(Object.entries(sw.chemistries).map(([chem, r]) => ({ id: chem, label: chem, render: () => {

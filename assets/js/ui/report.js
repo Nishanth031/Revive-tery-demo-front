@@ -74,8 +74,8 @@ function stateCard(st) {
   kp.push(kpi("Fade rate", h("span", {}, st.fade_rate_ref.value.toExponential(2), " ", prov("modelled")), st.fade_rate_ref.unit));
   const body = [h("p", { class: "muted" }, st.method), h("div", { class: "grid g4 mb" }, kp)];
   if (st.warnings.length) body.push(...st.warnings.map((w) => banner("warn", "", w)));
-  body.push(h("h3", {}, "Field features fed to the model"));
-  body.push(table([{ key: "k", label: "Feature" }, { label: "Value", render: (r) => tagged(r.v, 4) }], Object.entries(st.features).map(([k, v]) => ({ k, v }))));
+  body.push(h("details", {}, h("summary", { style: { cursor: "pointer", fontWeight: 600 } }, "Field features fed to the model"),
+    h("div", { class: "mt" }, table([{ key: "k", label: "Feature" }, { label: "Value", render: (r) => tagged(r.v, 4) }], Object.entries(st.features).map(([k, v]) => ({ k, v }))))));
   if (st.fold_predictions) body.push(h("p", { class: "muted mt", style: { fontSize: "12px" } }, `Fold models (cycles): ${st.fold_predictions.values.join(", ")}. ${st.distribution_shift_note || ""}`));
   if (st.reference_conditions) body.push(h("p", { class: "muted", style: { fontSize: "12px" } }, `Reference conditions: ${st.reference_conditions.values.note || JSON.stringify(st.reference_conditions.values)}`));
   return card("State (ML)", body);

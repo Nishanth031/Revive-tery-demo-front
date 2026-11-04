@@ -1,5 +1,5 @@
 // Data-quality lab: run the full engine on reference bundles and on every injected fault; edit the metadata and re-run.
-import { h, clear, card, banner, field, select, icon, pill, download } from "../ui/dom.js";
+import { h, clear, card, banner, field, select, icon, pill, download, spinnerBox } from "../ui/dom.js";
 import { renderFullReport } from "../ui/report.js";
 import { lineChart } from "../ui/charts.js";
 import { loadBundle, telemetryRows } from "../engines/contract.js";
@@ -9,7 +9,14 @@ import { toCSV } from "../lib/csv.js";
 export async function render(root, app) {
   root.append(h("div", { class: "page-head" }, h("div", {}, h("h1", {}, "Data-quality lab"),
     h("p", {}, "The full engine refuses data it can't trust. Pick a clean synthetic pack, a safety-gate case or one of the injected faults, and watch which check catches it. Edit the metadata (sign convention, chemistry, capacity tests…) and re-run."))));
-  const bundles = await app.getBundles();
+  const wait = spinnerBox("Loading reference bundles…");
+  root.append(wait);
+  let bundles;
+  try { bundles = await app.getBundles(); } catch (e) {
+    wait.replaceWith(banner("bad", "Could not load the reference bundles.", `${e.message}. Check that data/bundles.json is served.`));
+    return;
+  }
+  wait.remove();
   const names = Object.keys(bundles);
   let name = "clean_lfp";
   const groups = {};
@@ -54,7 +61,8 @@ export async function render(root, app) {
     let bundle;
     try { bundle = current(); } catch (e) { out.append(banner("bad", "Rejected by the data contract.", e.message)); return; }
     const t = performance.now();
-    const r = assess(bundle, app.assets);
+    let r;
+    try { r = assess(bundle, app.assets); } catch (e) { console.error(e); out.append(banner("bad", "The full engine failed.", e.message)); return; }
     const ms = performance.now() - t;
     const b = bundles[name];
     const edited = meta.value.trim() !== JSON.stringify(b.metadata, null, 2).trim();

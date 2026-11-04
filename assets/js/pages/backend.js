@@ -1,5 +1,5 @@
 // Backend connector: talk to the local REVIVE-TERY FastAPI backend (bulid X/backend/revive_api) if it is running.
-import { h, clear, card, banner, field, table, pill, icon } from "../ui/dom.js";
+import { h, clear, card, banner, field, table, pill, icon, collapsible } from "../ui/dom.js";
 import { evidence } from "../ui/report.js";
 import { storage } from "../app.js";
 
@@ -34,7 +34,7 @@ export function render(root) {
       h("button", { class: "btn", onclick: () => call("/api/batteries") }, "Batteries"),
       h("button", { class: "btn", onclick: () => call("/api/assessments") }, "Assessments"),
       h("button", { class: "btn", onclick: () => call("/api/uploads") }, "Uploads"))]),
-      card("Endpoints", table([{ key: 0, label: "Method" }, { key: 1, label: "Path" }, { key: 2, label: "What" }], ENDPOINTS))),
+      collapsible("Endpoints (16)", table([{ key: 0, label: "Method" }, { key: 1, label: "Path" }, { key: 2, label: "What" }], ENDPOINTS))),
     out));
   out.append(h("div", { class: "empty" }, "Responses appear here. Only read-only GET requests are sent from this page."));
 }

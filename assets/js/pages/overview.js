@@ -1,61 +1,105 @@
-// Overview: what REVIVE-TERY does, the decision flow, the provenance legend and every engine in this app.
-import { h, card, kpi, banner, prov, icon, PROV_HELP, num, pill } from "../ui/dom.js";
+// Overview: a minimal dashboard of the four back-end engines (ESP32 hardware, BMS engine, ML engine, database),
+// quick actions into each demo, system KPIs, and (folded away) the decision flow and provenance legend.
+import { h, kpi, banner, prov, icon, PROV_HELP, num, pill, collapsible } from "../ui/dom.js";
+import { listBatteryIds } from "../engines/bms.js";
+import { DEMO_TABLES } from "../app.js";
 
-const ENGINES = [
-  ["bench", "bolt", "Circuit Studio", "BMS engine (SOC by coulomb counting, live SOH with evidence basis), virtual replay of the demo pack, the simulated ESP32 with fault injection, and a real ESP32 over Web Serial (monitor-only).", "bulid X · bms_engine, esp32_sim, test_bench, run_controller"],
-  ["analyze", "upload", "Analyze batteries", "Upload CSV, Excel or zip files. The lite analyzer maps headers and suggests a second life; the upload adapter builds a data-contract bundle and the full ML engine assesses it.", "bulid X · ml_analyzer_suggester, ml_engine_bridge, ml_panel"],
-  ["dqlab", "flask", "Data-quality lab", "The 14 data-quality detectors and the readiness rules on reference bundles and every injected fault. Edit the metadata and re-run.", "revive-tery-ml · dq, gate, state, physics, econ, pipeline"],
-  ["physics", "wave", "Physics projection", "Double-exponential fade with Arrhenius, depth-of-discharge and C-rate stress factors, calendar ageing, the ML hand-over and a 1,000-draw Monte Carlo band.", "revive-tery-ml · physics/fade"],
-  ["economics", "coin", "Economics", "Second-Life vs Recycle with the Buy-New cap, sourced metal prices and the price-sensitivity sweep across chemistries.", "revive-tery-ml · econ/router, econ/sensitivity"],
-  ["database", "db", "Database", "The eight demo tables, your uploads (ml_telemetry, ml_ingest_log), bench run logs (test_run_log) and assessment history.", "bulid X · database/ (DuckDB tables)"],
-  ["evidence", "doc", "Model evidence", "Held-out metrics, CV+ coverage, gate detection rates, data-quality validation, physics sanity checks and the model cards.", "revive-tery-ml · reports, docs"],
-  ["relife", "cell", "ReLife BMS Studio", "The PySide6 prototype's engine: 23 catalog profiles, five virtual adapters, scenario evaluation and the 30 s synthetic pulse test.", "Hackathon project ev · bms_engine, models"],
-  ["hardware", "chip", "Firmware & hardware", "The bench wiring, the ESP32 sketch and its line protocol, with the low-voltage safety limits.", "bulid X · firmware/revive_tery_esp32"],
-  ["backend", "plug", "Backend connector", "Talk to the local FastAPI backend (16 endpoints) when it is running on your machine.", "bulid X · backend/revive_api"],
-];
+const go = (route) => { location.hash = `#/${route}`; };
+
+/** a card that is itself a link to `route`; inner buttons link elsewhere without triggering it */
+function engineCard({ route, ic, title, status, lines, links }) {
+  const ok = status.every(([, good]) => good);
+  return h("section", {
+    class: "card", role: "link", tabindex: 0, style: { cursor: "pointer", display: "flex", flexDirection: "column", gap: "10px" },
+    onclick: () => go(route), onkeydown: (e) => { if (e.key === "Enter") go(route); },
+  },
+  h("div", { class: "row between" },
+    h("div", { class: "row" }, h("span", { style: { color: "var(--accent)" } }, icon(ic, 20)), h("h3", { style: { margin: 0 } }, title)),
+    pill(ok ? "loaded" : "check", ok ? "good" : "warn")),
+  h("div", { class: "stack", style: { gap: "4px" } }, status.map(([text, good]) =>
+    h("div", { class: "row", style: { gap: "6px", fontSize: "13px" } }, h("span", { style: { color: good ? "var(--good)" : "var(--warn)" } }, icon(good ? "check" : "alert", 15)), text))),
+  h("div", { class: "muted", style: { fontSize: "12.5px" } }, lines.join(" · ")),
+  h("div", { class: "row", style: { gap: "6px", marginTop: "auto" } }, links.map(([r, label]) =>
+    h("a", { class: "btn small", href: `#/${r}`, onclick: (e) => e.stopPropagation() }, label))));
+}
 
 export function render(root, app) {
-  const v = app.assets.stateModel.validation;
-  const gp = app.assets.gates.synthetic_packs;
-  root.append(
-    h("div", { class: "page-head" }, h("div", {}, h("h1", {}, "REVIVE-TERY Studio"),
-      h("p", {}, "Triage for used EV batteries: is the data trustworthy, is the pack safe to handle, how healthy is it, how long will it last in a second life, and is that worth more than recycling? Every engine below runs in your browser — nothing is uploaded anywhere."))),
-    banner("warn", "Synthetic data.", "All REVIVE-TERY datasets here are synthetic or simulated. Results show the pipeline works; they say nothing about a real battery. The safety gate is UL 1974-style triage — a screening step, not UL certification or a safety approval."),
-    h("div", { class: "grid g4 mb" },
-      kpi("State model", "HGB + CV+", `trained on Severson LFP cells; held-out coverage ${num(100 * v.measured_coverage, 1)} % at nominal ${num(100 * v.nominal_level, 0)} %`),
-      kpi("Safety gate", "Limits + IForest", `${gp.nTrees} trees; ${gp.trainingSummary.train_windows?.toLocaleString?.() || ""} healthy training windows`),
-      kpi("Data-quality checks", "14", "explicit rules; inconclusive is never a pass"),
-      kpi("Monte Carlo draws", app.assets.mcParams.length.toLocaleString(), "physics-parameter priors, seed 0")),
-  );
+  const a = app.assets;
+  const sm = a.stateModel;
+  const gates = Object.values(a.gates);
+  const rowCounts = DEMO_TABLES.map((t) => [t, (app.demo[t] || []).length]);
+  const totalRows = rowCounts.reduce((s, [, n]) => s + n, 0);
+  const tablesLoaded = rowCounts.filter(([, n]) => n > 0).length;
+  const batteries = listBatteryIds(app.demo);
+  const serial = "serial" in navigator;
+  const modelsLoaded = [sm, ...gates, a.mcParams.length ? 1 : null].filter(Boolean).length;
+  const runs = new Set(app.runLog.map((r) => r.run_id).filter(Boolean)).size;
 
+  root.append(h("div", { class: "page-head" }, h("div", {}, h("h1", {}, "Engine dashboard"),
+    h("p", {}, "Second-life battery triage. Every engine runs in this browser; nothing is uploaded."))));
+  root.append(banner("warn", "Synthetic data.", "Results show the pipeline works, not the state of a real battery. The safety gate is UL 1974-style triage, not certification."));
+
+  // ------------------------------------------------ system health
+  root.append(h("div", { class: "grid g4 mb" },
+    kpi("Models loaded", `${modelsLoaded} / 4`, "state RUL, 2 safety gates, Monte Carlo draws"),
+    kpi("Demo tables", `${tablesLoaded} / ${DEMO_TABLES.length}`, `${totalRows.toLocaleString()} rows in total`),
+    kpi("Assessments", app.history.length.toLocaleString(), "kept in this browser"),
+    kpi("Run log entries", app.runLog.length.toLocaleString(), runs ? `${runs} bench run${runs === 1 ? "" : "s"}` : "no bench runs yet")));
+
+  // ------------------------------------------------ quick actions
+  root.append(h("div", { class: "row mb" },
+    h("a", { class: "btn primary", href: "#/analyze?demo=1" }, icon("play", 15), "Run demo assessment"),
+    h("a", { class: "btn", href: "#/bench" }, icon("bolt", 15), "Start bench test"),
+    h("a", { class: "btn", href: "#/dqlab" }, icon("flask", 15), "Open DQ lab"),
+    h("a", { class: "btn", href: "#/database" }, icon("db", 15), "View database")));
+
+  // ------------------------------------------------ the four engines
+  const fw = [ "Firmware sketch", null ];
+  const hwCard = engineCard({ route: "hardware", ic: "chip", title: "ESP32 hardware",
+    status: [fw, [serial ? "Web Serial available (read-only)" : "Web Serial unavailable in this browser", serial]],
+    lines: ["INA219 + DS18B20", "JSON lines at 115200 baud", "monitor-only, ≤ 26 V"],
+    links: [["hardware", "Firmware & wiring"], ["bench", "Live bench"]] });
+  const fwLine = hwCard.querySelector(".stack > .row");
+  const setFw = (good, text) => {
+    fwLine.replaceChildren(h("span", { style: { color: good ? "var(--good)" : "var(--warn)" } }, icon(good ? "check" : "alert", 15)), text);
+    const all = [...hwCard.querySelectorAll(".stack > .row > span")].every((s) => s.style.color.includes("good"));
+    hwCard.querySelector(".pill").replaceWith(pill(all ? "loaded" : "check", all ? "good" : "warn"));
+  };
+  fwLine.replaceChildren(h("span", { class: "spinner", style: { width: "13px", height: "13px" } }), "Checking firmware sketch…");
+  app.fetchText("data/firmware/revive_tery_esp32.ino")
+    .then((t) => setFw(true, `Firmware sketch present (${t.split("\n").length} lines)`))
+    .catch(() => setFw(false, "Firmware sketch missing"));
+
+  root.append(h("div", { class: "grid g2" },
+    hwCard,
+    engineCard({ route: "bench", ic: "bolt", title: "BMS engine",
+      status: [["Coulomb-counting SOC and live SOH ready", true], [`${batteries.length} batter${batteries.length === 1 ? "y" : "ies"} available for replay`, batteries.length > 0],
+        ["Simulated ESP32 with fault injection", true]],
+      lines: [`${app.runLog.length.toLocaleString()} logged readings`, "tiers: > 80 % stationary · 60–80 % low-speed EV · < 60 % recycle"],
+      links: [["bench", "Circuit Studio"], ["relife", "ReLife BMS"]] }),
+    engineCard({ route: "analyze", ic: "flask", title: "ML engine",
+      status: [[`State model: ${sm.folds.length} folds, ${sm.folds.reduce((s, f) => s + f.nTrees, 0).toLocaleString()} trees (HGB + CV+)`, sm.folds.length > 0],
+        [`Safety gate: ${gates.map((g) => `${g.nTrees} trees`).join(" + ")} (IsolationForest)`, gates.length === 2],
+        [`Physics: ${a.mcParams.length.toLocaleString()} Monte Carlo draws`, a.mcParams.length > 0]],
+      lines: [`held-out CV+ coverage ${num(100 * sm.validation.measured_coverage, 1)} %`, "14 data-quality checks"],
+      links: [["analyze", "Analyze"], ["dqlab", "DQ lab"], ["physics", "Physics"], ["economics", "Economics"]] }),
+    engineCard({ route: "database", ic: "db", title: "Database",
+      status: [[`${tablesLoaded} of ${DEMO_TABLES.length} demo tables loaded`, tablesLoaded === DEMO_TABLES.length],
+        [`${app.liteStore.telemetry.length.toLocaleString()} uploaded rows, ${app.liteStore.log.length} ingest log entries`, true]],
+      lines: rowCounts.map(([t, n]) => `${t} ${n}`),
+      links: [["database", "Tables"], ["evidence", "Model evidence"], ["backend", "Backend"]] })));
+
+  // ------------------------------------------------ reference (folded)
   const flow = [
-    ["1", "Data quality", "14 detectors: timestamps, sign convention, charge balance, regen sign, resistance, nulls, dropouts, stuck values, spikes, ranges, temperature, estimate disagreement, provenance, sample size.", "NOT_READY stops here"],
-    ["2", "Safety gate", "Chemistry limits (cell voltage, temperature, resistance growth, open safety events) then an IsolationForest out-of-distribution filter.", "Reject → recycling · Quarantine → inspection"],
-    ["3", "State (ML)", "SOH from the latest capacity test; remaining cycles to 80 % from gradient boosting with a 90 % CV+ interval.", "Fallback: capacity-test trend"],
-    ["4", "Projection", "Physics model anchored to the ML prediction, per workload: central path, ML band, Monte Carlo band, knee scenario.", "Labelled: projected (physics model)"],
-    ["5", "Economics", "Discounted second-life value, capped at the cost of buying new, against recycling now.", "Second-Life: <application> or Recycle"],
+    ["Data quality", "14 detectors", "NOT_READY stops here"],
+    ["Safety gate", "Chemistry limits, then an IsolationForest OOD filter", "Reject → recycle · Quarantine → inspect"],
+    ["State (ML)", "SOH from capacity tests; RUL with a 90 % CV+ interval", "Fallback: capacity trend"],
+    ["Projection", "Physics fade anchored to the ML prediction, per workload", "Central, ML band, MC band, knee"],
+    ["Economics", "Discounted second-life value capped at buy-new, vs recycling", "Second-Life or Recycle"],
   ];
-  root.append(card("How a decision is made (full ML engine)", h("div", { class: "stepper" }, flow.map(([n, t, s, out]) =>
-    h("div", { class: "step" }, h("div", { class: "n" }, `Stage ${n}`), h("div", { class: "t" }, t), h("div", { class: "s muted" }, s), h("div", { class: "s", style: { marginTop: "6px", fontWeight: 600 } }, out))))));
-
-  root.append(h("div", { class: "grid g2 mt" },
-    card("Every number carries its provenance", h("div", { class: "stack", style: { gap: "8px" } },
-      Object.entries(PROV_HELP).map(([p, t]) => h("div", { class: "row" }, prov(p), h("span", { class: "muted" }, t))),
-      h("p", { class: "muted", style: { fontSize: "12.5px", margin: 0 } }, "Simulated data is never tagged measured. Placeholder economic inputs are listed in every report."))),
-    card("Two engines, compared honestly", h("div", { class: "stack", style: { gap: "6px" } },
-      h("p", { style: { margin: 0 } }, h("b", {}, "Full ML engine"), " (revive-tery-ml): data contract, data quality, gate, ML state, physics, economics. Needs real timestamps."),
-      h("p", { style: { margin: 0 } }, h("b", {}, "Lite analyzer"), " (ml_analyzer_suggester): header mapping, simple gate, capacity-based SoH and fade, placeholder economics. Works on cycler logs without timestamps."),
-      h("p", { style: { margin: 0 } }, h("b", {}, "Old fixed rule"), ": SOH > 80 % stationary storage, 60–80 % low-speed EV, < 60 % recycle. Shown next to every result for comparison only.")))));
-
-  root.append(h("h2", { class: "mt", style: { marginTop: "22px" } }, "Engines and software in this app"));
-  root.append(h("div", { class: "grid g2" }, ENGINES.map(([id, ic, t, d, src]) =>
-    h("a", { href: `#/${id}`, class: "card", style: { display: "block", color: "inherit", textDecoration: "none" } },
-      h("div", { class: "row", style: { marginBottom: "6px" } }, h("span", { style: { color: "var(--accent)" } }, icon(ic, 20)), h("h3", { style: { margin: 0 } }, t)),
-      h("p", { class: "muted", style: { margin: "0 0 6px" } }, d), pill(src, "neutral")))));
-
-  root.append(card("Safety, by design", h("ul", { style: { margin: 0, paddingLeft: "18px" } },
-    h("li", {}, "Monitor-only hardware: the app reads lines from the ESP32 and has no code path that writes to it."),
-    h("li", {}, "Bench is low-voltage only. The INA219 is rated to 26 V; the firmware withholds readings and warns above it."),
-    h("li", {}, "The gate never says a battery is safe: it rejects, quarantines for inspection, or passes it to the next screening step."),
-    h("li", {}, "No value is invented: missing timestamps, capacity or temperature are reported, and the engine falls back or refuses with a reason.")), null, "mt"));
+  root.append(collapsible("How a decision is made (full ML engine)", h("div", { class: "stepper" }, flow.map(([t, s, out], i) =>
+    h("div", { class: "step" }, h("div", { class: "n" }, `Stage ${i + 1}`), h("div", { class: "t" }, t), h("div", { class: "s muted" }, s),
+      h("div", { class: "s", style: { marginTop: "6px", fontWeight: 600 } }, out)))), false, "mt"));
+  root.append(collapsible("Provenance tags", h("div", { class: "stack", style: { gap: "8px" } },
+    Object.entries(PROV_HELP).map(([p, t]) => h("div", { class: "row" }, prov(p), h("span", { class: "muted" }, t)))), false, "mt"));
 }
