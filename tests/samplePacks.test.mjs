@@ -12,7 +12,7 @@ function replay(file) {
   const pack = samplePackFromCSV(readFileSync(join(ROOT, "data", "samples", file), "utf8"), file);
   const p = pack.profile;
   const engine = new BMSEngine({ rated_capacity_ah: p.rated_capacity_ah, baseline_measured_ah: p.measured_capacity_ah,
-    baseline_date: p.capacity_test_date, discharge_positive: BUNDLE_DISCHARGE_POSITIVE });
+    baseline_date: p.capacity_test_date, discharge_positive: BUNDLE_DISCHARGE_POSITIVE, baseline_source: p.baseline_source });
   for (const s of pack.samples) engine.process(s);
   const rows = pack.samples.map((s) => ({ voltage_v: s.voltage_v }));
   return { pack, engine, decision: getDecisionForUi(engine), flags: voltageFlags(p, rows) };
@@ -34,6 +34,7 @@ test("sample packs: tiers follow the logged capacity", () => {
   assert.equal(tier("2_worn_pack.csv"), TIER_LOW_SPEED_EV);
   assert.equal(tier("5_end_of_life_pack.csv"), TIER_RECYCLING);
   assert.equal(tier("6_timestamped_pack.csv"), TIER_STATIONARY);
+  assert.equal(replay("2_worn_pack.csv").decision.basis, "Discharge capacity logged in the sample pack on cycle 150 of the log");
 });
 
 test("sample packs: only the over-discharged pack is flagged for voltage", () => {

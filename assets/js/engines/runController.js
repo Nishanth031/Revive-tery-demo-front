@@ -60,7 +60,7 @@ export function voltageFlags(profile, rows) {
   const lo = Math.min(...v), hi = Math.max(...v);
   if (profile.min_voltage_v !== null && profile.min_voltage_v !== undefined && lo < profile.min_voltage_v) {
     flags.push(`Over-discharge: the voltage fell to ${lo.toFixed(1)} V, below the pack's minimum of ${profile.min_voltage_v} V. ` +
-      "Inspect the pack before any reuse; the capacity-based tier below doesn't account for this.");
+      "Inspect the pack before any reuse; this capacity-based tier doesn't account for it.");
   }
   if (profile.max_voltage_v !== null && profile.max_voltage_v !== undefined && hi > profile.max_voltage_v) {
     flags.push(`Over-voltage: the voltage reached ${hi.toFixed(1)} V, above the pack's maximum of ${profile.max_voltage_v} V. Inspect the pack before any reuse.`);
@@ -156,7 +156,7 @@ export class RunController {
     if (!p) { this.notice = "No battery is loaded."; this.onUpdate(); return; }
     if (!p.telemetry_rows) { this.notice = `${p.asset_id} has no telemetry to replay.`; this.onUpdate(); return; }
     const engine = new BMSEngine({ rated_capacity_ah: p.rated_capacity_ah, baseline_measured_ah: p.measured_capacity_ah,
-      baseline_date: p.capacity_test_date, discharge_positive: BUNDLE_DISCHARGE_POSITIVE });
+      baseline_date: p.capacity_test_date, discharge_positive: BUNDLE_DISCHARGE_POSITIVE, ...(p.baseline_source ? { baseline_source: p.baseline_source } : {}) });
     const pack = this.isSamplePack(p.asset_id) ? this.packs[p.asset_id] : null;
     this.begin("virtual", engine, { source: pack ? "sample_pack_replay" : "virtual_replay", asset_id: p.asset_id, data_class: p.is_synthetic ? "SYNTHETIC" : "RECORDED" });
     const samples = pack ? pack.samples : replaySamples(this.tables, p.asset_id, this.parseTime);

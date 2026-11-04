@@ -42,8 +42,9 @@ export function makeSample(o) {
 
 export class BMSEngine {
   constructor({ rated_capacity_ah = null, initial_soc_pct = null, baseline_measured_ah = null, baseline_date = null,
-    cutoff_voltage_v = null, discharge_positive = true } = {}) {
+    cutoff_voltage_v = null, discharge_positive = true, baseline_source = "Capacity test recorded in the database" } = {}) {
     this.rated_capacity_ah = rated_capacity_ah;
+    this.baseline_source = baseline_source;
     this.baseline_measured_ah = baseline_measured_ah;
     this.baseline_date = baseline_date;
     this.cutoff_voltage_v = cutoff_voltage_v;
@@ -115,7 +116,7 @@ export class BMSEngine {
   finalSoh() {
     if (this.fullDischargeSoh !== null) return [this.fullDischargeSoh, "Full discharge measured in this test"];
     const b = this.baselineSoh();
-    if (b !== null) return [b, `Capacity test recorded in the database${this.baseline_date ? ` on ${this.baseline_date}` : ""}`];
+    if (b !== null) return [b, `${this.baseline_source}${this.baseline_date ? ` on ${this.baseline_date}` : ""}`];
     if (this.soh_basis === BASIS_PARTIAL) return [this.soh_live_pct, "Estimate from this test's recorded SOC change"];
     return [null, "No capacity measurement: discharge to the cutoff voltage to measure one"];
   }

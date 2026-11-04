@@ -48,7 +48,7 @@ export function samplePackFromCSV(text, file) {
     asset_id: id, chemistry: SAMPLE_PACK_SPEC.chemistry, nominal_voltage_v: null,
     min_voltage_v: round(lim.cell_v_min * n), max_voltage_v: round(lim.cell_v_max * n),
     rated_capacity_ah: SAMPLE_PACK_SPEC.rated_capacity_ah, measured_capacity_ah: round(measured, 2),
-    capacity_test_date: `cycle ${lastCycle} of the log`, telemetry_rows: samples.length, is_synthetic: true,
+    capacity_test_date: `cycle ${lastCycle} of the log`, baseline_source: "Discharge capacity logged in the sample pack", telemetry_rows: samples.length, is_synthetic: true,
     source: "sample", file, cycle: lastCycle, cycles_in_file: new Set(std.data.map((r) => r.cycle_index)).size,
     voltage_limits_basis: `${SAMPLE_PACK_SPEC.chemistry} ${lim.cell_v_min}–${lim.cell_v_max} V per cell × ${n} in series`,
   };
