@@ -13,11 +13,11 @@ A static website that runs every REVIVE-TERY engine in the browser. There is no 
 | Data-quality lab | `revive-tery-ml`: contract, 14 data-quality detectors and readiness rules, gate, state, physics, economics, pipeline |
 | Physics projection | `revive_ml.physics.fade` (double-exponential fade, stress factors, calendar ageing, 1,000-draw Monte Carlo) |
 | Economics | `revive_ml.econ.router` and `econ.sensitivity` |
-| Database | the eight demo tables; uploads (`ml_telemetry`, `ml_ingest_log`), `test_run_log` and assessment history, stored in this browser |
+| Database | the eight tables of the project database (`data/db/revive_tery.duckdb`, read with DuckDB-WASM); uploads (`ml_telemetry`, `ml_ingest_log`), `test_run_log` and assessment history, stored in this browser |
 | Model evidence | the ML engine's validation reports and model cards |
 | ReLife BMS Studio | `Hackathon project ev`: `bms_engine`, `models` (adapters, scenarios, 30 s virtual pulse test) |
 | Firmware & hardware | `firmware/revive_tery_esp32.ino`, wiring and line protocol |
-| Backend connector | read-only calls to the local FastAPI backend (`backend/revive_api`) |
+| Backend | a built-in backend on the project database with the demo battery `DEMO-EV-PACK-001` connected: the FastAPI routes (health, batteries, assessments), scans through the full ML engine, and read-only SQL. Optional read-only calls to a local FastAPI backend (`backend/revive_api`) |
 
 The trained models (HistGradientBoosting + MAPIE CV+ for remaining life, and IsolationForest for the gate) are exported to JSON by `tools/export_assets.py`. The export checks the browser's algorithm against scikit-learn and MAPIE before writing anything.
 
@@ -58,6 +58,22 @@ Then open http://localhost:8080.
 3. The site is published at `https://<user>.github.io/<repo>/`. `.nojekyll` is included, so files are served as they are.
 
 The site uses hash routing (`#/analyze`), so no server rewrite rules are needed. The hardware page's Web Serial access needs Chrome or Edge on a desktop. GitHub Pages serves over https, which Web Serial requires.
+
+## The project database
+
+The site runs on the REVIVE-TERY DuckDB database from [revive-tery-DB](https://github.com/Nishanth031/revive-tery-DB).
+At start-up the browser downloads `data/db/revive_tery.duckdb`, opens it read-only with
+[DuckDB-WASM](https://github.com/duckdb/duckdb-wasm) 1.29.0 (from jsDelivr), and reads the eight tables the engines use.
+The Database, Backend and Overview pages show which source was used. If DuckDB-WASM can't start (for example the CDN
+is blocked), the site falls back to the CSV export in `data/demo/` and says why. Both give identical rows.
+
+The database file in revive-tery-DB uses DuckDB storage v2.0, which DuckDB-WASM can't open yet. To update the site's copy:
+
+```bash
+python tools/convert_db.py path/to/revive_tery.duckdb
+```
+
+It rewrites `data/db/revive_tery.duckdb` in storage v1.0.0 and checks every table's row count.
 
 ## Regenerating data
 

@@ -42,7 +42,7 @@ export function render(root, app) {
   // ------------------------------------------------ system health
   root.append(h("div", { class: "grid g4 mb" },
     kpi("Models loaded", `${modelsLoaded} / 4`, "state RUL, 2 safety gates, Monte Carlo draws"),
-    kpi("Demo tables", `${tablesLoaded} / ${DEMO_TABLES.length}`, `${totalRows.toLocaleString()} rows in total`),
+    kpi("Database tables", `${tablesLoaded} / ${DEMO_TABLES.length}`, `${totalRows.toLocaleString()} rows · ${app.dbSource?.kind === "duckdb" ? "DuckDB" : "CSV fallback"}`),
     kpi("Assessments", app.history.length.toLocaleString(), "kept in this browser"),
     kpi("Run log entries", app.runLog.length.toLocaleString(), runs ? `${runs} bench run${runs === 1 ? "" : "s"}` : "no bench runs yet")));
 
@@ -51,7 +51,8 @@ export function render(root, app) {
     h("a", { class: "btn primary", href: "#/analyze?demo=1" }, icon("play", 15), "Run demo assessment"),
     h("a", { class: "btn", href: "#/bench" }, icon("bolt", 15), "Start bench test"),
     h("a", { class: "btn", href: "#/dqlab" }, icon("flask", 15), "Open DQ lab"),
-    h("a", { class: "btn", href: "#/database" }, icon("db", 15), "View database")));
+    h("a", { class: "btn", href: "#/database" }, icon("db", 15), "View database"),
+    h("a", { class: "btn", href: "#/backend" }, icon("plug", 15), "Scan from the database")));
 
   // ------------------------------------------------ the four engines
   const fw = [ "Firmware sketch", null ];
@@ -84,7 +85,8 @@ export function render(root, app) {
       lines: [`held-out CV+ coverage ${num(100 * sm.validation.measured_coverage, 1)} %`, "14 data-quality checks"],
       links: [["analyze", "Analyze"], ["dqlab", "DQ lab"], ["physics", "Physics"], ["economics", "Economics"]] }),
     engineCard({ route: "database", ic: "db", title: "Database",
-      status: [[`${tablesLoaded} of ${DEMO_TABLES.length} demo tables loaded`, tablesLoaded === DEMO_TABLES.length],
+      status: [[app.dbSource?.kind === "duckdb" ? `DuckDB ${app.dbSource.version}: ${app.dbSource.file}` : `CSV export (database not opened: ${app.dbSource?.reason || "unknown"})`, app.dbSource?.kind === "duckdb"],
+        [`${tablesLoaded} of ${DEMO_TABLES.length} tables loaded · demo battery DEMO-EV-PACK-001 connected`, tablesLoaded === DEMO_TABLES.length],
         [`${app.liteStore.telemetry.length.toLocaleString()} uploaded rows, ${app.liteStore.log.length} ingest log entries`, true]],
       lines: rowCounts.map(([t, n]) => `${t} ${n}`),
       links: [["database", "Tables"], ["evidence", "Model evidence"], ["backend", "Backend"]] })));

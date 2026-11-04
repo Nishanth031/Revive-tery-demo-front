@@ -4,6 +4,7 @@ import { h, clear, icon, toast } from "./ui/dom.js";
 import { loadAssets } from "./engines/pipeline.js";
 import { parseCSV } from "./lib/csv.js";
 import { LiteStore } from "./engines/lite.js";
+import { openDatabase, readTable, DB_FILE } from "./lib/duckdb.js";
 
 const PAGES = [
   { group: "Start" },
@@ -16,10 +17,10 @@ const PAGES = [
   { id: "economics", title: "Economics", icon: "coin", load: () => import("./pages/economics.js") },
   { id: "database", title: "Database", icon: "db", load: () => import("./pages/database.js") },
   { id: "evidence", title: "Model evidence", icon: "doc", load: () => import("./pages/evidence.js") },
+  { id: "backend", title: "Backend", icon: "plug", load: () => import("./pages/backend.js") },
   { group: "Other software" },
   { id: "relife", title: "ReLife BMS Studio", icon: "cell", load: () => import("./pages/relife.js") },
   { id: "hardware", title: "Firmware & hardware", icon: "chip", load: () => import("./pages/hardware.js") },
-  { id: "backend", title: "Backend connector", icon: "plug", load: () => import("./pages/backend.js") },
 ];
 
 // ---------------------------------------------------------------- persistence (per-browser conveniences only)
@@ -35,7 +36,7 @@ export const DEMO_TABLES = ["battery_asset", "telemetry", "health_history", "saf
 
 /** shared application state */
 export const app = {
-  assets: null, demo: null, relife: null, circuit: null, bundles: null,
+  assets: null, demo: null, dbSource: null, db: null, relife: null, circuit: null, bundles: null,
   liteStore: null, history: [], runLog: [], fetchJSON, fetchText,
   libs() { return { JSZip: window.JSZip, XLSX: window.XLSX }; },
   saveLite() {
@@ -56,17 +57,41 @@ export const app = {
 };
 
 async function boot() {
-  const [assets, relife, circuit, ...tables] = await Promise.all([
+  const [assets, relife, circuit] = await Promise.all([
     loadAssets(fetchJSON), fetchJSON("data/relife.json"), fetchJSON("data/circuit.json"),
-    ...DEMO_TABLES.map((t) => fetchText(`data/demo/${t}.csv`)),
   ]);
   app.assets = assets;
   app.relife = relife;
   app.circuit = circuit;
-  app.demo = Object.fromEntries(DEMO_TABLES.map((t, i) => [t, parseCSV(tables[i]).rows]));
+  await loadDemoTables();
   app.liteStore = new LiteStore(storage.get("lite-store"));
   app.history = storage.get("history", []);
   app.runLog = storage.get("run-log", []);
+}
+
+/**
+ * The demo tables come from the project database (data/db/revive_tery.duckdb, opened with DuckDB-WASM).
+ * If the database can't be opened (offline CDN, old browser), the CSV export in data/demo/ is used and the
+ * reason is shown on the Overview, Database and Backend pages.
+ */
+async function loadDemoTables() {
+  setBootStatus("Opening the REVIVE-TERY database (DuckDB)…");
+  try {
+    const db = await openDatabase();
+    const rows = await Promise.all(DEMO_TABLES.map((t) => readTable(db.conn, t)));
+    app.demo = Object.fromEntries(DEMO_TABLES.map((t, i) => [t, rows[i]]));
+    app.db = db;
+    app.dbSource = { kind: "duckdb", file: DB_FILE, version: db.version, bytes: db.bytes };
+  } catch (e) {
+    console.warn("DuckDB unavailable, using the CSV export:", e);
+    const tables = await Promise.all(DEMO_TABLES.map((t) => fetchText(`data/demo/${t}.csv`)));
+    app.demo = Object.fromEntries(DEMO_TABLES.map((t, i) => [t, parseCSV(tables[i]).rows]));
+    app.dbSource = { kind: "csv", file: "data/demo/*.csv", reason: String(e.message || e) };
+  }
+}
+function setBootStatus(text) {
+  const el = document.querySelector("#content .loading-screen");
+  const line = el && el.firstElementChild; if (line) line.lastChild.textContent = ` ${text}`;
 }
 
 // ---------------------------------------------------------------- shell
