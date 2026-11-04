@@ -5,6 +5,7 @@ import { loadAssets } from "./engines/pipeline.js";
 import { parseCSV } from "./lib/csv.js";
 import { LiteStore } from "./engines/lite.js";
 import { openDatabase, readTable, DB_FILE } from "./lib/duckdb.js";
+import { loadSamplePacks } from "./engines/samplePacks.js";
 
 const PAGES = [
   { group: "Start" },
@@ -53,6 +54,7 @@ export const app = {
     if (this.runLog.length > 20000) this.runLog = this.runLog.slice(-20000);
     storage.set("run-log", this.runLog.slice(-5000));
   },
+  async getSamplePacks() { if (!this.samplePacks) this.samplePacks = await loadSamplePacks(fetchText); return this.samplePacks; },
   async getBundles() { if (!this.bundles) this.bundles = await fetchJSON("data/bundles.json"); return this.bundles; },
 };
 

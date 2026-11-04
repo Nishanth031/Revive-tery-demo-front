@@ -52,26 +52,47 @@ class ReadOnlyPort {
   }
 }
 
+/** readings outside the pack's stated voltage window: capacity tiers don't cover this, so it is said first */
+export function voltageFlags(profile, rows) {
+  const v = rows.map((r) => r.voltage_v).filter(Number.isFinite);
+  if (!profile || !v.length) return [];
+  const flags = [];
+  const lo = Math.min(...v), hi = Math.max(...v);
+  if (profile.min_voltage_v !== null && profile.min_voltage_v !== undefined && lo < profile.min_voltage_v) {
+    flags.push(`Over-discharge: the voltage fell to ${lo.toFixed(1)} V, below the pack's minimum of ${profile.min_voltage_v} V. ` +
+      "Inspect the pack before any reuse; the capacity-based tier below doesn't account for this.");
+  }
+  if (profile.max_voltage_v !== null && profile.max_voltage_v !== undefined && hi > profile.max_voltage_v) {
+    flags.push(`Over-voltage: the voltage reached ${hi.toFixed(1)} V, above the pack's maximum of ${profile.max_voltage_v} V. Inspect the pack before any reuse.`);
+  }
+  return flags;
+}
+
 export class RunController {
   /** tables: demo database rows; parseTime: ISO -> epoch seconds; onUpdate(): redraw; onLog(rows): store run rows */
-  constructor({ tables, parseTime, onUpdate = () => {}, onLog = () => {} }) {
-    this.tables = tables; this.parseTime = parseTime; this.onUpdate = onUpdate; this.onLog = onLog;
+  /** packs: optional { asset_id: { profile, samples, note } } replayable alongside the database (engines/samplePacks.js) */
+  constructor({ tables, parseTime, onUpdate = () => {}, onLog = () => {}, packs = {} }) {
+    this.tables = tables; this.parseTime = parseTime; this.onUpdate = onUpdate; this.onLog = onLog; this.packs = packs;
     this.status = "idle"; this.source = "virtual"; this.notice = ""; this.error = ""; this.logNote = "";
     this.readings = []; this.decision = null; this.stats = new SerialStats(); this.simulated = false; this.sim = null;
     this.engine = null; this.runStartedAt = 0; this.timer = null; this.port = null; this.stopRequested = false;
-    this.batteryIds = listBatteryIds(tables);
-    this.profile = this.batteryIds.length ? loadBatteryProfile(tables, this.batteryIds[0]) : null;
+    this.dbBatteryIds = listBatteryIds(tables);
+    this.batteryIds = [...this.dbBatteryIds, ...Object.keys(packs).sort().filter((id) => !this.dbBatteryIds.includes(id))];
+    this.profile = this.batteryIds.length ? this.loadProfile(this.batteryIds[0]) : null;
     if (!this.batteryIds.length) this.error = "The database has no batteries yet.";
   }
   get running() { return this.status === "running"; }
+  isSamplePack(assetId) { return !this.dbBatteryIds.includes(assetId) && assetId in this.packs; }
+  loadProfile(assetId) { return this.isSamplePack(assetId) ? { ...this.packs[assetId].profile } : loadBatteryProfile(this.tables, assetId); }
+  whereFrom(assetId) { return this.isSamplePack(assetId) ? `the sample pack ${this.packs[assetId].profile.file}` : "the database"; }
 
   selectBattery(assetId) {
     if (this.running) { this.notice = "Stop the test before switching battery."; this.onUpdate(); return false; }
     if (!this.batteryIds.includes(assetId)) return false;
-    this.profile = loadBatteryProfile(this.tables, assetId);
+    this.profile = this.loadProfile(assetId);
     this.reset("virtual");
     this.status = "idle";
-    this.notice = `Loaded ${assetId} from the database.`;
+    this.notice = `Loaded ${assetId} from ${this.whereFrom(assetId)}.`;
     this.onUpdate();
     return true;
   }
@@ -82,11 +103,11 @@ export class RunController {
     if (!ids.length) { this.error = "The database has no batteries yet."; this.onUpdate(); return; }
     const pos = this.profile ? ids.indexOf(this.profile.asset_id) : -1;
     const next = ids[(pos + 1) % ids.length];
-    this.profile = loadBatteryProfile(this.tables, next);
+    this.profile = this.loadProfile(next);
     this.reset("virtual");
     this.status = "idle";
     this.notice = ids.length === 1 ? `Reloaded ${next} from the database. It's the only battery in the database.`
-      : `Loaded ${next} from the database (${ids.indexOf(next) + 1} of ${ids.length}).`;
+      : `Loaded ${next} from ${this.whereFrom(next)} (${ids.indexOf(next) + 1} of ${ids.length}).`;
     this.onUpdate();
   }
   reset(source) {
@@ -120,6 +141,7 @@ export class RunController {
     try { this.onLog(this.run.rows); this.logNote = `${n} readings logged to the in-browser table test_run_log (run ${this.run.run_id}).`; }
     catch (e) { this.logNote = `Some readings couldn't be logged: ${e.message}`; }
     this.decision = this.engine.samples_seen ? getDecisionForUi(this.engine) : null;
+    if (this.decision && this.source === "virtual") this.decision.flags = [...voltageFlags(this.profile, this.run.rows), ...this.decision.flags];
     if (this.decision) {
       this.decision.flags = [...this.decision.flags, ...faultFlags(this.stats)];
       if (this.simulated) this.decision.flags.unshift("This result comes from a software simulation of a made-up cell, not from a real battery.");
@@ -135,8 +157,9 @@ export class RunController {
     if (!p.telemetry_rows) { this.notice = `${p.asset_id} has no telemetry to replay.`; this.onUpdate(); return; }
     const engine = new BMSEngine({ rated_capacity_ah: p.rated_capacity_ah, baseline_measured_ah: p.measured_capacity_ah,
       baseline_date: p.capacity_test_date, discharge_positive: BUNDLE_DISCHARGE_POSITIVE });
-    this.begin("virtual", engine, { source: "virtual_replay", asset_id: p.asset_id, data_class: p.is_synthetic ? "SYNTHETIC" : "RECORDED" });
-    const samples = replaySamples(this.tables, p.asset_id, this.parseTime);
+    const pack = this.isSamplePack(p.asset_id) ? this.packs[p.asset_id] : null;
+    this.begin("virtual", engine, { source: pack ? "sample_pack_replay" : "virtual_replay", asset_id: p.asset_id, data_class: p.is_synthetic ? "SYNTHETIC" : "RECORDED" });
+    const samples = pack ? pack.samples : replaySamples(this.tables, p.asset_id, this.parseTime);
     let k = 0;
     const step = () => {
       if (this.stopRequested) return this.finish("stopped");

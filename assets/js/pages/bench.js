@@ -54,11 +54,12 @@ export function circuitSvg(circuit, running, onBattery = null) {
     h("div", { class: "legend" }, Object.entries(WIRE_LABEL).map(([k, l]) => h("span", {}, h("i", { style: { background: WIRE_STYLE[k][0] } }), l))));
 }
 
-export function render(root, app) {
+export async function render(root, app) {
+  const { packs, errors: packErrors } = await app.getSamplePacks();
   const ui = { source: "virtual", delay: 0.4, battery: null, sim: { ...DEFAULT_SIM, seed: null }, rated: SIMULATED_RATED_AH, cutoff: SIMULATED_CUTOFF_V,
     fault: "none", hw: { baudrate: 115200, rated_capacity_ah: 2.0, start_soc_pct: 100, cutoff_voltage_v: 3.0, discharge_positive: true } };
   let frame = 0;
-  const ctl = new RunController({ tables: app.demo, parseTime: parseIso, onLog: (rows) => app.addRunRows(rows),
+  const ctl = new RunController({ tables: app.demo, packs, parseTime: parseIso, onLog: (rows) => app.addRunRows(rows),
     onUpdate: () => { if (!frame) frame = requestAnimationFrame(() => { frame = 0; paint(); }); } });
   ui.battery = ctl.profile ? ctl.profile.asset_id : null;
   current = ctl;
@@ -77,14 +78,19 @@ export function render(root, app) {
     controls.append(seg([["virtual", "Replay"], ["simulated", "Simulator"], ["hardware", "Real ESP32"]], ui.source, (v) => { ui.source = v; drawControls(); }));
     const f = h("div", { class: "stack mt", style: { gap: "10px" } });
     if (ui.source === "virtual") {
-      f.append(h("p", { class: "muted", style: { margin: 0 } }, "Replays the battery's recorded telemetry from the database. Nothing is invented: a short recording gives a short test."));
-      f.append(field("Battery", select(ctl.batteryIds, ui.battery, (v) => { ui.battery = v; ctl.selectBattery(v); })));
+      f.append(h("p", { class: "muted", style: { margin: 0 } }, "Replays a battery's recorded telemetry: the battery in the database, or one of the synthetic sample packs. Nothing is invented: a short recording gives a short test."));
+      const options = ctl.batteryIds.map((id) => [id, ctl.isSamplePack(id) ? `${id} · sample pack` : `${id} · database`]);
+      f.append(field("Battery", select(options, ui.battery, (v) => { ui.battery = v; ctl.selectBattery(v); drawControls(); })));
+      if (packErrors.length) f.append(banner("warn", "Some sample packs couldn't be loaded.", packErrors.join(" ")));
       if (ctl.profile) {
         const p = ctl.profile;
-        f.append(table([{ key: "k", label: "From the database" }, { key: "v", label: "" }], [
-          { k: "Chemistry", v: p.chemistry }, { k: "Rated capacity", v: `${num(p.rated_capacity_ah, 1)} Ah` },
-          { k: "Latest capacity test", v: `${num(p.measured_capacity_ah, 1)} Ah (${p.capacity_test_date})` },
-          { k: "Telemetry rows", v: p.telemetry_rows }, { k: "Data class", v: p.is_synthetic ? "SYNTHETIC" : "RECORDED" }]));
+        const sample = ctl.isSamplePack(p.asset_id);
+        f.append(table([{ key: "k", label: sample ? "From the sample pack" : "From the database" }, { key: "v", label: "" }], [
+          { k: "Chemistry", v: sample ? `${p.chemistry}, 16 cells in series` : p.chemistry }, { k: "Rated capacity", v: `${num(p.rated_capacity_ah, 1)} Ah` },
+          { k: sample ? "Logged capacity" : "Latest capacity test", v: `${num(p.measured_capacity_ah, 1)} Ah (${p.capacity_test_date})` },
+          sample ? { k: "Voltage window", v: `${p.min_voltage_v}–${p.max_voltage_v} V (${p.voltage_limits_basis})` } : null,
+          { k: "Telemetry rows", v: p.telemetry_rows }, { k: "Data class", v: p.is_synthetic ? "SYNTHETIC" : "RECORDED" }].filter(Boolean)));
+        if (sample) f.append(h("small", { class: "muted" }, packs[p.asset_id].note));
       }
       f.append(field(`Delay between rows: ${ui.delay.toFixed(2)} s`, h("input", { type: "range", min: 0.05, max: 2, step: 0.05, value: ui.delay, oninput: (e) => { ui.delay = Number(e.target.value); e.target.previousSibling.textContent = `Delay between rows: ${ui.delay.toFixed(2)} s`; } })));
     } else if (ui.source === "simulated") {
