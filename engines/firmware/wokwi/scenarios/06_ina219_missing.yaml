@@ -1,0 +1,7 @@
+name: 'INA219 missing is reported'
+version: 1
+author: 'REVIVE-TERY'
+steps:
+  - wait-serial: '# fw=revive_tery_esp32'
+# TODO verify: there is no documented way to disconnect a part from a scenario. Run once with the ina part deleted
+# from diagram.json and expect "# INA219 not found"; re-add it to see recovery after the 5 s retry.

@@ -1,0 +1,10 @@
+name: 'Current above the 3.2 A range is withheld'
+version: 1
+author: 'REVIVE-TERY'
+steps:
+  - wait-serial: '# INA219 ready'
+  - set-control:
+      part-id: ina
+      control: currentMa
+      value: 3500
+  - wait-serial: '# Current above the 3.2 A range'

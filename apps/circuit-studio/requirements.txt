@@ -1,0 +1,14 @@
+# REVIVE-TERY Circuit Studio. The requirements.txt one folder up belongs to the Delhi pipeline.
+dash==4.5.0
+dash-cytoscape==1.0.0
+plotly==7.1.0
+duckdb==2.0.0
+pyserial==3.5
+# ML analyzer panel (src/ml_panel.py, src/ml_analyzer_suggester.py)
+pandas==3.1.0
+numpy==2.5.4
+openpyxl==3.1.5   # .xlsx uploads
+
+# Optional: the full ML engine for the ML panel (without it the panel uses the lite analyzer only).
+# Needs Python 3.13 or older (pyyaml has no wheel for 3.15 yet). Install from this folder with:
+#   pip install -e ../revive-tery-ml

@@ -1,114 +1,58 @@
-# REVIVE-TERY Studio (web)
+# REVIVE-TERY Platform
 
-A static website that runs every REVIVE-TERY engine in the browser. There is no server or build step, and nothing is uploaded. Deploy it on GitHub Pages as is.
+**Problem:** Give used EV batteries a second life. Quickly assess the health of a used EV battery and decide whether it should be **reused, repurposed or recycled** (AI/ML · battery analytics · EV technology · predictive analytics).
 
-> All REVIVE-TERY data in this app is **synthetic** or simulated. Results show that the pipeline works; they say nothing about a real battery. The safety gate is **UL 1974-style triage**: a screening step, not UL certification or a safety approval.
+This folder is the single, organised home for everything built so far in the five legacy folders, arranged so that **edits stay local** and **changes tell you what else to re-run**.
 
-## What's inside
-
-| Page | Engine (original Python) |
-|---|---|
-| Circuit Studio | `bulid X/src`: `bms_engine`, `esp32_sim`, `test_bench`, `run_controller`. Virtual replay, the simulated ESP32 with fault injection, and a real ESP32 over Web Serial (read-only) |
-| Analyze batteries | `ml_analyzer_suggester` (lite analyzer), `ml_engine_bridge` (upload adapter), `ml_panel` flow, plus the full engine |
-| Data-quality lab | `revive-tery-ml`: contract, 14 data-quality detectors and readiness rules, gate, state, physics, economics, pipeline |
-| Physics projection | `revive_ml.physics.fade` (double-exponential fade, stress factors, calendar ageing, 1,000-draw Monte Carlo) |
-| Economics | `revive_ml.econ.router` and `econ.sensitivity` |
-| Database | the eight tables of the project database (`data/db/revive_tery.duckdb`, read with DuckDB-WASM); uploads (`ml_telemetry`, `ml_ingest_log`), `test_run_log` and assessment history, stored in this browser |
-| Model evidence | the ML engine's validation reports and model cards |
-| ReLife BMS Studio | `Hackathon project ev`: `bms_engine`, `models` (adapters, scenarios, 30 s virtual pulse test) |
-| Firmware & hardware | `firmware/revive_tery_esp32.ino`, wiring and line protocol |
-| Backend | a built-in backend on the project database with the demo battery `DEMO-EV-PACK-001` connected: the FastAPI routes (health, batteries, assessments), scans through the full ML engine, and read-only SQL. Optional read-only calls to a local FastAPI backend (`backend/revive_api`) |
-
-The trained models (HistGradientBoosting + MAPIE CV+ for remaining life, and IsolationForest for the gate) are exported to JSON by `tools/export_assets.py`. The export checks the browser's algorithm against scikit-learn and MAPIE before writing anything.
-
-## Tested against the Python engines
-
-`tools/make_golden.py` records what the Python engines output. `npm test` then checks the JavaScript ports against those outputs (41 tests):
-
-- all 23 full-pipeline cases (the demo pack, clean LFP/NMC packs, gate cases and every injected data-quality fault): decisions, every check status and message, gate window counts, remaining-life intervals, projections and economics;
-- the exported models to 1e-9;
-- the physics sanity tables and the price-sensitivity sweep;
-- the lite analyzer and upload adapter on the 7 sample files;
-- the BMS engine reading by reading;
-- the simulated ESP32's line sequence;
-- ReLife compatibility, evaluation, pulse test and screening.
-
-```bash
-npm install
-```
-
-```bash
-npm test
-```
-
-## Run locally
-
-Browsers block ES modules from `file://`, so serve the folder:
-
-```bash
-python -m http.server 8080
-```
-
-Then open http://localhost:8080.
-
-## Deploy on GitHub Pages
-
-1. Push this folder to a GitHub repository, either as the repository root or as a `docs/` folder.
-2. Go to **Settings → Pages → Build and deployment**, choose **Deploy from a branch**, then pick the branch and folder (`/ (root)` or `/docs`).
-3. The site is published at `https://<user>.github.io/<repo>/`. `.nojekyll` is included, so files are served as they are.
-
-The site uses hash routing (`#/analyze`), so no server rewrite rules are needed. The hardware page's Web Serial access needs Chrome or Edge on a desktop. GitHub Pages serves over https, which Web Serial requires.
-
-## The project database
-
-The site runs on the REVIVE-TERY DuckDB database from [revive-tery-DB](https://github.com/Nishanth031/revive-tery-DB).
-At start-up the browser downloads `data/db/revive_tery.duckdb`, opens it read-only with
-[DuckDB-WASM](https://github.com/duckdb/duckdb-wasm) 1.29.0 (from jsDelivr), and reads the eight tables the engines use.
-The Database, Backend and Overview pages show which source was used. If DuckDB-WASM can't start (for example the CDN
-is blocked), the site falls back to the CSV export in `data/demo/` and says why. Both give identical rows.
-
-The database file in revive-tery-DB uses DuckDB storage v2.0, which DuckDB-WASM can't open yet. To update the site's copy:
-
-```bash
-python tools/convert_db.py path/to/revive_tery.duckdb
-```
-
-It rewrites `data/db/revive_tery.duckdb` in storage v1.0.0 and checks every table's row count.
-
-## Regenerating data
-
-These steps need the `revive-tery-ml` virtual environment and the sibling folders `bulid X`, `revive-tery-ml` and `Hackathon project ev (3)`:
-
-```bash
-../revive-tery-ml/.venv/Scripts/python.exe tools/export_assets.py
-```
-
-```bash
-../revive-tery-ml/.venv/Scripts/python.exe tools/make_golden.py
-```
-
-```bash
-node tools/make_bundles.mjs
-```
+> All data is synthetic or simulated. Results show the pipeline works, not anything about a real battery. Hardware is monitor-only and low-voltage only.
 
 ## Layout
 
 ```
-index.html                 app shell
-assets/css/app.css         styles (light and dark)
-assets/js/app.js           router, shared state, asset loading
-assets/js/engines/         the ported engines (no DOM; also imported by the Node tests)
-assets/js/pages/           one module per page
-assets/js/ui/              DOM helpers, SVG charts, report renderer
-assets/js/lib/             numerics (numpy/pandas behaviour), CSV, provenance, markdown
-assets/vendor/             JSZip 3.10.1 (MIT) and SheetJS 0.18.5 (Apache-2.0), with licences
-data/                      configs, exported models, demo tables, samples, reports, docs, firmware
-tests/                     Node parity tests and golden outputs
-tools/                     export and golden-output scripts
+REVIVE-TERY-Platform/
+├─ README.md  MASTER_PROMPT.md  registry.json  justfile
+├─ docs/            PROJECT_INVENTORY.md  FOLDER_WORKFLOWS.md  ARCHITECTURE.md  CHANGE_GUIDE.md  legacy/
+├─ contracts/       the interfaces between parts (JSON schemas) + CHANGELOG.md
+├─ config/          platform settings + decision_map.json (engine tunables stay in engines/ml/configs)
+├─ engines/
+│   ├─ firmware/    ESP32 sketch
+│   ├─ bms/         BMS engine, ESP32 simulator, run controller
+│   ├─ lite/        lite analyzer + upload bridge
+│   ├─ ml/          full ML engine (revive-tery-ml, own layout)
+│   └─ database/    DuckDB build scripts, demo CSV bundle, sample uploads
+├─ services/api/    FastAPI backend
+├─ apps/
+│   ├─ circuit-studio/   Dash dashboard
+│   ├─ relife-studio/    PySide6 prototype
+│   └─ web-studio/       static browser app (JS ports of every engine)
+├─ data/            db/ (DuckDB), samples/
+├─ scripts/         migrate_from_legacy.py  impact.py  check_contracts.py  migration_manifest.json
+└─ tests/           contract guard tests
 ```
 
-## Safety
+Every module has a `MODULE.md` (purpose, public interface, rules, origin, how to run/test).
 
-- The hardware connection is **monitor-only**: the serial wrapper can only read. DTR/RTS are held low so the board doesn't reset.
-- The bench is **low-voltage only**. The INA219 is rated to 26 V.
-- No value is invented. Missing timestamps, capacity or temperature are reported, and the engine falls back or refuses with a reason.
+## Start here
+
+1. Read [docs/PROJECT_INVENTORY.md](docs/PROJECT_INVENTORY.md) (what exists) and [docs/FOLDER_WORKFLOWS.md](docs/FOLDER_WORKFLOWS.md) (how each part runs).
+2. Bring the code in (read-only on the old folders, merge-copy, safe to re-run):
+   ```
+   pip install rust-just
+   just migrate-dry      # shows the plan
+   just migrate          # copies
+   just check            # contracts + registry guard
+   ```
+3. Hand the rest to Claude Code with [MASTER_PROMPT.md](MASTER_PROMPT.md) (fixes paths, runs every test suite, reports).
+
+## Working day to day
+
+| I want to... | Do this |
+|---|---|
+| Know what my edit affects | `just impact` (uses git) or `just impact <files>` |
+| Tune the ML engine | edit `engines/ml/configs/*.yaml`, then `just test-ml`, `just web-regen` |
+| Change an interface | edit `contracts/`, bump `contracts/CHANGELOG.md`, update every consumer listed in `registry.json` |
+| Add an engine / app | add a folder, add one entry in `registry.json`, add a `MODULE.md` |
+| Run everything's tests | `just test-all` |
+| Start things | `just studio` · `just api` · `just web` · `just relife` |
+
+Details: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/CHANGE_GUIDE.md](docs/CHANGE_GUIDE.md).

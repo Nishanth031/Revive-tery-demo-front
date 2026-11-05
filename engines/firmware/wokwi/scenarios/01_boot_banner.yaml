@@ -1,0 +1,6 @@
+name: 'Boot banner and version line'
+version: 1
+author: 'REVIVE-TERY'
+steps:
+  - wait-serial: '# fw=revive_tery_esp32 v1.1.0'
+  - wait-serial: '# INA219 ready'

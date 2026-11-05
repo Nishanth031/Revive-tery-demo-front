@@ -1,0 +1,1191 @@
+asset_id,field,value
+DEMO-EV-PACK-002,asset_id,DEMO-EV-PACK-002
+DEMO-EV-PACK-002,vehicle_id,DEMO-EV-002
+DEMO-EV-PACK-002,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-002,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-002,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-002,series_parallel_configuration,96s36p
+DEMO-EV-PACK-002,cell_count,3456
+DEMO-EV-PACK-002,nominal_voltage_V,355.2
+DEMO-EV-PACK-002,max_voltage_V,403.2
+DEMO-EV-PACK-002,min_voltage_V,288.0
+DEMO-EV-PACK-002,nominal_capacity_Ah,180
+DEMO-EV-PACK-002,nominal_energy_kWh,63.94
+DEMO-EV-PACK-002,pack_mass_kg,405
+DEMO-EV-PACK-002,manufacture_date,2024-01-15
+DEMO-EV-PACK-002,commissioning_date,2024-02-01
+DEMO-EV-PACK-002,warranty_end_date,2032-02-01
+DEMO-EV-PACK-002,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-LFP-PACK-004,asset_id,DEMO-LFP-PACK-004
+DEMO-LFP-PACK-004,vehicle_id,DEMO-BUS-004
+DEMO-LFP-PACK-004,battery_type,Lithium-ion traction battery
+DEMO-LFP-PACK-004,chemistry,LFP (lithium iron phosphate)
+DEMO-LFP-PACK-004,cell_format,21700 cylindrical (illustrative)
+DEMO-LFP-PACK-004,series_parallel_configuration,100s50p
+DEMO-LFP-PACK-004,cell_count,5000
+DEMO-LFP-PACK-004,nominal_voltage_V,320.0
+DEMO-LFP-PACK-004,max_voltage_V,365.0
+DEMO-LFP-PACK-004,min_voltage_V,250.0
+DEMO-LFP-PACK-004,nominal_capacity_Ah,120
+DEMO-LFP-PACK-004,nominal_energy_kWh,38.4
+DEMO-LFP-PACK-004,pack_mass_kg,270
+DEMO-LFP-PACK-004,manufacture_date,2024-01-15
+DEMO-LFP-PACK-004,commissioning_date,2024-02-01
+DEMO-LFP-PACK-004,warranty_end_date,2032-02-01
+DEMO-LFP-PACK-004,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-LFP-PACK-005,asset_id,DEMO-LFP-PACK-005
+DEMO-LFP-PACK-005,vehicle_id,DEMO-VAN-005
+DEMO-LFP-PACK-005,battery_type,Lithium-ion traction battery
+DEMO-LFP-PACK-005,chemistry,LFP (lithium iron phosphate)
+DEMO-LFP-PACK-005,cell_format,21700 cylindrical (illustrative)
+DEMO-LFP-PACK-005,series_parallel_configuration,96s60p
+DEMO-LFP-PACK-005,cell_count,5760
+DEMO-LFP-PACK-005,nominal_voltage_V,307.2
+DEMO-LFP-PACK-005,max_voltage_V,350.4
+DEMO-LFP-PACK-005,min_voltage_V,240.0
+DEMO-LFP-PACK-005,nominal_capacity_Ah,160
+DEMO-LFP-PACK-005,nominal_energy_kWh,49.15
+DEMO-LFP-PACK-005,pack_mass_kg,360
+DEMO-LFP-PACK-005,manufacture_date,2024-01-15
+DEMO-LFP-PACK-005,commissioning_date,2024-02-01
+DEMO-LFP-PACK-005,warranty_end_date,2032-02-01
+DEMO-LFP-PACK-005,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-007,asset_id,DEMO-EV-PACK-007
+DEMO-EV-PACK-007,vehicle_id,DEMO-EV-007
+DEMO-EV-PACK-007,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-007,chemistry,NCA
+DEMO-EV-PACK-007,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-007,series_parallel_configuration,96s40p
+DEMO-EV-PACK-007,cell_count,3840
+DEMO-EV-PACK-007,nominal_voltage_V,345.6
+DEMO-EV-PACK-007,max_voltage_V,403.2
+DEMO-EV-PACK-007,min_voltage_V,288.0
+DEMO-EV-PACK-007,nominal_capacity_Ah,200
+DEMO-EV-PACK-007,nominal_energy_kWh,69.12
+DEMO-EV-PACK-007,pack_mass_kg,450
+DEMO-EV-PACK-007,manufacture_date,2024-01-15
+DEMO-EV-PACK-007,commissioning_date,2024-02-01
+DEMO-EV-PACK-007,warranty_end_date,2032-02-01
+DEMO-EV-PACK-007,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-2W-PACK-008,asset_id,DEMO-2W-PACK-008
+DEMO-2W-PACK-008,vehicle_id,DEMO-2W-001
+DEMO-2W-PACK-008,battery_type,Lithium-ion traction battery
+DEMO-2W-PACK-008,chemistry,NMC (nickel manganese cobalt)
+DEMO-2W-PACK-008,cell_format,21700 cylindrical (illustrative)
+DEMO-2W-PACK-008,series_parallel_configuration,20s12p
+DEMO-2W-PACK-008,cell_count,240
+DEMO-2W-PACK-008,nominal_voltage_V,74.0
+DEMO-2W-PACK-008,max_voltage_V,84.0
+DEMO-2W-PACK-008,min_voltage_V,60.0
+DEMO-2W-PACK-008,nominal_capacity_Ah,54
+DEMO-2W-PACK-008,nominal_energy_kWh,4.0
+DEMO-2W-PACK-008,pack_mass_kg,27
+DEMO-2W-PACK-008,manufacture_date,2018-08-06
+DEMO-2W-PACK-008,commissioning_date,2018-09-01
+DEMO-2W-PACK-008,warranty_end_date,2026-09-01
+DEMO-2W-PACK-008,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-2W-PACK-016,asset_id,DEMO-2W-PACK-016
+DEMO-2W-PACK-016,vehicle_id,DEMO-2W-002
+DEMO-2W-PACK-016,battery_type,Lithium-ion traction battery
+DEMO-2W-PACK-016,chemistry,NMC (nickel manganese cobalt)
+DEMO-2W-PACK-016,cell_format,21700 cylindrical (illustrative)
+DEMO-2W-PACK-016,series_parallel_configuration,17s12p
+DEMO-2W-PACK-016,cell_count,204
+DEMO-2W-PACK-016,nominal_voltage_V,62.9
+DEMO-2W-PACK-016,max_voltage_V,71.4
+DEMO-2W-PACK-016,min_voltage_V,51.0
+DEMO-2W-PACK-016,nominal_capacity_Ah,54
+DEMO-2W-PACK-016,nominal_energy_kWh,3.4
+DEMO-2W-PACK-016,pack_mass_kg,20
+DEMO-2W-PACK-016,manufacture_date,2019-04-17
+DEMO-2W-PACK-016,commissioning_date,2019-05-16
+DEMO-2W-PACK-016,warranty_end_date,2027-05-16
+DEMO-2W-PACK-016,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-2W-PACK-017,asset_id,DEMO-2W-PACK-017
+DEMO-2W-PACK-017,vehicle_id,DEMO-2W-003
+DEMO-2W-PACK-017,battery_type,Lithium-ion traction battery
+DEMO-2W-PACK-017,chemistry,NMC (nickel manganese cobalt)
+DEMO-2W-PACK-017,cell_format,21700 cylindrical (illustrative)
+DEMO-2W-PACK-017,series_parallel_configuration,20s8p
+DEMO-2W-PACK-017,cell_count,160
+DEMO-2W-PACK-017,nominal_voltage_V,74.0
+DEMO-2W-PACK-017,max_voltage_V,84.0
+DEMO-2W-PACK-017,min_voltage_V,60.0
+DEMO-2W-PACK-017,nominal_capacity_Ah,36
+DEMO-2W-PACK-017,nominal_energy_kWh,2.66
+DEMO-2W-PACK-017,pack_mass_kg,16
+DEMO-2W-PACK-017,manufacture_date,2020-12-23
+DEMO-2W-PACK-017,commissioning_date,2021-01-26
+DEMO-2W-PACK-017,warranty_end_date,2029-01-26
+DEMO-2W-PACK-017,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-2W-PACK-019,asset_id,DEMO-2W-PACK-019
+DEMO-2W-PACK-019,vehicle_id,DEMO-2W-004
+DEMO-2W-PACK-019,battery_type,Lithium-ion traction battery
+DEMO-2W-PACK-019,chemistry,NMC (nickel manganese cobalt)
+DEMO-2W-PACK-019,cell_format,21700 cylindrical (illustrative)
+DEMO-2W-PACK-019,series_parallel_configuration,16s12p
+DEMO-2W-PACK-019,cell_count,192
+DEMO-2W-PACK-019,nominal_voltage_V,59.2
+DEMO-2W-PACK-019,max_voltage_V,67.2
+DEMO-2W-PACK-019,min_voltage_V,48.0
+DEMO-2W-PACK-019,nominal_capacity_Ah,54
+DEMO-2W-PACK-019,nominal_energy_kWh,3.2
+DEMO-2W-PACK-019,pack_mass_kg,21
+DEMO-2W-PACK-019,manufacture_date,2019-11-10
+DEMO-2W-PACK-019,commissioning_date,2019-11-30
+DEMO-2W-PACK-019,warranty_end_date,2027-11-28
+DEMO-2W-PACK-019,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-2W-PACK-026,asset_id,DEMO-2W-PACK-026
+DEMO-2W-PACK-026,vehicle_id,DEMO-2W-005
+DEMO-2W-PACK-026,battery_type,Lithium-ion traction battery
+DEMO-2W-PACK-026,chemistry,NMC (nickel manganese cobalt)
+DEMO-2W-PACK-026,cell_format,21700 cylindrical (illustrative)
+DEMO-2W-PACK-026,series_parallel_configuration,20s12p
+DEMO-2W-PACK-026,cell_count,240
+DEMO-2W-PACK-026,nominal_voltage_V,74.0
+DEMO-2W-PACK-026,max_voltage_V,84.0
+DEMO-2W-PACK-026,min_voltage_V,60.0
+DEMO-2W-PACK-026,nominal_capacity_Ah,54
+DEMO-2W-PACK-026,nominal_energy_kWh,4.0
+DEMO-2W-PACK-026,pack_mass_kg,26
+DEMO-2W-PACK-026,manufacture_date,2021-04-09
+DEMO-2W-PACK-026,commissioning_date,2021-05-08
+DEMO-2W-PACK-026,warranty_end_date,2029-05-08
+DEMO-2W-PACK-026,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-2W-PACK-045,asset_id,DEMO-2W-PACK-045
+DEMO-2W-PACK-045,vehicle_id,DEMO-2W-006
+DEMO-2W-PACK-045,battery_type,Lithium-ion traction battery
+DEMO-2W-PACK-045,chemistry,NMC (nickel manganese cobalt)
+DEMO-2W-PACK-045,cell_format,21700 cylindrical (illustrative)
+DEMO-2W-PACK-045,series_parallel_configuration,16s10p
+DEMO-2W-PACK-045,cell_count,160
+DEMO-2W-PACK-045,nominal_voltage_V,59.2
+DEMO-2W-PACK-045,max_voltage_V,67.2
+DEMO-2W-PACK-045,min_voltage_V,48.0
+DEMO-2W-PACK-045,nominal_capacity_Ah,45
+DEMO-2W-PACK-045,nominal_energy_kWh,2.66
+DEMO-2W-PACK-045,pack_mass_kg,15
+DEMO-2W-PACK-045,manufacture_date,2024-05-07
+DEMO-2W-PACK-045,commissioning_date,2024-06-05
+DEMO-2W-PACK-045,warranty_end_date,2032-06-05
+DEMO-2W-PACK-045,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-2W-PACK-050,asset_id,DEMO-2W-PACK-050
+DEMO-2W-PACK-050,vehicle_id,DEMO-2W-007
+DEMO-2W-PACK-050,battery_type,Lithium-ion traction battery
+DEMO-2W-PACK-050,chemistry,LFP (lithium iron phosphate)
+DEMO-2W-PACK-050,cell_format,18650 cylindrical (illustrative)
+DEMO-2W-PACK-050,series_parallel_configuration,20s12p
+DEMO-2W-PACK-050,cell_count,240
+DEMO-2W-PACK-050,nominal_voltage_V,64.0
+DEMO-2W-PACK-050,max_voltage_V,73.0
+DEMO-2W-PACK-050,min_voltage_V,50.0
+DEMO-2W-PACK-050,nominal_capacity_Ah,36
+DEMO-2W-PACK-050,nominal_energy_kWh,2.3
+DEMO-2W-PACK-050,pack_mass_kg,20
+DEMO-2W-PACK-050,manufacture_date,2019-03-08
+DEMO-2W-PACK-050,commissioning_date,2019-04-05
+DEMO-2W-PACK-050,warranty_end_date,2027-04-05
+DEMO-2W-PACK-050,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-2W-PACK-051,asset_id,DEMO-2W-PACK-051
+DEMO-2W-PACK-051,vehicle_id,DEMO-2W-008
+DEMO-2W-PACK-051,battery_type,Lithium-ion traction battery
+DEMO-2W-PACK-051,chemistry,NMC (nickel manganese cobalt)
+DEMO-2W-PACK-051,cell_format,21700 cylindrical (illustrative)
+DEMO-2W-PACK-051,series_parallel_configuration,20s8p
+DEMO-2W-PACK-051,cell_count,160
+DEMO-2W-PACK-051,nominal_voltage_V,74.0
+DEMO-2W-PACK-051,max_voltage_V,84.0
+DEMO-2W-PACK-051,min_voltage_V,60.0
+DEMO-2W-PACK-051,nominal_capacity_Ah,36
+DEMO-2W-PACK-051,nominal_energy_kWh,2.66
+DEMO-2W-PACK-051,pack_mass_kg,18
+DEMO-2W-PACK-051,manufacture_date,2020-02-06
+DEMO-2W-PACK-051,commissioning_date,2020-03-21
+DEMO-2W-PACK-051,warranty_end_date,2028-03-21
+DEMO-2W-PACK-051,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-2W-PACK-054,asset_id,DEMO-2W-PACK-054
+DEMO-2W-PACK-054,vehicle_id,DEMO-2W-009
+DEMO-2W-PACK-054,battery_type,Lithium-ion traction battery
+DEMO-2W-PACK-054,chemistry,NMC (nickel manganese cobalt)
+DEMO-2W-PACK-054,cell_format,21700 cylindrical (illustrative)
+DEMO-2W-PACK-054,series_parallel_configuration,17s8p
+DEMO-2W-PACK-054,cell_count,136
+DEMO-2W-PACK-054,nominal_voltage_V,62.9
+DEMO-2W-PACK-054,max_voltage_V,71.4
+DEMO-2W-PACK-054,min_voltage_V,51.0
+DEMO-2W-PACK-054,nominal_capacity_Ah,36
+DEMO-2W-PACK-054,nominal_energy_kWh,2.26
+DEMO-2W-PACK-054,pack_mass_kg,14
+DEMO-2W-PACK-054,manufacture_date,2023-05-27
+DEMO-2W-PACK-054,commissioning_date,2023-06-28
+DEMO-2W-PACK-054,warranty_end_date,2031-06-28
+DEMO-2W-PACK-054,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-3W-PACK-004,asset_id,DEMO-3W-PACK-004
+DEMO-3W-PACK-004,vehicle_id,DEMO-3W-001
+DEMO-3W-PACK-004,battery_type,Lithium-ion traction battery
+DEMO-3W-PACK-004,chemistry,NMC (nickel manganese cobalt)
+DEMO-3W-PACK-004,cell_format,21700 cylindrical (illustrative)
+DEMO-3W-PACK-004,series_parallel_configuration,20s25p
+DEMO-3W-PACK-004,cell_count,500
+DEMO-3W-PACK-004,nominal_voltage_V,74.0
+DEMO-3W-PACK-004,max_voltage_V,84.0
+DEMO-3W-PACK-004,min_voltage_V,60.0
+DEMO-3W-PACK-004,nominal_capacity_Ah,125
+DEMO-3W-PACK-004,nominal_energy_kWh,9.25
+DEMO-3W-PACK-004,pack_mass_kg,61
+DEMO-3W-PACK-004,manufacture_date,2024-03-13
+DEMO-3W-PACK-004,commissioning_date,2024-04-17
+DEMO-3W-PACK-004,warranty_end_date,2032-04-17
+DEMO-3W-PACK-004,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-3W-PACK-005,asset_id,DEMO-3W-PACK-005
+DEMO-3W-PACK-005,vehicle_id,DEMO-3W-002
+DEMO-3W-PACK-005,battery_type,Lithium-ion traction battery
+DEMO-3W-PACK-005,chemistry,NMC (nickel manganese cobalt)
+DEMO-3W-PACK-005,cell_format,prismatic (illustrative)
+DEMO-3W-PACK-005,series_parallel_configuration,20s1p
+DEMO-3W-PACK-005,cell_count,20
+DEMO-3W-PACK-005,nominal_voltage_V,74.0
+DEMO-3W-PACK-005,max_voltage_V,84.0
+DEMO-3W-PACK-005,min_voltage_V,60.0
+DEMO-3W-PACK-005,nominal_capacity_Ah,100
+DEMO-3W-PACK-005,nominal_energy_kWh,7.4
+DEMO-3W-PACK-005,pack_mass_kg,45
+DEMO-3W-PACK-005,manufacture_date,2018-03-07
+DEMO-3W-PACK-005,commissioning_date,2018-04-06
+DEMO-3W-PACK-005,warranty_end_date,2026-04-06
+DEMO-3W-PACK-005,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-3W-PACK-027,asset_id,DEMO-3W-PACK-027
+DEMO-3W-PACK-027,vehicle_id,DEMO-3W-003
+DEMO-3W-PACK-027,battery_type,Lithium-ion traction battery
+DEMO-3W-PACK-027,chemistry,NMC (nickel manganese cobalt)
+DEMO-3W-PACK-027,cell_format,21700 cylindrical (illustrative)
+DEMO-3W-PACK-027,series_parallel_configuration,16s30p
+DEMO-3W-PACK-027,cell_count,480
+DEMO-3W-PACK-027,nominal_voltage_V,59.2
+DEMO-3W-PACK-027,max_voltage_V,67.2
+DEMO-3W-PACK-027,min_voltage_V,48.0
+DEMO-3W-PACK-027,nominal_capacity_Ah,150
+DEMO-3W-PACK-027,nominal_energy_kWh,8.88
+DEMO-3W-PACK-027,pack_mass_kg,51
+DEMO-3W-PACK-027,manufacture_date,2019-11-28
+DEMO-3W-PACK-027,commissioning_date,2019-12-26
+DEMO-3W-PACK-027,warranty_end_date,2027-12-26
+DEMO-3W-PACK-027,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-3W-PACK-038,asset_id,DEMO-3W-PACK-038
+DEMO-3W-PACK-038,vehicle_id,DEMO-3W-004
+DEMO-3W-PACK-038,battery_type,Lithium-ion traction battery
+DEMO-3W-PACK-038,chemistry,LFP (lithium iron phosphate)
+DEMO-3W-PACK-038,cell_format,21700 cylindrical (illustrative)
+DEMO-3W-PACK-038,series_parallel_configuration,16s30p
+DEMO-3W-PACK-038,cell_count,480
+DEMO-3W-PACK-038,nominal_voltage_V,51.2
+DEMO-3W-PACK-038,max_voltage_V,58.4
+DEMO-3W-PACK-038,min_voltage_V,40.0
+DEMO-3W-PACK-038,nominal_capacity_Ah,150
+DEMO-3W-PACK-038,nominal_energy_kWh,7.68
+DEMO-3W-PACK-038,pack_mass_kg,64
+DEMO-3W-PACK-038,manufacture_date,2024-02-26
+DEMO-3W-PACK-038,commissioning_date,2024-03-24
+DEMO-3W-PACK-038,warranty_end_date,2032-03-24
+DEMO-3W-PACK-038,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-3W-PACK-040,asset_id,DEMO-3W-PACK-040
+DEMO-3W-PACK-040,vehicle_id,DEMO-3W-005
+DEMO-3W-PACK-040,battery_type,Lithium-ion traction battery
+DEMO-3W-PACK-040,chemistry,LFP (lithium iron phosphate)
+DEMO-3W-PACK-040,cell_format,21700 cylindrical (illustrative)
+DEMO-3W-PACK-040,series_parallel_configuration,20s20p
+DEMO-3W-PACK-040,cell_count,400
+DEMO-3W-PACK-040,nominal_voltage_V,64.0
+DEMO-3W-PACK-040,max_voltage_V,73.0
+DEMO-3W-PACK-040,min_voltage_V,50.0
+DEMO-3W-PACK-040,nominal_capacity_Ah,100
+DEMO-3W-PACK-040,nominal_energy_kWh,6.4
+DEMO-3W-PACK-040,pack_mass_kg,59
+DEMO-3W-PACK-040,manufacture_date,2021-07-26
+DEMO-3W-PACK-040,commissioning_date,2021-08-24
+DEMO-3W-PACK-040,warranty_end_date,2029-08-24
+DEMO-3W-PACK-040,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-3W-PACK-046,asset_id,DEMO-3W-PACK-046
+DEMO-3W-PACK-046,vehicle_id,DEMO-3W-006
+DEMO-3W-PACK-046,battery_type,Lithium-ion traction battery
+DEMO-3W-PACK-046,chemistry,NMC (nickel manganese cobalt)
+DEMO-3W-PACK-046,cell_format,21700 cylindrical (illustrative)
+DEMO-3W-PACK-046,series_parallel_configuration,20s30p
+DEMO-3W-PACK-046,cell_count,600
+DEMO-3W-PACK-046,nominal_voltage_V,74.0
+DEMO-3W-PACK-046,max_voltage_V,84.0
+DEMO-3W-PACK-046,min_voltage_V,60.0
+DEMO-3W-PACK-046,nominal_capacity_Ah,150
+DEMO-3W-PACK-046,nominal_energy_kWh,11.1
+DEMO-3W-PACK-046,pack_mass_kg,65
+DEMO-3W-PACK-046,manufacture_date,2023-11-30
+DEMO-3W-PACK-046,commissioning_date,2023-12-29
+DEMO-3W-PACK-046,warranty_end_date,2031-12-28
+DEMO-3W-PACK-046,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-3W-PACK-058,asset_id,DEMO-3W-PACK-058
+DEMO-3W-PACK-058,vehicle_id,DEMO-3W-007
+DEMO-3W-PACK-058,battery_type,Lithium-ion traction battery
+DEMO-3W-PACK-058,chemistry,LFP (lithium iron phosphate)
+DEMO-3W-PACK-058,cell_format,21700 cylindrical (illustrative)
+DEMO-3W-PACK-058,series_parallel_configuration,20s20p
+DEMO-3W-PACK-058,cell_count,400
+DEMO-3W-PACK-058,nominal_voltage_V,64.0
+DEMO-3W-PACK-058,max_voltage_V,73.0
+DEMO-3W-PACK-058,min_voltage_V,50.0
+DEMO-3W-PACK-058,nominal_capacity_Ah,100
+DEMO-3W-PACK-058,nominal_energy_kWh,6.4
+DEMO-3W-PACK-058,pack_mass_kg,53
+DEMO-3W-PACK-058,manufacture_date,2018-03-04
+DEMO-3W-PACK-058,commissioning_date,2018-04-07
+DEMO-3W-PACK-058,warranty_end_date,2026-04-07
+DEMO-3W-PACK-058,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-BUS-PACK-002,asset_id,DEMO-BUS-PACK-002
+DEMO-BUS-PACK-002,vehicle_id,DEMO-BUS-001
+DEMO-BUS-PACK-002,battery_type,Lithium-ion traction battery
+DEMO-BUS-PACK-002,chemistry,LFP (lithium iron phosphate)
+DEMO-BUS-PACK-002,cell_format,prismatic (illustrative)
+DEMO-BUS-PACK-002,series_parallel_configuration,140s3p
+DEMO-BUS-PACK-002,cell_count,420
+DEMO-BUS-PACK-002,nominal_voltage_V,448.0
+DEMO-BUS-PACK-002,max_voltage_V,511.0
+DEMO-BUS-PACK-002,min_voltage_V,350.0
+DEMO-BUS-PACK-002,nominal_capacity_Ah,300
+DEMO-BUS-PACK-002,nominal_energy_kWh,134.4
+DEMO-BUS-PACK-002,pack_mass_kg,1263
+DEMO-BUS-PACK-002,manufacture_date,2021-12-21
+DEMO-BUS-PACK-002,commissioning_date,2022-01-20
+DEMO-BUS-PACK-002,warranty_end_date,2030-01-20
+DEMO-BUS-PACK-002,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-BUS-PACK-024,asset_id,DEMO-BUS-PACK-024
+DEMO-BUS-PACK-024,vehicle_id,DEMO-BUS-002
+DEMO-BUS-PACK-024,battery_type,Lithium-ion traction battery
+DEMO-BUS-PACK-024,chemistry,NMC (nickel manganese cobalt)
+DEMO-BUS-PACK-024,cell_format,prismatic (illustrative)
+DEMO-BUS-PACK-024,series_parallel_configuration,96s3p
+DEMO-BUS-PACK-024,cell_count,288
+DEMO-BUS-PACK-024,nominal_voltage_V,355.2
+DEMO-BUS-PACK-024,max_voltage_V,403.2
+DEMO-BUS-PACK-024,min_voltage_V,288.0
+DEMO-BUS-PACK-024,nominal_capacity_Ah,360
+DEMO-BUS-PACK-024,nominal_energy_kWh,127.87
+DEMO-BUS-PACK-024,pack_mass_kg,799
+DEMO-BUS-PACK-024,manufacture_date,2024-03-05
+DEMO-BUS-PACK-024,commissioning_date,2024-04-13
+DEMO-BUS-PACK-024,warranty_end_date,2032-04-13
+DEMO-BUS-PACK-024,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-BUS-PACK-028,asset_id,DEMO-BUS-PACK-028
+DEMO-BUS-PACK-028,vehicle_id,DEMO-BUS-003
+DEMO-BUS-PACK-028,battery_type,Lithium-ion traction battery
+DEMO-BUS-PACK-028,chemistry,NMC (nickel manganese cobalt)
+DEMO-BUS-PACK-028,cell_format,prismatic (illustrative)
+DEMO-BUS-PACK-028,series_parallel_configuration,120s4p
+DEMO-BUS-PACK-028,cell_count,480
+DEMO-BUS-PACK-028,nominal_voltage_V,444.0
+DEMO-BUS-PACK-028,max_voltage_V,504.0
+DEMO-BUS-PACK-028,min_voltage_V,360.0
+DEMO-BUS-PACK-028,nominal_capacity_Ah,480
+DEMO-BUS-PACK-028,nominal_energy_kWh,213.12
+DEMO-BUS-PACK-028,pack_mass_kg,1338
+DEMO-BUS-PACK-028,manufacture_date,2024-06-25
+DEMO-BUS-PACK-028,commissioning_date,2024-07-12
+DEMO-BUS-PACK-028,warranty_end_date,2032-07-12
+DEMO-BUS-PACK-028,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-BUS-PACK-030,asset_id,DEMO-BUS-PACK-030
+DEMO-BUS-PACK-030,vehicle_id,DEMO-BUS-004
+DEMO-BUS-PACK-030,battery_type,Lithium-ion traction battery
+DEMO-BUS-PACK-030,chemistry,LFP (lithium iron phosphate)
+DEMO-BUS-PACK-030,cell_format,prismatic (illustrative)
+DEMO-BUS-PACK-030,series_parallel_configuration,96s3p
+DEMO-BUS-PACK-030,cell_count,288
+DEMO-BUS-PACK-030,nominal_voltage_V,307.2
+DEMO-BUS-PACK-030,max_voltage_V,350.4
+DEMO-BUS-PACK-030,min_voltage_V,240.0
+DEMO-BUS-PACK-030,nominal_capacity_Ah,300
+DEMO-BUS-PACK-030,nominal_energy_kWh,92.16
+DEMO-BUS-PACK-030,pack_mass_kg,795
+DEMO-BUS-PACK-030,manufacture_date,2019-12-01
+DEMO-BUS-PACK-030,commissioning_date,2019-12-16
+DEMO-BUS-PACK-030,warranty_end_date,2027-12-16
+DEMO-BUS-PACK-030,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-BUS-PACK-034,asset_id,DEMO-BUS-PACK-034
+DEMO-BUS-PACK-034,vehicle_id,DEMO-BUS-005
+DEMO-BUS-PACK-034,battery_type,Lithium-ion traction battery
+DEMO-BUS-PACK-034,chemistry,LFP (lithium iron phosphate)
+DEMO-BUS-PACK-034,cell_format,prismatic (illustrative)
+DEMO-BUS-PACK-034,series_parallel_configuration,112s4p
+DEMO-BUS-PACK-034,cell_count,448
+DEMO-BUS-PACK-034,nominal_voltage_V,358.4
+DEMO-BUS-PACK-034,max_voltage_V,408.8
+DEMO-BUS-PACK-034,min_voltage_V,280.0
+DEMO-BUS-PACK-034,nominal_capacity_Ah,400
+DEMO-BUS-PACK-034,nominal_energy_kWh,143.36
+DEMO-BUS-PACK-034,pack_mass_kg,1024
+DEMO-BUS-PACK-034,manufacture_date,2023-05-18
+DEMO-BUS-PACK-034,commissioning_date,2023-06-28
+DEMO-BUS-PACK-034,warranty_end_date,2031-06-28
+DEMO-BUS-PACK-034,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-BUS-PACK-044,asset_id,DEMO-BUS-PACK-044
+DEMO-BUS-PACK-044,vehicle_id,DEMO-BUS-006
+DEMO-BUS-PACK-044,battery_type,Lithium-ion traction battery
+DEMO-BUS-PACK-044,chemistry,NMC (nickel manganese cobalt)
+DEMO-BUS-PACK-044,cell_format,prismatic (illustrative)
+DEMO-BUS-PACK-044,series_parallel_configuration,168s3p
+DEMO-BUS-PACK-044,cell_count,504
+DEMO-BUS-PACK-044,nominal_voltage_V,621.6
+DEMO-BUS-PACK-044,max_voltage_V,705.6
+DEMO-BUS-PACK-044,min_voltage_V,504.0
+DEMO-BUS-PACK-044,nominal_capacity_Ah,300
+DEMO-BUS-PACK-044,nominal_energy_kWh,186.48
+DEMO-BUS-PACK-044,pack_mass_kg,1188
+DEMO-BUS-PACK-044,manufacture_date,2022-02-09
+DEMO-BUS-PACK-044,commissioning_date,2022-03-09
+DEMO-BUS-PACK-044,warranty_end_date,2030-03-09
+DEMO-BUS-PACK-044,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-BUS-PACK-048,asset_id,DEMO-BUS-PACK-048
+DEMO-BUS-PACK-048,vehicle_id,DEMO-BUS-007
+DEMO-BUS-PACK-048,battery_type,Lithium-ion traction battery
+DEMO-BUS-PACK-048,chemistry,LFP (lithium iron phosphate)
+DEMO-BUS-PACK-048,cell_format,prismatic (illustrative)
+DEMO-BUS-PACK-048,series_parallel_configuration,112s4p
+DEMO-BUS-PACK-048,cell_count,448
+DEMO-BUS-PACK-048,nominal_voltage_V,358.4
+DEMO-BUS-PACK-048,max_voltage_V,408.8
+DEMO-BUS-PACK-048,min_voltage_V,280.0
+DEMO-BUS-PACK-048,nominal_capacity_Ah,400
+DEMO-BUS-PACK-048,nominal_energy_kWh,143.36
+DEMO-BUS-PACK-048,pack_mass_kg,1337
+DEMO-BUS-PACK-048,manufacture_date,2021-06-29
+DEMO-BUS-PACK-048,commissioning_date,2021-07-29
+DEMO-BUS-PACK-048,warranty_end_date,2029-07-28
+DEMO-BUS-PACK-048,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-BUS-PACK-052,asset_id,DEMO-BUS-PACK-052
+DEMO-BUS-PACK-052,vehicle_id,DEMO-BUS-008
+DEMO-BUS-PACK-052,battery_type,Lithium-ion traction battery
+DEMO-BUS-PACK-052,chemistry,NMC (nickel manganese cobalt)
+DEMO-BUS-PACK-052,cell_format,prismatic (illustrative)
+DEMO-BUS-PACK-052,series_parallel_configuration,160s2p
+DEMO-BUS-PACK-052,cell_count,320
+DEMO-BUS-PACK-052,nominal_voltage_V,592.0
+DEMO-BUS-PACK-052,max_voltage_V,672.0
+DEMO-BUS-PACK-052,min_voltage_V,480.0
+DEMO-BUS-PACK-052,nominal_capacity_Ah,240
+DEMO-BUS-PACK-052,nominal_energy_kWh,142.08
+DEMO-BUS-PACK-052,pack_mass_kg,842
+DEMO-BUS-PACK-052,manufacture_date,2019-10-11
+DEMO-BUS-PACK-052,commissioning_date,2019-11-06
+DEMO-BUS-PACK-052,warranty_end_date,2027-11-06
+DEMO-BUS-PACK-052,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-ESS-PACK-007,asset_id,DEMO-ESS-PACK-007
+DEMO-ESS-PACK-007,vehicle_id,
+DEMO-ESS-PACK-007,battery_type,Lithium-ion stationary storage battery
+DEMO-ESS-PACK-007,chemistry,NMC (nickel manganese cobalt)
+DEMO-ESS-PACK-007,cell_format,prismatic (illustrative)
+DEMO-ESS-PACK-007,series_parallel_configuration,160s1p
+DEMO-ESS-PACK-007,cell_count,160
+DEMO-ESS-PACK-007,nominal_voltage_V,592.0
+DEMO-ESS-PACK-007,max_voltage_V,672.0
+DEMO-ESS-PACK-007,min_voltage_V,480.0
+DEMO-ESS-PACK-007,nominal_capacity_Ah,280
+DEMO-ESS-PACK-007,nominal_energy_kWh,165.76
+DEMO-ESS-PACK-007,pack_mass_kg,988
+DEMO-ESS-PACK-007,manufacture_date,2021-07-07
+DEMO-ESS-PACK-007,commissioning_date,2021-08-09
+DEMO-ESS-PACK-007,warranty_end_date,2029-08-09
+DEMO-ESS-PACK-007,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-ESS-PACK-011,asset_id,DEMO-ESS-PACK-011
+DEMO-ESS-PACK-011,vehicle_id,
+DEMO-ESS-PACK-011,battery_type,Lithium-ion stationary storage battery
+DEMO-ESS-PACK-011,chemistry,NMC (nickel manganese cobalt)
+DEMO-ESS-PACK-011,cell_format,prismatic (illustrative)
+DEMO-ESS-PACK-011,series_parallel_configuration,160s2p
+DEMO-ESS-PACK-011,cell_count,320
+DEMO-ESS-PACK-011,nominal_voltage_V,592.0
+DEMO-ESS-PACK-011,max_voltage_V,672.0
+DEMO-ESS-PACK-011,min_voltage_V,480.0
+DEMO-ESS-PACK-011,nominal_capacity_Ah,560
+DEMO-ESS-PACK-011,nominal_energy_kWh,331.52
+DEMO-ESS-PACK-011,pack_mass_kg,2065
+DEMO-ESS-PACK-011,manufacture_date,2018-11-03
+DEMO-ESS-PACK-011,commissioning_date,2018-12-03
+DEMO-ESS-PACK-011,warranty_end_date,2026-12-03
+DEMO-ESS-PACK-011,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-ESS-PACK-012,asset_id,DEMO-ESS-PACK-012
+DEMO-ESS-PACK-012,vehicle_id,
+DEMO-ESS-PACK-012,battery_type,Lithium-ion stationary storage battery
+DEMO-ESS-PACK-012,chemistry,LFP (lithium iron phosphate)
+DEMO-ESS-PACK-012,cell_format,prismatic (illustrative)
+DEMO-ESS-PACK-012,series_parallel_configuration,140s1p
+DEMO-ESS-PACK-012,cell_count,140
+DEMO-ESS-PACK-012,nominal_voltage_V,448.0
+DEMO-ESS-PACK-012,max_voltage_V,511.0
+DEMO-ESS-PACK-012,min_voltage_V,350.0
+DEMO-ESS-PACK-012,nominal_capacity_Ah,100
+DEMO-ESS-PACK-012,nominal_energy_kWh,44.8
+DEMO-ESS-PACK-012,pack_mass_kg,342
+DEMO-ESS-PACK-012,manufacture_date,2023-03-03
+DEMO-ESS-PACK-012,commissioning_date,2023-03-30
+DEMO-ESS-PACK-012,warranty_end_date,2031-03-28
+DEMO-ESS-PACK-012,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-ESS-PACK-022,asset_id,DEMO-ESS-PACK-022
+DEMO-ESS-PACK-022,vehicle_id,
+DEMO-ESS-PACK-022,battery_type,Lithium-ion stationary storage battery
+DEMO-ESS-PACK-022,chemistry,LFP (lithium iron phosphate)
+DEMO-ESS-PACK-022,cell_format,prismatic (illustrative)
+DEMO-ESS-PACK-022,series_parallel_configuration,140s3p
+DEMO-ESS-PACK-022,cell_count,420
+DEMO-ESS-PACK-022,nominal_voltage_V,448.0
+DEMO-ESS-PACK-022,max_voltage_V,511.0
+DEMO-ESS-PACK-022,min_voltage_V,350.0
+DEMO-ESS-PACK-022,nominal_capacity_Ah,300
+DEMO-ESS-PACK-022,nominal_energy_kWh,134.4
+DEMO-ESS-PACK-022,pack_mass_kg,962
+DEMO-ESS-PACK-022,manufacture_date,2023-03-14
+DEMO-ESS-PACK-022,commissioning_date,2023-04-02
+DEMO-ESS-PACK-022,warranty_end_date,2031-04-02
+DEMO-ESS-PACK-022,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-ESS-PACK-023,asset_id,DEMO-ESS-PACK-023
+DEMO-ESS-PACK-023,vehicle_id,
+DEMO-ESS-PACK-023,battery_type,Lithium-ion stationary storage battery
+DEMO-ESS-PACK-023,chemistry,NMC (nickel manganese cobalt)
+DEMO-ESS-PACK-023,cell_format,prismatic (illustrative)
+DEMO-ESS-PACK-023,series_parallel_configuration,84s2p
+DEMO-ESS-PACK-023,cell_count,168
+DEMO-ESS-PACK-023,nominal_voltage_V,310.8
+DEMO-ESS-PACK-023,max_voltage_V,352.8
+DEMO-ESS-PACK-023,min_voltage_V,252.0
+DEMO-ESS-PACK-023,nominal_capacity_Ah,560
+DEMO-ESS-PACK-023,nominal_energy_kWh,174.05
+DEMO-ESS-PACK-023,pack_mass_kg,1024
+DEMO-ESS-PACK-023,manufacture_date,2022-08-19
+DEMO-ESS-PACK-023,commissioning_date,2022-09-05
+DEMO-ESS-PACK-023,warranty_end_date,2030-09-05
+DEMO-ESS-PACK-023,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-ESS-PACK-043,asset_id,DEMO-ESS-PACK-043
+DEMO-ESS-PACK-043,vehicle_id,
+DEMO-ESS-PACK-043,battery_type,Lithium-ion stationary storage battery
+DEMO-ESS-PACK-043,chemistry,LFP (lithium iron phosphate)
+DEMO-ESS-PACK-043,cell_format,prismatic (illustrative)
+DEMO-ESS-PACK-043,series_parallel_configuration,64s1p
+DEMO-ESS-PACK-043,cell_count,64
+DEMO-ESS-PACK-043,nominal_voltage_V,204.8
+DEMO-ESS-PACK-043,max_voltage_V,233.6
+DEMO-ESS-PACK-043,min_voltage_V,160.0
+DEMO-ESS-PACK-043,nominal_capacity_Ah,100
+DEMO-ESS-PACK-043,nominal_energy_kWh,20.48
+DEMO-ESS-PACK-043,pack_mass_kg,155
+DEMO-ESS-PACK-043,manufacture_date,2019-01-09
+DEMO-ESS-PACK-043,commissioning_date,2019-02-02
+DEMO-ESS-PACK-043,warranty_end_date,2027-02-02
+DEMO-ESS-PACK-043,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-ESS-PACK-055,asset_id,DEMO-ESS-PACK-055
+DEMO-ESS-PACK-055,vehicle_id,
+DEMO-ESS-PACK-055,battery_type,Lithium-ion stationary storage battery
+DEMO-ESS-PACK-055,chemistry,LFP (lithium iron phosphate)
+DEMO-ESS-PACK-055,cell_format,prismatic (illustrative)
+DEMO-ESS-PACK-055,series_parallel_configuration,96s1p
+DEMO-ESS-PACK-055,cell_count,96
+DEMO-ESS-PACK-055,nominal_voltage_V,307.2
+DEMO-ESS-PACK-055,max_voltage_V,350.4
+DEMO-ESS-PACK-055,min_voltage_V,240.0
+DEMO-ESS-PACK-055,nominal_capacity_Ah,280
+DEMO-ESS-PACK-055,nominal_energy_kWh,86.02
+DEMO-ESS-PACK-055,pack_mass_kg,690
+DEMO-ESS-PACK-055,manufacture_date,2021-11-03
+DEMO-ESS-PACK-055,commissioning_date,2021-12-08
+DEMO-ESS-PACK-055,warranty_end_date,2029-12-08
+DEMO-ESS-PACK-055,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-ESS-PACK-057,asset_id,DEMO-ESS-PACK-057
+DEMO-ESS-PACK-057,vehicle_id,
+DEMO-ESS-PACK-057,battery_type,Lithium-ion stationary storage battery
+DEMO-ESS-PACK-057,chemistry,NMC (nickel manganese cobalt)
+DEMO-ESS-PACK-057,cell_format,prismatic (illustrative)
+DEMO-ESS-PACK-057,series_parallel_configuration,64s1p
+DEMO-ESS-PACK-057,cell_count,64
+DEMO-ESS-PACK-057,nominal_voltage_V,236.8
+DEMO-ESS-PACK-057,max_voltage_V,268.8
+DEMO-ESS-PACK-057,min_voltage_V,192.0
+DEMO-ESS-PACK-057,nominal_capacity_Ah,280
+DEMO-ESS-PACK-057,nominal_energy_kWh,66.3
+DEMO-ESS-PACK-057,pack_mass_kg,437
+DEMO-ESS-PACK-057,manufacture_date,2023-04-24
+DEMO-ESS-PACK-057,commissioning_date,2023-05-30
+DEMO-ESS-PACK-057,warranty_end_date,2031-05-28
+DEMO-ESS-PACK-057,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-ESS-PACK-059,asset_id,DEMO-ESS-PACK-059
+DEMO-ESS-PACK-059,vehicle_id,
+DEMO-ESS-PACK-059,battery_type,Lithium-ion stationary storage battery
+DEMO-ESS-PACK-059,chemistry,LFP (lithium iron phosphate)
+DEMO-ESS-PACK-059,cell_format,prismatic (illustrative)
+DEMO-ESS-PACK-059,series_parallel_configuration,140s1p
+DEMO-ESS-PACK-059,cell_count,140
+DEMO-ESS-PACK-059,nominal_voltage_V,448.0
+DEMO-ESS-PACK-059,max_voltage_V,511.0
+DEMO-ESS-PACK-059,min_voltage_V,350.0
+DEMO-ESS-PACK-059,nominal_capacity_Ah,100
+DEMO-ESS-PACK-059,nominal_energy_kWh,44.8
+DEMO-ESS-PACK-059,pack_mass_kg,362
+DEMO-ESS-PACK-059,manufacture_date,2023-11-23
+DEMO-ESS-PACK-059,commissioning_date,2023-12-17
+DEMO-ESS-PACK-059,warranty_end_date,2031-12-17
+DEMO-ESS-PACK-059,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-001,asset_id,DEMO-EV-PACK-001
+DEMO-EV-PACK-001,vehicle_id,DEMO-EV-001
+DEMO-EV-PACK-001,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-001,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-001,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-001,series_parallel_configuration,96s40p
+DEMO-EV-PACK-001,cell_count,3840
+DEMO-EV-PACK-001,nominal_voltage_V,355.2
+DEMO-EV-PACK-001,max_voltage_V,403.2
+DEMO-EV-PACK-001,min_voltage_V,288.0
+DEMO-EV-PACK-001,nominal_capacity_Ah,200
+DEMO-EV-PACK-001,nominal_energy_kWh,71.04
+DEMO-EV-PACK-001,pack_mass_kg,450
+DEMO-EV-PACK-001,manufacture_date,2024-01-15
+DEMO-EV-PACK-001,commissioning_date,2024-02-01
+DEMO-EV-PACK-001,warranty_end_date,2032-02-01
+DEMO-EV-PACK-001,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-003,asset_id,DEMO-EV-PACK-003
+DEMO-EV-PACK-003,vehicle_id,DEMO-EV-002
+DEMO-EV-PACK-003,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-003,chemistry,NCA (nickel cobalt aluminium)
+DEMO-EV-PACK-003,cell_format,pouch (illustrative)
+DEMO-EV-PACK-003,series_parallel_configuration,144s3p
+DEMO-EV-PACK-003,cell_count,432
+DEMO-EV-PACK-003,nominal_voltage_V,518.4
+DEMO-EV-PACK-003,max_voltage_V,604.8
+DEMO-EV-PACK-003,min_voltage_V,432.0
+DEMO-EV-PACK-003,nominal_capacity_Ah,180
+DEMO-EV-PACK-003,nominal_energy_kWh,93.31
+DEMO-EV-PACK-003,pack_mass_kg,576
+DEMO-EV-PACK-003,manufacture_date,2024-11-14
+DEMO-EV-PACK-003,commissioning_date,2024-12-10
+DEMO-EV-PACK-003,warranty_end_date,2032-12-10
+DEMO-EV-PACK-003,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-006,asset_id,DEMO-EV-PACK-006
+DEMO-EV-PACK-006,vehicle_id,DEMO-EV-003
+DEMO-EV-PACK-006,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-006,chemistry,LFP (lithium iron phosphate)
+DEMO-EV-PACK-006,cell_format,pouch (illustrative)
+DEMO-EV-PACK-006,series_parallel_configuration,96s2p
+DEMO-EV-PACK-006,cell_count,192
+DEMO-EV-PACK-006,nominal_voltage_V,307.2
+DEMO-EV-PACK-006,max_voltage_V,350.4
+DEMO-EV-PACK-006,min_voltage_V,240.0
+DEMO-EV-PACK-006,nominal_capacity_Ah,120
+DEMO-EV-PACK-006,nominal_energy_kWh,36.86
+DEMO-EV-PACK-006,pack_mass_kg,286
+DEMO-EV-PACK-006,manufacture_date,2020-12-02
+DEMO-EV-PACK-006,commissioning_date,2020-12-29
+DEMO-EV-PACK-006,warranty_end_date,2028-12-28
+DEMO-EV-PACK-006,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-009,asset_id,DEMO-EV-PACK-009
+DEMO-EV-PACK-009,vehicle_id,DEMO-EV-004
+DEMO-EV-PACK-009,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-009,chemistry,NCA (nickel cobalt aluminium)
+DEMO-EV-PACK-009,cell_format,pouch (illustrative)
+DEMO-EV-PACK-009,series_parallel_configuration,96s2p
+DEMO-EV-PACK-009,cell_count,192
+DEMO-EV-PACK-009,nominal_voltage_V,345.6
+DEMO-EV-PACK-009,max_voltage_V,403.2
+DEMO-EV-PACK-009,min_voltage_V,288.0
+DEMO-EV-PACK-009,nominal_capacity_Ah,120
+DEMO-EV-PACK-009,nominal_energy_kWh,41.47
+DEMO-EV-PACK-009,pack_mass_kg,241
+DEMO-EV-PACK-009,manufacture_date,2024-06-01
+DEMO-EV-PACK-009,commissioning_date,2024-07-12
+DEMO-EV-PACK-009,warranty_end_date,2032-07-12
+DEMO-EV-PACK-009,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-010,asset_id,DEMO-EV-PACK-010
+DEMO-EV-PACK-010,vehicle_id,DEMO-EV-005
+DEMO-EV-PACK-010,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-010,chemistry,LFP (lithium iron phosphate)
+DEMO-EV-PACK-010,cell_format,pouch (illustrative)
+DEMO-EV-PACK-010,series_parallel_configuration,192s2p
+DEMO-EV-PACK-010,cell_count,384
+DEMO-EV-PACK-010,nominal_voltage_V,614.4
+DEMO-EV-PACK-010,max_voltage_V,700.8
+DEMO-EV-PACK-010,min_voltage_V,480.0
+DEMO-EV-PACK-010,nominal_capacity_Ah,120
+DEMO-EV-PACK-010,nominal_energy_kWh,73.73
+DEMO-EV-PACK-010,pack_mass_kg,672
+DEMO-EV-PACK-010,manufacture_date,2022-11-11
+DEMO-EV-PACK-010,commissioning_date,2022-12-21
+DEMO-EV-PACK-010,warranty_end_date,2030-12-21
+DEMO-EV-PACK-010,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-013,asset_id,DEMO-EV-PACK-013
+DEMO-EV-PACK-013,vehicle_id,DEMO-EV-006
+DEMO-EV-PACK-013,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-013,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-013,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-013,series_parallel_configuration,96s30p
+DEMO-EV-PACK-013,cell_count,2880
+DEMO-EV-PACK-013,nominal_voltage_V,355.2
+DEMO-EV-PACK-013,max_voltage_V,403.2
+DEMO-EV-PACK-013,min_voltage_V,288.0
+DEMO-EV-PACK-013,nominal_capacity_Ah,150
+DEMO-EV-PACK-013,nominal_energy_kWh,53.28
+DEMO-EV-PACK-013,pack_mass_kg,350
+DEMO-EV-PACK-013,manufacture_date,2020-08-30
+DEMO-EV-PACK-013,commissioning_date,2020-09-14
+DEMO-EV-PACK-013,warranty_end_date,2028-09-14
+DEMO-EV-PACK-013,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-014,asset_id,DEMO-EV-PACK-014
+DEMO-EV-PACK-014,vehicle_id,DEMO-EV-007
+DEMO-EV-PACK-014,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-014,chemistry,LFP (lithium iron phosphate)
+DEMO-EV-PACK-014,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-014,series_parallel_configuration,128s50p
+DEMO-EV-PACK-014,cell_count,6400
+DEMO-EV-PACK-014,nominal_voltage_V,409.6
+DEMO-EV-PACK-014,max_voltage_V,467.2
+DEMO-EV-PACK-014,min_voltage_V,320.0
+DEMO-EV-PACK-014,nominal_capacity_Ah,250
+DEMO-EV-PACK-014,nominal_energy_kWh,102.4
+DEMO-EV-PACK-014,pack_mass_kg,884
+DEMO-EV-PACK-014,manufacture_date,2020-04-12
+DEMO-EV-PACK-014,commissioning_date,2020-05-24
+DEMO-EV-PACK-014,warranty_end_date,2028-05-24
+DEMO-EV-PACK-014,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-015,asset_id,DEMO-EV-PACK-015
+DEMO-EV-PACK-015,vehicle_id,DEMO-EV-008
+DEMO-EV-PACK-015,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-015,chemistry,LFP (lithium iron phosphate)
+DEMO-EV-PACK-015,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-015,series_parallel_configuration,128s40p
+DEMO-EV-PACK-015,cell_count,5120
+DEMO-EV-PACK-015,nominal_voltage_V,409.6
+DEMO-EV-PACK-015,max_voltage_V,467.2
+DEMO-EV-PACK-015,min_voltage_V,320.0
+DEMO-EV-PACK-015,nominal_capacity_Ah,200
+DEMO-EV-PACK-015,nominal_energy_kWh,81.92
+DEMO-EV-PACK-015,pack_mass_kg,660
+DEMO-EV-PACK-015,manufacture_date,2022-04-30
+DEMO-EV-PACK-015,commissioning_date,2022-05-27
+DEMO-EV-PACK-015,warranty_end_date,2030-05-27
+DEMO-EV-PACK-015,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-018,asset_id,DEMO-EV-PACK-018
+DEMO-EV-PACK-018,vehicle_id,DEMO-EV-009
+DEMO-EV-PACK-018,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-018,chemistry,NCA (nickel cobalt aluminium)
+DEMO-EV-PACK-018,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-018,series_parallel_configuration,72s40p
+DEMO-EV-PACK-018,cell_count,2880
+DEMO-EV-PACK-018,nominal_voltage_V,259.2
+DEMO-EV-PACK-018,max_voltage_V,302.4
+DEMO-EV-PACK-018,min_voltage_V,216.0
+DEMO-EV-PACK-018,nominal_capacity_Ah,200
+DEMO-EV-PACK-018,nominal_energy_kWh,51.84
+DEMO-EV-PACK-018,pack_mass_kg,323
+DEMO-EV-PACK-018,manufacture_date,2021-03-05
+DEMO-EV-PACK-018,commissioning_date,2021-03-31
+DEMO-EV-PACK-018,warranty_end_date,2029-03-28
+DEMO-EV-PACK-018,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-020,asset_id,DEMO-EV-PACK-020
+DEMO-EV-PACK-020,vehicle_id,DEMO-EV-010
+DEMO-EV-PACK-020,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-020,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-020,cell_format,pouch (illustrative)
+DEMO-EV-PACK-020,series_parallel_configuration,96s3p
+DEMO-EV-PACK-020,cell_count,288
+DEMO-EV-PACK-020,nominal_voltage_V,355.2
+DEMO-EV-PACK-020,max_voltage_V,403.2
+DEMO-EV-PACK-020,min_voltage_V,288.0
+DEMO-EV-PACK-020,nominal_capacity_Ah,180
+DEMO-EV-PACK-020,nominal_energy_kWh,63.94
+DEMO-EV-PACK-020,pack_mass_kg,374
+DEMO-EV-PACK-020,manufacture_date,2019-01-21
+DEMO-EV-PACK-020,commissioning_date,2019-03-05
+DEMO-EV-PACK-020,warranty_end_date,2027-03-05
+DEMO-EV-PACK-020,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-021,asset_id,DEMO-EV-PACK-021
+DEMO-EV-PACK-021,vehicle_id,DEMO-EV-011
+DEMO-EV-PACK-021,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-021,chemistry,NCA (nickel cobalt aluminium)
+DEMO-EV-PACK-021,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-021,series_parallel_configuration,48s40p
+DEMO-EV-PACK-021,cell_count,1920
+DEMO-EV-PACK-021,nominal_voltage_V,172.8
+DEMO-EV-PACK-021,max_voltage_V,201.6
+DEMO-EV-PACK-021,min_voltage_V,144.0
+DEMO-EV-PACK-021,nominal_capacity_Ah,200
+DEMO-EV-PACK-021,nominal_energy_kWh,34.56
+DEMO-EV-PACK-021,pack_mass_kg,195
+DEMO-EV-PACK-021,manufacture_date,2025-01-28
+DEMO-EV-PACK-021,commissioning_date,2025-03-08
+DEMO-EV-PACK-021,warranty_end_date,2033-03-08
+DEMO-EV-PACK-021,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-025,asset_id,DEMO-EV-PACK-025
+DEMO-EV-PACK-025,vehicle_id,DEMO-EV-012
+DEMO-EV-PACK-025,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-025,chemistry,LFP (lithium iron phosphate)
+DEMO-EV-PACK-025,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-025,series_parallel_configuration,96s40p
+DEMO-EV-PACK-025,cell_count,3840
+DEMO-EV-PACK-025,nominal_voltage_V,307.2
+DEMO-EV-PACK-025,max_voltage_V,350.4
+DEMO-EV-PACK-025,min_voltage_V,240.0
+DEMO-EV-PACK-025,nominal_capacity_Ah,200
+DEMO-EV-PACK-025,nominal_energy_kWh,61.44
+DEMO-EV-PACK-025,pack_mass_kg,505
+DEMO-EV-PACK-025,manufacture_date,2024-02-03
+DEMO-EV-PACK-025,commissioning_date,2024-03-17
+DEMO-EV-PACK-025,warranty_end_date,2032-03-17
+DEMO-EV-PACK-025,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-029,asset_id,DEMO-EV-PACK-029
+DEMO-EV-PACK-029,vehicle_id,DEMO-EV-013
+DEMO-EV-PACK-029,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-029,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-029,cell_format,pouch (illustrative)
+DEMO-EV-PACK-029,series_parallel_configuration,128s3p
+DEMO-EV-PACK-029,cell_count,384
+DEMO-EV-PACK-029,nominal_voltage_V,473.6
+DEMO-EV-PACK-029,max_voltage_V,537.6
+DEMO-EV-PACK-029,min_voltage_V,384.0
+DEMO-EV-PACK-029,nominal_capacity_Ah,180
+DEMO-EV-PACK-029,nominal_energy_kWh,85.25
+DEMO-EV-PACK-029,pack_mass_kg,543
+DEMO-EV-PACK-029,manufacture_date,2021-09-26
+DEMO-EV-PACK-029,commissioning_date,2021-10-21
+DEMO-EV-PACK-029,warranty_end_date,2029-10-21
+DEMO-EV-PACK-029,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-031,asset_id,DEMO-EV-PACK-031
+DEMO-EV-PACK-031,vehicle_id,DEMO-EV-014
+DEMO-EV-PACK-031,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-031,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-031,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-031,series_parallel_configuration,144s40p
+DEMO-EV-PACK-031,cell_count,5760
+DEMO-EV-PACK-031,nominal_voltage_V,532.8
+DEMO-EV-PACK-031,max_voltage_V,604.8
+DEMO-EV-PACK-031,min_voltage_V,432.0
+DEMO-EV-PACK-031,nominal_capacity_Ah,200
+DEMO-EV-PACK-031,nominal_energy_kWh,106.56
+DEMO-EV-PACK-031,pack_mass_kg,634
+DEMO-EV-PACK-031,manufacture_date,2020-05-20
+DEMO-EV-PACK-031,commissioning_date,2020-06-22
+DEMO-EV-PACK-031,warranty_end_date,2028-06-22
+DEMO-EV-PACK-031,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-032,asset_id,DEMO-EV-PACK-032
+DEMO-EV-PACK-032,vehicle_id,DEMO-EV-015
+DEMO-EV-PACK-032,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-032,chemistry,NCA (nickel cobalt aluminium)
+DEMO-EV-PACK-032,cell_format,pouch (illustrative)
+DEMO-EV-PACK-032,series_parallel_configuration,144s3p
+DEMO-EV-PACK-032,cell_count,432
+DEMO-EV-PACK-032,nominal_voltage_V,518.4
+DEMO-EV-PACK-032,max_voltage_V,604.8
+DEMO-EV-PACK-032,min_voltage_V,432.0
+DEMO-EV-PACK-032,nominal_capacity_Ah,180
+DEMO-EV-PACK-032,nominal_energy_kWh,93.31
+DEMO-EV-PACK-032,pack_mass_kg,571
+DEMO-EV-PACK-032,manufacture_date,2021-05-21
+DEMO-EV-PACK-032,commissioning_date,2021-07-05
+DEMO-EV-PACK-032,warranty_end_date,2029-07-05
+DEMO-EV-PACK-032,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-033,asset_id,DEMO-EV-PACK-033
+DEMO-EV-PACK-033,vehicle_id,DEMO-EV-016
+DEMO-EV-PACK-033,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-033,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-033,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-033,series_parallel_configuration,96s40p
+DEMO-EV-PACK-033,cell_count,3840
+DEMO-EV-PACK-033,nominal_voltage_V,355.2
+DEMO-EV-PACK-033,max_voltage_V,403.2
+DEMO-EV-PACK-033,min_voltage_V,288.0
+DEMO-EV-PACK-033,nominal_capacity_Ah,200
+DEMO-EV-PACK-033,nominal_energy_kWh,71.04
+DEMO-EV-PACK-033,pack_mass_kg,425
+DEMO-EV-PACK-033,manufacture_date,2021-04-04
+DEMO-EV-PACK-033,commissioning_date,2021-04-26
+DEMO-EV-PACK-033,warranty_end_date,2029-04-26
+DEMO-EV-PACK-033,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-035,asset_id,DEMO-EV-PACK-035
+DEMO-EV-PACK-035,vehicle_id,DEMO-EV-017
+DEMO-EV-PACK-035,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-035,chemistry,NCA (nickel cobalt aluminium)
+DEMO-EV-PACK-035,cell_format,pouch (illustrative)
+DEMO-EV-PACK-035,series_parallel_configuration,72s3p
+DEMO-EV-PACK-035,cell_count,216
+DEMO-EV-PACK-035,nominal_voltage_V,259.2
+DEMO-EV-PACK-035,max_voltage_V,302.4
+DEMO-EV-PACK-035,min_voltage_V,216.0
+DEMO-EV-PACK-035,nominal_capacity_Ah,180
+DEMO-EV-PACK-035,nominal_energy_kWh,46.66
+DEMO-EV-PACK-035,pack_mass_kg,260
+DEMO-EV-PACK-035,manufacture_date,2019-03-02
+DEMO-EV-PACK-035,commissioning_date,2019-03-17
+DEMO-EV-PACK-035,warranty_end_date,2027-03-17
+DEMO-EV-PACK-035,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-036,asset_id,DEMO-EV-PACK-036
+DEMO-EV-PACK-036,vehicle_id,DEMO-EV-018
+DEMO-EV-PACK-036,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-036,chemistry,NCA (nickel cobalt aluminium)
+DEMO-EV-PACK-036,cell_format,pouch (illustrative)
+DEMO-EV-PACK-036,series_parallel_configuration,64s2p
+DEMO-EV-PACK-036,cell_count,128
+DEMO-EV-PACK-036,nominal_voltage_V,230.4
+DEMO-EV-PACK-036,max_voltage_V,268.8
+DEMO-EV-PACK-036,min_voltage_V,192.0
+DEMO-EV-PACK-036,nominal_capacity_Ah,120
+DEMO-EV-PACK-036,nominal_energy_kWh,27.65
+DEMO-EV-PACK-036,pack_mass_kg,150
+DEMO-EV-PACK-036,manufacture_date,2020-04-17
+DEMO-EV-PACK-036,commissioning_date,2020-05-09
+DEMO-EV-PACK-036,warranty_end_date,2028-05-09
+DEMO-EV-PACK-036,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-037,asset_id,DEMO-EV-PACK-037
+DEMO-EV-PACK-037,vehicle_id,DEMO-EV-019
+DEMO-EV-PACK-037,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-037,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-037,cell_format,pouch (illustrative)
+DEMO-EV-PACK-037,series_parallel_configuration,128s1p
+DEMO-EV-PACK-037,cell_count,128
+DEMO-EV-PACK-037,nominal_voltage_V,473.6
+DEMO-EV-PACK-037,max_voltage_V,537.6
+DEMO-EV-PACK-037,min_voltage_V,384.0
+DEMO-EV-PACK-037,nominal_capacity_Ah,60
+DEMO-EV-PACK-037,nominal_energy_kWh,28.42
+DEMO-EV-PACK-037,pack_mass_kg,175
+DEMO-EV-PACK-037,manufacture_date,2025-03-04
+DEMO-EV-PACK-037,commissioning_date,2025-04-17
+DEMO-EV-PACK-037,warranty_end_date,2033-04-17
+DEMO-EV-PACK-037,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-039,asset_id,DEMO-EV-PACK-039
+DEMO-EV-PACK-039,vehicle_id,DEMO-EV-020
+DEMO-EV-PACK-039,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-039,chemistry,NCA (nickel cobalt aluminium)
+DEMO-EV-PACK-039,cell_format,pouch (illustrative)
+DEMO-EV-PACK-039,series_parallel_configuration,72s2p
+DEMO-EV-PACK-039,cell_count,144
+DEMO-EV-PACK-039,nominal_voltage_V,259.2
+DEMO-EV-PACK-039,max_voltage_V,302.4
+DEMO-EV-PACK-039,min_voltage_V,216.0
+DEMO-EV-PACK-039,nominal_capacity_Ah,120
+DEMO-EV-PACK-039,nominal_energy_kWh,31.1
+DEMO-EV-PACK-039,pack_mass_kg,178
+DEMO-EV-PACK-039,manufacture_date,2019-12-01
+DEMO-EV-PACK-039,commissioning_date,2019-12-31
+DEMO-EV-PACK-039,warranty_end_date,2027-12-28
+DEMO-EV-PACK-039,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-041,asset_id,DEMO-EV-PACK-041
+DEMO-EV-PACK-041,vehicle_id,DEMO-EV-021
+DEMO-EV-PACK-041,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-041,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-041,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-041,series_parallel_configuration,96s40p
+DEMO-EV-PACK-041,cell_count,3840
+DEMO-EV-PACK-041,nominal_voltage_V,355.2
+DEMO-EV-PACK-041,max_voltage_V,403.2
+DEMO-EV-PACK-041,min_voltage_V,288.0
+DEMO-EV-PACK-041,nominal_capacity_Ah,200
+DEMO-EV-PACK-041,nominal_energy_kWh,71.04
+DEMO-EV-PACK-041,pack_mass_kg,421
+DEMO-EV-PACK-041,manufacture_date,2023-04-03
+DEMO-EV-PACK-041,commissioning_date,2023-05-02
+DEMO-EV-PACK-041,warranty_end_date,2031-05-02
+DEMO-EV-PACK-041,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-042,asset_id,DEMO-EV-PACK-042
+DEMO-EV-PACK-042,vehicle_id,DEMO-EV-022
+DEMO-EV-PACK-042,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-042,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-042,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-042,series_parallel_configuration,64s40p
+DEMO-EV-PACK-042,cell_count,2560
+DEMO-EV-PACK-042,nominal_voltage_V,236.8
+DEMO-EV-PACK-042,max_voltage_V,268.8
+DEMO-EV-PACK-042,min_voltage_V,192.0
+DEMO-EV-PACK-042,nominal_capacity_Ah,200
+DEMO-EV-PACK-042,nominal_energy_kWh,47.36
+DEMO-EV-PACK-042,pack_mass_kg,290
+DEMO-EV-PACK-042,manufacture_date,2018-12-08
+DEMO-EV-PACK-042,commissioning_date,2019-01-14
+DEMO-EV-PACK-042,warranty_end_date,2027-01-14
+DEMO-EV-PACK-042,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-047,asset_id,DEMO-EV-PACK-047
+DEMO-EV-PACK-047,vehicle_id,DEMO-EV-023
+DEMO-EV-PACK-047,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-047,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-047,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-047,series_parallel_configuration,96s50p
+DEMO-EV-PACK-047,cell_count,4800
+DEMO-EV-PACK-047,nominal_voltage_V,355.2
+DEMO-EV-PACK-047,max_voltage_V,403.2
+DEMO-EV-PACK-047,min_voltage_V,288.0
+DEMO-EV-PACK-047,nominal_capacity_Ah,250
+DEMO-EV-PACK-047,nominal_energy_kWh,88.8
+DEMO-EV-PACK-047,pack_mass_kg,585
+DEMO-EV-PACK-047,manufacture_date,2025-01-07
+DEMO-EV-PACK-047,commissioning_date,2025-01-28
+DEMO-EV-PACK-047,warranty_end_date,2033-01-28
+DEMO-EV-PACK-047,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-049,asset_id,DEMO-EV-PACK-049
+DEMO-EV-PACK-049,vehicle_id,DEMO-EV-024
+DEMO-EV-PACK-049,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-049,chemistry,LFP (lithium iron phosphate)
+DEMO-EV-PACK-049,cell_format,pouch (illustrative)
+DEMO-EV-PACK-049,series_parallel_configuration,72s3p
+DEMO-EV-PACK-049,cell_count,216
+DEMO-EV-PACK-049,nominal_voltage_V,230.4
+DEMO-EV-PACK-049,max_voltage_V,262.8
+DEMO-EV-PACK-049,min_voltage_V,180.0
+DEMO-EV-PACK-049,nominal_capacity_Ah,180
+DEMO-EV-PACK-049,nominal_energy_kWh,41.47
+DEMO-EV-PACK-049,pack_mass_kg,351
+DEMO-EV-PACK-049,manufacture_date,2025-03-29
+DEMO-EV-PACK-049,commissioning_date,2025-04-30
+DEMO-EV-PACK-049,warranty_end_date,2033-04-28
+DEMO-EV-PACK-049,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-053,asset_id,DEMO-EV-PACK-053
+DEMO-EV-PACK-053,vehicle_id,DEMO-EV-025
+DEMO-EV-PACK-053,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-053,chemistry,LFP (lithium iron phosphate)
+DEMO-EV-PACK-053,cell_format,pouch (illustrative)
+DEMO-EV-PACK-053,series_parallel_configuration,96s2p
+DEMO-EV-PACK-053,cell_count,192
+DEMO-EV-PACK-053,nominal_voltage_V,307.2
+DEMO-EV-PACK-053,max_voltage_V,350.4
+DEMO-EV-PACK-053,min_voltage_V,240.0
+DEMO-EV-PACK-053,nominal_capacity_Ah,120
+DEMO-EV-PACK-053,nominal_energy_kWh,36.86
+DEMO-EV-PACK-053,pack_mass_kg,324
+DEMO-EV-PACK-053,manufacture_date,2021-11-20
+DEMO-EV-PACK-053,commissioning_date,2021-12-13
+DEMO-EV-PACK-053,warranty_end_date,2029-12-13
+DEMO-EV-PACK-053,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-056,asset_id,DEMO-EV-PACK-056
+DEMO-EV-PACK-056,vehicle_id,DEMO-EV-026
+DEMO-EV-PACK-056,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-056,chemistry,LFP (lithium iron phosphate)
+DEMO-EV-PACK-056,cell_format,pouch (illustrative)
+DEMO-EV-PACK-056,series_parallel_configuration,96s3p
+DEMO-EV-PACK-056,cell_count,288
+DEMO-EV-PACK-056,nominal_voltage_V,307.2
+DEMO-EV-PACK-056,max_voltage_V,350.4
+DEMO-EV-PACK-056,min_voltage_V,240.0
+DEMO-EV-PACK-056,nominal_capacity_Ah,180
+DEMO-EV-PACK-056,nominal_energy_kWh,55.3
+DEMO-EV-PACK-056,pack_mass_kg,466
+DEMO-EV-PACK-056,manufacture_date,2018-12-24
+DEMO-EV-PACK-056,commissioning_date,2019-01-22
+DEMO-EV-PACK-056,warranty_end_date,2027-01-22
+DEMO-EV-PACK-056,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-EV-PACK-060,asset_id,DEMO-EV-PACK-060
+DEMO-EV-PACK-060,vehicle_id,DEMO-EV-027
+DEMO-EV-PACK-060,battery_type,Lithium-ion traction battery
+DEMO-EV-PACK-060,chemistry,NMC (nickel manganese cobalt)
+DEMO-EV-PACK-060,cell_format,21700 cylindrical (illustrative)
+DEMO-EV-PACK-060,series_parallel_configuration,96s40p
+DEMO-EV-PACK-060,cell_count,3840
+DEMO-EV-PACK-060,nominal_voltage_V,355.2
+DEMO-EV-PACK-060,max_voltage_V,403.2
+DEMO-EV-PACK-060,min_voltage_V,288.0
+DEMO-EV-PACK-060,nominal_capacity_Ah,200
+DEMO-EV-PACK-060,nominal_energy_kWh,71.04
+DEMO-EV-PACK-060,pack_mass_kg,422
+DEMO-EV-PACK-060,manufacture_date,2018-09-06
+DEMO-EV-PACK-060,commissioning_date,2018-10-10
+DEMO-EV-PACK-060,warranty_end_date,2026-10-10
+DEMO-EV-PACK-060,demo_status,SYNTHETIC DEMO — not a real vehicle or manufacturer specification
+DEMO-FLAW-01,asset_id,DEMO-FLAW-01
+DEMO-FLAW-01,vehicle_id,TEST-01
+DEMO-FLAW-01,battery_type,Lithium-ion traction battery
+DEMO-FLAW-01,chemistry,NMC (nickel manganese cobalt)
+DEMO-FLAW-01,cell_format,21700 cylindrical (illustrative)
+DEMO-FLAW-01,series_parallel_configuration,96s40p
+DEMO-FLAW-01,cell_count,3840
+DEMO-FLAW-01,nominal_voltage_V,355.2
+DEMO-FLAW-01,max_voltage_V,403.2
+DEMO-FLAW-01,min_voltage_V,288.0
+DEMO-FLAW-01,nominal_capacity_Ah,200
+DEMO-FLAW-01,nominal_energy_kWh,71.04
+DEMO-FLAW-01,pack_mass_kg,450
+DEMO-FLAW-01,manufacture_date,2024-01-15
+DEMO-FLAW-01,commissioning_date,2024-02-01
+DEMO-FLAW-01,warranty_end_date,2032-02-01
+DEMO-FLAW-01,demo_status,SYNTHETIC TEST CASE - injected data fault: current sign flips half-way through the record
+DEMO-FLAW-02,asset_id,DEMO-FLAW-02
+DEMO-FLAW-02,vehicle_id,TEST-02
+DEMO-FLAW-02,battery_type,Lithium-ion traction battery
+DEMO-FLAW-02,chemistry,NMC (nickel manganese cobalt)
+DEMO-FLAW-02,cell_format,21700 cylindrical (illustrative)
+DEMO-FLAW-02,series_parallel_configuration,96s40p
+DEMO-FLAW-02,cell_count,3840
+DEMO-FLAW-02,nominal_voltage_V,355.2
+DEMO-FLAW-02,max_voltage_V,403.2
+DEMO-FLAW-02,min_voltage_V,288.0
+DEMO-FLAW-02,nominal_capacity_Ah,200
+DEMO-FLAW-02,nominal_energy_kWh,71.04
+DEMO-FLAW-02,pack_mass_kg,450
+DEMO-FLAW-02,manufacture_date,2024-01-15
+DEMO-FLAW-02,commissioning_date,2024-02-01
+DEMO-FLAW-02,warranty_end_date,2032-02-01
+DEMO-FLAW-02,demo_status,SYNTHETIC TEST CASE - injected data fault: 60-minute gap in the record
+DEMO-FLAW-03,asset_id,DEMO-FLAW-03
+DEMO-FLAW-03,vehicle_id,TEST-03
+DEMO-FLAW-03,battery_type,Lithium-ion traction battery
+DEMO-FLAW-03,chemistry,NMC (nickel manganese cobalt)
+DEMO-FLAW-03,cell_format,21700 cylindrical (illustrative)
+DEMO-FLAW-03,series_parallel_configuration,96s40p
+DEMO-FLAW-03,cell_count,3840
+DEMO-FLAW-03,nominal_voltage_V,355.2
+DEMO-FLAW-03,max_voltage_V,403.2
+DEMO-FLAW-03,min_voltage_V,288.0
+DEMO-FLAW-03,nominal_capacity_Ah,200
+DEMO-FLAW-03,nominal_energy_kWh,71.04
+DEMO-FLAW-03,pack_mass_kg,450
+DEMO-FLAW-03,manufacture_date,2024-01-15
+DEMO-FLAW-03,commissioning_date,2024-02-01
+DEMO-FLAW-03,warranty_end_date,2032-02-01
+DEMO-FLAW-03,demo_status,SYNTHETIC TEST CASE - injected data fault: voltage frozen for 20 minutes while current flows
+DEMO-FLAW-04,asset_id,DEMO-FLAW-04
+DEMO-FLAW-04,vehicle_id,TEST-04
+DEMO-FLAW-04,battery_type,Lithium-ion traction battery
+DEMO-FLAW-04,chemistry,NMC (nickel manganese cobalt)
+DEMO-FLAW-04,cell_format,21700 cylindrical (illustrative)
+DEMO-FLAW-04,series_parallel_configuration,96s40p
+DEMO-FLAW-04,cell_count,3840
+DEMO-FLAW-04,nominal_voltage_V,355.2
+DEMO-FLAW-04,max_voltage_V,403.2
+DEMO-FLAW-04,min_voltage_V,288.0
+DEMO-FLAW-04,nominal_capacity_Ah,200
+DEMO-FLAW-04,nominal_energy_kWh,71.04
+DEMO-FLAW-04,pack_mass_kg,450
+DEMO-FLAW-04,manufacture_date,2024-01-15
+DEMO-FLAW-04,commissioning_date,2024-02-01
+DEMO-FLAW-04,warranty_end_date,2032-02-01
+DEMO-FLAW-04,demo_status,SYNTHETIC TEST CASE - injected data fault: single-sample temperature spikes of +25 degC
+DEMO-FLAW-05,asset_id,DEMO-FLAW-05
+DEMO-FLAW-05,vehicle_id,TEST-05
+DEMO-FLAW-05,battery_type,Lithium-ion traction battery
+DEMO-FLAW-05,chemistry,NMC (nickel manganese cobalt)
+DEMO-FLAW-05,cell_format,21700 cylindrical (illustrative)
+DEMO-FLAW-05,series_parallel_configuration,96s40p
+DEMO-FLAW-05,cell_count,3840
+DEMO-FLAW-05,nominal_voltage_V,355.2
+DEMO-FLAW-05,max_voltage_V,403.2
+DEMO-FLAW-05,min_voltage_V,288.0
+DEMO-FLAW-05,nominal_capacity_Ah,200
+DEMO-FLAW-05,nominal_energy_kWh,71.04
+DEMO-FLAW-05,pack_mass_kg,450
+DEMO-FLAW-05,manufacture_date,2024-01-15
+DEMO-FLAW-05,commissioning_date,2024-02-01
+DEMO-FLAW-05,warranty_end_date,2032-02-01
+DEMO-FLAW-05,demo_status,SYNTHETIC TEST CASE - injected data fault: voltage missing on every 7th row
+DEMO-FLAW-06,asset_id,DEMO-FLAW-06
+DEMO-FLAW-06,vehicle_id,TEST-06
+DEMO-FLAW-06,battery_type,Lithium-ion traction battery
+DEMO-FLAW-06,chemistry,NMC (nickel manganese cobalt)
+DEMO-FLAW-06,cell_format,21700 cylindrical (illustrative)
+DEMO-FLAW-06,series_parallel_configuration,96s40p
+DEMO-FLAW-06,cell_count,3840
+DEMO-FLAW-06,nominal_voltage_V,355.2
+DEMO-FLAW-06,max_voltage_V,403.2
+DEMO-FLAW-06,min_voltage_V,288.0
+DEMO-FLAW-06,nominal_capacity_Ah,200
+DEMO-FLAW-06,nominal_energy_kWh,71.04
+DEMO-FLAW-06,pack_mass_kg,450
+DEMO-FLAW-06,manufacture_date,2024-01-15
+DEMO-FLAW-06,commissioning_date,2024-02-01
+DEMO-FLAW-06,warranty_end_date,2032-02-01
+DEMO-FLAW-06,demo_status,SYNTHETIC TEST CASE - injected data fault: latest capacity test disagrees with the telemetry

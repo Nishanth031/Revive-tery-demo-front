@@ -1,0 +1,84 @@
+# Public datasets used for state-estimation training. Downloaded only by
+# `revive-ml download` (src/revive_ml/state/download.py). Checksums of what was
+# actually downloaded are written to configs/dataset_checksums.json.
+#
+# Raw files are cached OUTSIDE the repo (default %LOCALAPPDATA%/revive-tery-ml/cache,
+# override with REVIVE_ML_CACHE) because the repo sits in a OneDrive-synced folder.
+datasets:
+  severson_batch1:
+    group: severson
+    citation: >-
+      Severson, K.A., Attia, P.M., Jin, N. et al. Data-driven prediction of battery
+      cycle life before capacity degradation. Nature Energy 4, 383-391 (2019).
+      doi:10.1038/s41560-019-0356-8. Data: https://data.matr.io/1/
+    chemistry: LFP (A123 APR18650M1A, 1.1 Ah, graphite anode)
+    url: https://data.matr.io/1/api/v1/file/5c86c0b5fa2ede00015ddf66/download
+    filename: 2017-05-12_batchdata_updated_struct_errorcorrect.mat
+    size_bytes: 3025320241
+  severson_batch2:
+    group: severson
+    citation: see severson_batch1
+    chemistry: LFP (A123 APR18650M1A)
+    url: https://data.matr.io/1/api/v1/file/5c86bf13fa2ede00015ddd82/download
+    filename: 2017-06-30_batchdata_updated_struct_errorcorrect.mat
+    size_bytes: 2007331155
+  severson_batch3:
+    group: severson
+    citation: see severson_batch1
+    chemistry: LFP (A123 APR18650M1A)
+    url: https://data.matr.io/1/api/v1/file/5c86bd64fa2ede00015ddbb2/download
+    filename: 2018-04-12_batchdata_updated_struct_errorcorrect.mat
+    size_bytes: 3236690412
+  nasa_pcoe_battery:
+    group: nasa
+    citation: >-
+      B. Saha and K. Goebel (2007). Battery Data Set, NASA Prognostics Data Repository,
+      NASA Ames Research Center, Moffett Field, CA.
+    chemistry: Li-ion 18650, 2 Ah rated (cathode chemistry not stated in the source README)
+    url: https://phm-datasets.s3.amazonaws.com/NASA/5.+Battery+Data+Set.zip
+    filename: nasa_5_battery_data_set.zip
+    size_bytes: 209708670
+  nasa_randomized:
+    group: nasa_randomized
+    citation: >-
+      B. Bole, C. Kulkarni, M. Daigle (2014). Randomized Battery Usage Data Set,
+      NASA Prognostics Data Repository, NASA Ames Research Center.
+    chemistry: Li-ion 18650 (LG Chem, 2.1 Ah per source README)
+    url: https://phm-datasets.s3.amazonaws.com/NASA/11.+Randomized+Battery+Usage+Data+Set.zip
+    filename: nasa_11_randomized_battery_usage.zip
+    size_bytes: 1065821095
+    optional: true
+  calce_cs2_35:
+    group: calce
+    citation: >-
+      CALCE Battery Research Group, University of Maryland. CS2 cell data.
+      https://calce.umd.edu/battery-data ; He, W. et al., J. Power Sources 196 (2011) 10314-10321.
+    chemistry: LCO (CS2 prismatic, 1.1 Ah)
+    url: https://web.calce.umd.edu/batteries/data/CS2_35.zip
+    filename: CS2_35.zip
+    size_bytes: 37056519
+    optional: true
+  calce_cs2_36:
+    group: calce
+    citation: see calce_cs2_35
+    chemistry: LCO (CS2 prismatic, 1.1 Ah)
+    url: https://web.calce.umd.edu/batteries/data/CS2_36.zip
+    filename: CS2_36.zip
+    size_bytes: 37881685
+    optional: true
+  calce_cs2_37:
+    group: calce
+    citation: see calce_cs2_35
+    chemistry: LCO (CS2 prismatic, 1.1 Ah)
+    url: https://web.calce.umd.edu/batteries/data/CS2_37.zip
+    filename: CS2_37.zip
+    size_bytes: 41513048
+    optional: true
+  calce_cs2_38:
+    group: calce
+    citation: see calce_cs2_35
+    chemistry: LCO (CS2 prismatic, 1.1 Ah)
+    url: https://web.calce.umd.edu/batteries/data/CS2_38.zip
+    filename: CS2_38.zip
+    size_bytes: 42811100
+    optional: true

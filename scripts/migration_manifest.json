@@ -1,0 +1,71 @@
+{
+  "_comment": "What moves where. Read by scripts/migrate_from_legacy.py. Sources are relative to the legacy base folder (the folder that contains the five old project folders). Edit this file, not the script, to change the migration.",
+  "legacy_roots": {
+    "BX":  "bulid X",
+    "HK":  "Hackathon project ev (3)/Hackathon project ev",
+    "FR":  "Revive-tery-demo-front",
+    "ML":  "revive-tery-ml",
+    "WEB": "revive-tery-web"
+  },
+  "global_exclude": [
+    "node_modules", ".git", "__pycache__", ".pytest_cache", ".ruff_cache", ".venv", ".venv-studio",
+    "*.pyc", "*.egg-info", ".claude", ".nojekyll.bak"
+  ],
+  "copies": [
+    {"src": "BX/firmware/revive_tery_esp32", "dst": "engines/firmware/revive_tery_esp32", "note": "ESP32 sketch"},
+
+    {"src": "BX/src/bms_engine.py",     "dst": "engines/bms/bms_engine.py"},
+    {"src": "BX/src/esp32_sim.py",      "dst": "engines/bms/esp32_sim.py"},
+    {"src": "BX/src/run_controller.py", "dst": "engines/bms/run_controller.py"},
+    {"src": "BX/src/test_bench.py",     "dst": "engines/bms/test_bench.py"},
+
+    {"src": "BX/src/ml_analyzer_suggester.py", "dst": "engines/lite/ml_analyzer_suggester.py"},
+    {"src": "BX/src/ml_engine_bridge.py",      "dst": "engines/lite/ml_engine_bridge.py"},
+
+    {"src": "BX/src/build_relational_db.py", "dst": "engines/database/build_relational_db.py"},
+    {"src": "BX/src/make_ml_samples.py",     "dst": "engines/database/make_ml_samples.py"},
+    {"src": "BX/database/csv_bundle",        "dst": "engines/database/csv_bundle"},
+    {"src": "BX/database/ml_samples",        "dst": "engines/database/ml_samples"},
+    {"src": "BX/database/database/revive_tery.duckdb", "dst": "data/db/revive_tery.duckdb", "note": "the pre-cleanup backup is NOT copied"},
+
+    {"src": "ML/pyproject.toml",    "dst": "engines/ml/pyproject.toml"},
+    {"src": "ML/justfile",          "dst": "engines/ml/justfile"},
+    {"src": "ML/README.md",         "dst": "engines/ml/README.md"},
+    {"src": "ML/PLAN.md",           "dst": "engines/ml/PLAN.md"},
+    {"src": "ML/.gitignore",        "dst": "engines/ml/.gitignore", "optional": true},
+    {"src": "ML/.gitattributes",    "dst": "engines/ml/.gitattributes", "optional": true},
+    {"src": "ML/configs",           "dst": "engines/ml/configs"},
+    {"src": "ML/docs",              "dst": "engines/ml/docs"},
+    {"src": "ML/examples",          "dst": "engines/ml/examples"},
+    {"src": "ML/models",            "dst": "engines/ml/models"},
+    {"src": "ML/reports",           "dst": "engines/ml/reports"},
+    {"src": "ML/src",               "dst": "engines/ml/src"},
+    {"src": "ML/tests",             "dst": "engines/ml/tests", "note": "data/processed (~90 MB parquet) is NOT copied: regenerate with `just etl`"},
+
+    {"src": "BX/backend/revive_api",       "dst": "services/api/revive_api"},
+    {"src": "BX/backend/tests",            "dst": "services/api/tests"},
+    {"src": "BX/backend/requirements.txt", "dst": "services/api/requirements.txt"},
+    {"src": "BX/backend/pytest.ini",       "dst": "services/api/pytest.ini"},
+    {"src": "BX/backend/README.md",        "dst": "services/api/README.md"},
+
+    {"src": "BX/src/app.py",               "dst": "apps/circuit-studio/app.py"},
+    {"src": "BX/src/ml_panel.py",          "dst": "apps/circuit-studio/ml_panel.py"},
+    {"src": "BX/src/backend_connector.py", "dst": "apps/circuit-studio/backend_connector.py"},
+    {"src": "BX/src/requirements.txt",     "dst": "apps/circuit-studio/requirements.txt"},
+
+    {"src": "HK", "dst": "apps/relife-studio", "note": "whole app incl. tests; its .git history stays in the original folder"},
+
+    {"src": "WEB", "dst": "apps/web-studio", "note": "variant B is the base (latest edit)"},
+
+    {"src": "FR/assets/js/lib/duckdb.js", "dst": "apps/web-studio/_reconcile_from_demo_front/assets/js/lib/duckdb.js"},
+    {"src": "FR/assets/js/pages",         "dst": "apps/web-studio/_reconcile_from_demo_front/assets/js/pages"},
+    {"src": "FR/tools/convert_db.py",     "dst": "apps/web-studio/_reconcile_from_demo_front/tools/convert_db.py"},
+    {"src": "FR/data/db",                 "dst": "apps/web-studio/_reconcile_from_demo_front/data/db"},
+
+    {"src": "FR/WORKFLOW.md",      "dst": "docs/legacy/demo-front_WORKFLOW.md"},
+    {"src": "FR/MASTER_PROMPT.md", "dst": "docs/legacy/demo-front_MASTER_PROMPT.md"},
+    {"src": "FR/README.md",        "dst": "docs/legacy/demo-front_README.md"},
+    {"src": "BX/README.md",        "dst": "docs/legacy/bulid-X_README.md"},
+    {"src": "BX/graphify-out/GRAPH_REPORT.md", "dst": "docs/legacy/bulid-X_GRAPH_REPORT.md", "optional": true}
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Assessment report (output of revive_ml.pipeline.assess)",
+  "description": "Contract v1.1, top level only. Producer: engines/ml pipeline.py (and its JS port pipeline.js). Every number inside carries a provenance tag: measured | modelled | assumed | synthetic.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "engine",
+    "asset_id",
+    "chemistry",
+    "data_provenance",
+    "data_quality",
+    "decision",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer"
+    },
+    "engine": {
+      "type": "string"
+    },
+    "generated_utc": {
+      "type": "string"
+    },
+    "asset_id": {
+      "type": "string"
+    },
+    "chemistry": {
+      "type": "string"
+    },
+    "data_provenance": {
+      "type": "string"
+    },
+    "data_quality": {
+      "type": "object",
+      "required": [
+        "checks",
+        "readiness"
+      ]
+    },
+    "gate": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "state": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "projections": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "economics": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "recommendation": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "decision": {
+      "type": "string",
+      "description": "Second-Life: <application> | Recycle | Inspection required | Reject (safety triage): route to recycling | Insufficient or untrustworthy data"
+    },
+    "rationale": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "insight": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Optional (v1.1, additive): revive_ml.insight.workflow.assess_with_insight adds {reasons:{top,all}, confidence, rul_range, years_range, robustness, next_actions, rule_gap}. Every reason cites a report field.",
+      "required": [
+        "reasons",
+        "confidence",
+        "next_actions",
+        "rule_gap"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

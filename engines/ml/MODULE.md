@@ -1,0 +1,14 @@
+# engines/ml: full ML decision engine (revive-tery-ml)
+
+**Purpose:** `assess(bundle)`: 14 data-quality checks -> safety gate -> state/RUL (CV+) -> physics projection -> economics -> decision.
+**Public interface:** `revive_ml.pipeline.assess`, `revive_ml.contract.Bundle`, the `revive-ml` CLI, `uvicorn revive_ml.api:app`, report shape in `contracts/assessment_report.schema.json`.
+**Single source of truth for tunables:** `configs/*.yaml` (limits, dq_rules, physics, economics, workloads, datasets). Edit YAML, not code, to tune.
+**Keeps its own layout** because `revive_ml/paths.py` resolves `configs/`, `models/`, `reports/` relative to this folder. Install with `pip install -e "engines/ml[dev,api]"`.
+**Independence rule:** imports nothing from other folders. The only coupling is the data contract.
+**Origin:** `revive-tery-ml/`. Not migrated: `data/processed/` (regenerate with `just etl`).
+**Test:** `just test-ml` (pytest), `just lint` inside this folder. Downstream: after any change run `just web-regen` so the JS ports and golden outputs follow.
+
+**Intelligence layer (`revive_ml.intelligence`, additive; `pipeline.py` and every existing file are unchanged):**
+`mapper.py` is a trained column mapper (char n-gram TF-IDF + logistic regression, learned at first use from `configs/intelligence.yaml`) that reads vendor-style headers and units (mV, mA, mAh, degF, K, ms) and maps a column only when its name AND values agree; `identity.py` finds chemistry, maker and pack spec (from the user, a metadata table in the upload, names such as BYD/LiFePO4, or a single cell's voltage window) and lists what it still needs rather than guessing; `advisor.py` ranks second-use applications per battery from chemistry/maker characteristics (`configs/battery_profiles.yaml`, ASSUMED priors), health, duty and the engine's economics, and never overrules the safety gate or a data-quality failure; `workflow.py` has `analyze_upload(paths, hints)` and `assess_with_advice(bundle)` (report unchanged + a new `advice` key). Honest limit: only the column mapper is a learned model; the chemistry weights are literature-style priors, not fitted to second-life outcomes. Test: `engines/ml/tests/test_intelligence.py`.
+
+**Insight layer (`revive_ml.insight`, upgrade P2):** `explain` (reasons citing report fields), `confidence` (heuristic, weights in `configs/intelligence.yaml`), `reroute`/`break_even`/`robustness` (economics stage only, on a copy of the config), `next_best_actions`, `assign` (fleet plan, greedy + 2-opt, exact scipy check), `impact`/`scale`, `passport` (contracts/battery_passport.schema.json, informational), `workflow.assess_with_insight`. `assess(..., region=)` picks a tariff region (`economics.yaml second_life.regions`); `low_speed_ev` uses `valuation_mode: avoided_new_pack`. API: `/assess?insight=true`, `/whatif`, `/passport`. Port: `apps/web-studio/assets/js/engines/insight.js` (golden `insight_cases.json`). Tests: `tests/test_insight.py`.

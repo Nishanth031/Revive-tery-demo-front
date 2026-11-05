@@ -1,0 +1,25 @@
+{
+ "generated_utc": "2026-11-05T02:18:10Z",
+ "source_db_mtime": "2026-11-05T02:18:08Z",
+ "n_assets": 70,
+ "table_counts": {
+  "assessments": 2,
+  "battery_asset": 1190,
+  "battery_registry": 70,
+  "charge_sessions": 152,
+  "data_sources": 4,
+  "fleet_reports": 140,
+  "health_history": 386,
+  "materials_recycling": 350,
+  "ml_battery_profile": 0,
+  "ml_ingest_log": 0,
+  "ml_suggestions": 2,
+  "ml_telemetry": 0,
+  "modules": 356,
+  "safety_events": 75,
+  "telemetry": 1056,
+  "telemetry_dense": 71400,
+  "test_run_log": 3476
+ },
+ "note": "All packs are SYNTHETIC; telemetry_dense is densified SYNTHETIC telemetry (see engines/database/MODULE.md)."
+}

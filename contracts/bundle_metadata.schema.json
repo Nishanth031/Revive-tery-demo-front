@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "REVIVE-TERY bundle metadata (metadata.json)",
+  "description": "Contract v1. Mirrors revive_ml.contract (pydantic). Changing this file means changing revive_ml/contract.py, engines/lite/ml_engine_bridge.py and apps/web-studio/assets/js/engines/contract.js together; see docs/CHANGE_GUIDE.md.",
+  "type": "object",
+  "required": ["asset_id", "chemistry", "rated_capacity_ah", "nominal_voltage_v", "min_voltage_v", "max_voltage_v",
+               "series_cells", "parallel_cells", "data_provenance", "current_sign_convention"],
+  "properties": {
+    "asset_id": {"type": "string"},
+    "chemistry": {"type": "string", "enum": ["LFP", "NMC", "NCA"]},
+    "rated_capacity_ah": {"type": "number"},
+    "nominal_voltage_v": {"type": "number"},
+    "min_voltage_v": {"type": "number"},
+    "max_voltage_v": {"type": "number"},
+    "series_cells": {"type": "integer"},
+    "parallel_cells": {"type": "integer"},
+    "data_provenance": {"type": "string", "enum": ["measured", "simulated", "synthetic"]},
+    "current_sign_convention": {"type": "string", "enum": ["discharge_negative", "discharge_positive", "unknown"]},
+    "cycle_count": {"type": "integer"},
+    "capacity_tests": {"type": "array", "items": {
+      "type": "object",
+      "required": ["provenance", "measured_capacity_ah"],
+      "properties": {
+        "provenance": {"type": "string", "enum": ["measured", "simulated", "synthetic"]},
+        "date": {"type": "string"},
+        "cycle_count": {"type": "integer"},
+        "measured_capacity_ah": {"type": "number"},
+        "method": {"type": "string"}
+      }}},
+    "resistance_tests": {"type": "array", "items": {
+      "type": "object",
+      "required": ["provenance", "resistance_mohm"],
+      "properties": {
+        "provenance": {"type": "string", "enum": ["measured", "simulated", "synthetic"]},
+        "date": {"type": "string"},
+        "cycle_count": {"type": "integer"},
+        "resistance_mohm": {"type": "number"},
+        "level": {"type": "string"},
+        "method": {"type": "string"}
+      }}},
+    "safety_events": {"type": "array", "items": {
+      "type": "object",
+      "required": ["provenance", "timestamp_utc", "event_type", "severity"],
+      "properties": {
+        "provenance": {"type": "string", "enum": ["measured", "simulated", "synthetic"]},
+        "timestamp_utc": {"type": "string"},
+        "event_type": {"type": "string"},
+        "severity": {"type": "string"},
+        "status": {"type": "string"},
+        "description": {"type": "string"}
+      }}},
+    "cell_model": {"type": "string"},
+    "notes": {"type": "string"},
+    "source": {"type": "string"}
+  },
+  "additionalProperties": true
+}

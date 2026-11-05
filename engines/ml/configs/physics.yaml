@@ -1,0 +1,79 @@
+# Physics projection parameters. EVERY value here is "assumed": literature-informed, not fitted
+# to the battery being assessed. Priors are used for the Monte Carlo (assumption-conditional) band.
+# Citations name the source of the functional form or the central value; the spreads are our
+# own assumptions. None of these PDFs were re-downloaded during this build: verify before use.
+references:
+  wang2011: >-
+    J. Wang et al., "Cycle-life model for graphite-LiFePO4 cells", J. Power Sources 196 (2011)
+    3942-3948. Capacity loss = B * exp((-31700 + 370.3 * C_rate) / (R T)) * Ah^0.55 for LFP;
+    source of the activation energy (31.7 kJ/mol) and of the C-rate term (370.3 J/mol per C).
+  he2011: >-
+    W. He, N. Williard, M. Osterman, M. Pecht, "Prognostics of lithium-ion batteries based on
+    Dempster-Shafer theory and the Bayesian Monte Carlo method", J. Power Sources 196 (2011)
+    10314-10321. Source of the double-exponential capacity-fade form Q = a e^(b k) + c e^(d k).
+  naumann2018: >-
+    M. Naumann et al., "Analysis and modeling of calendar aging of a commercial LiFePO4/graphite
+    cell", J. Energy Storage 17 (2018) 153-169. Calendar capacity loss grows roughly with the
+    square root of time; used for the form of the calendar term only.
+  naumann2020: >-
+    M. Naumann et al., "Analysis and modeling of cycle aging of a commercial LiFePO4/graphite
+    cell", J. Power Sources 451 (2020) 227666. Shows cycle-depth dependence beyond simple charge-
+    throughput equivalence; used qualitatively to set k_dod >= 1.
+  severson2019: >-
+    K. Severson et al., Nature Energy 4 (2019) 383-391. Defines the reference conditions of the ML
+    model (30 degC chamber, 100 % DoD between 2.0 and 3.6 V, 4C discharge).
+
+constants:
+  gas_constant: 8.314          # J/(mol K)
+
+reference:                     # conditions at which the ML fade rate is defined (severson2019)
+  temperature_c: 30.0
+  daily_dod: 1.0
+  c_rate: 4.0
+
+parameters:
+  activation_energy_j_mol:     # cycle-ageing Arrhenius factor (not the 10 degC-doubling rule)
+    nominal: 31700
+    prior: {dist: normal, mean: 31700, sd: 4000, low: 20000, high: 45000}
+    source: wang2011
+  c_rate_coefficient_j_mol:    # per unit C-rate inside the Arrhenius exponent
+    nominal: 370.3
+    prior: {dist: uniform, low: 200.0, high: 550.0}
+    source: wang2011
+  k_dod:                       # per-cycle damage scales as (DoD / DoD_ref) ** k_dod
+    nominal: 1.2
+    prior: {dist: uniform, low: 1.0, high: 1.5}
+    source: "naumann2020 (qualitative); k = 1 is charge-throughput equivalence"
+  cell_temperature_rise_c_per_c_rate:   # cell runs warmer than ambient under load
+    nominal: 2.0
+    prior: {dist: uniform, low: 0.5, high: 4.0}
+    source: "assumed"
+  calendar_loss_per_sqrt_year: # SOH fraction lost per sqrt(year) at 25 degC
+    nominal: 0.02
+    prior: {dist: uniform, low: 0.01, high: 0.035}
+    source: "naumann2018 (form); magnitude assumed"
+  calendar_activation_energy_j_mol:
+    nominal: 40000
+    prior: {dist: uniform, low: 25000, high: 55000}
+    source: "assumed"
+  knee_epsilon:                # weight of the growing exponential (double-exponential, he2011)
+    nominal: 0.001
+    prior: {dist: loguniform, low: 0.0001, high: 0.005}
+    source: "he2011 (form); value assumed"
+  knee_kappa:                  # growth rate of the knee term = kappa / ML reference RUL
+    nominal: 2.0
+    prior: {dist: uniform, low: 1.5, high: 3.0}
+    source: "assumed"
+
+knee_scenario:                 # optional late-life knee: much stronger growing term
+  knee_epsilon: 0.01
+  knee_kappa: 3.0
+
+monte_carlo:
+  n_draws: 1000
+  seed: 0
+  band: [0.05, 0.95]
+
+projection:
+  horizon_years: 20
+  steps_per_year: 12

@@ -1,0 +1,50 @@
+# Reproducible targets. `just` is installed in the venv (rust-just wheel):
+#   .venv/Scripts/just.exe test        (Windows)
+#   .venv/bin/just test                (Linux/macOS)
+set windows-shell := ["powershell.exe", "-NoLogo", "-NoProfile", "-Command"]
+set dotenv-load := false
+
+export PYTHONIOENCODING := "utf-8"
+export PYTHONHASHSEED := "0"
+
+py := if os_family() == "windows" { ".venv/Scripts/python.exe" } else { ".venv/bin/python" }
+
+default: test
+
+setup:
+    py -3.13 -m venv .venv
+    {{py}} -m pip install -e ".[dev,api]"
+
+lint:
+    {{py}} -m ruff check src tests
+
+test:
+    {{py}} -m pytest
+
+download:
+    {{py}} -m revive_ml.cli download
+
+etl:
+    {{py}} -m revive_ml.cli etl
+
+train:
+    {{py}} -m revive_ml.cli train
+
+validate-dq:
+    {{py}} -m revive_ml.cli validate-dq
+
+train-gate:
+    {{py}} -m revive_ml.cli train-gate
+
+physics-check:
+    {{py}} -m revive_ml.cli physics-check
+
+sweep:
+    {{py}} -m revive_ml.cli sweep
+
+demo:
+    {{py}} -m revive_ml.cli convert-demo
+    {{py}} -m revive_ml.cli assess examples/demo_bundle --out out/demo_report.json
+    {{py}} -m revive_ml.cli assess examples/clean_synthetic_bundle --out out/clean_report.json
+
+all: lint test validate-dq train-gate physics-check sweep demo

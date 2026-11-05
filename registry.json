@@ -1,0 +1,213 @@
+{
+  "_comment": "Single source of truth for what depends on what. scripts/impact.py reads this. When you add or move a component, edit it here and nowhere else.",
+  "version": 1,
+  "components": [
+    {
+      "id": "contracts",
+      "name": "Data contracts (bundle metadata, telemetry, ESP32 line, report)",
+      "kind": "contract",
+      "paths": [
+        "contracts/"
+      ],
+      "consumers": [
+        "ml",
+        "lite",
+        "bms",
+        "api",
+        "web-studio"
+      ],
+      "on_change": [
+        "python scripts/check_contracts.py"
+      ]
+    },
+    {
+      "id": "platform-config",
+      "name": "Platform settings and decision map",
+      "kind": "config",
+      "paths": [
+        "config/"
+      ],
+      "consumers": [
+        "api",
+        "circuit-studio",
+        "web-studio"
+      ],
+      "on_change": [
+        "python scripts/check_contracts.py",
+        "just fleet (decision_map.json registry_status_expectation)",
+        "just sync-config"
+      ]
+    },
+    {
+      "id": "firmware",
+      "name": "ESP32 firmware (INA219 + DS18B20)",
+      "kind": "engine",
+      "paths": [
+        "engines/firmware/"
+      ],
+      "consumers": [
+        "bms",
+        "web-studio"
+      ],
+      "on_change": [
+        "just check (monitor-only guard + circuit rules + contracts)",
+        "just fw-build",
+        "just wokwi-sync",
+        "python -m pytest engines/bms/test_firmware_lines.py -q",
+        "Check the JSON line still matches contracts/esp32_line.schema.json",
+        "cd apps/web-studio && <ml-venv-python> tools/export_assets.py (mirrors the sketch and the Wokwi project)"
+      ]
+    },
+    {
+      "id": "bms",
+      "name": "BMS engine, ESP32 simulator, run controller",
+      "kind": "engine",
+      "paths": [
+        "engines/bms/"
+      ],
+      "consumers": [
+        "api",
+        "circuit-studio",
+        "web-studio"
+      ],
+      "on_change": [
+        "python -m pytest engines/bms/test_firmware_lines.py -q",
+        "python -m pytest services/api/tests -q",
+        "just web-regen"
+      ]
+    },
+    {
+      "id": "lite",
+      "name": "Lite analyzer and upload bridge",
+      "kind": "engine",
+      "paths": [
+        "engines/lite/"
+      ],
+      "consumers": [
+        "api",
+        "circuit-studio",
+        "web-studio"
+      ],
+      "on_change": [
+        "python -m pytest services/api/tests -q"
+      ]
+    },
+    {
+      "id": "database",
+      "name": "DuckDB build scripts, demo CSV bundle, sample uploads",
+      "kind": "engine",
+      "paths": [
+        "engines/database/",
+        "data/"
+      ],
+      "consumers": [
+        "api",
+        "circuit-studio",
+        "relife-studio",
+        "web-studio"
+      ],
+      "on_change": [
+        "just db",
+        "just fleet",
+        "python -m pytest engines/database/test_fleet.py -q",
+        "just web-db",
+        "just web-regen"
+      ]
+    },
+    {
+      "id": "ml",
+      "name": "Full ML engine (revive-tery-ml)",
+      "kind": "engine",
+      "paths": [
+        "engines/ml/"
+      ],
+      "consumers": [
+        "api",
+        "lite",
+        "web-studio"
+      ],
+      "on_change": [
+        "cd engines/ml && just lint test",
+        "just fleet",
+        "just web-regen",
+        "python scripts/fleet_parity.py"
+      ]
+    },
+    {
+      "id": "relife",
+      "name": "ReLife BMS engine (inside the ReLife app)",
+      "kind": "engine",
+      "paths": [
+        "apps/relife-studio/bms_engine.py",
+        "apps/relife-studio/models.py",
+        "apps/relife-studio/battery_details.py",
+        "apps/relife-studio/circuit_studio.py"
+      ],
+      "consumers": [
+        "relife-studio",
+        "web-studio"
+      ],
+      "on_change": [
+        "cd apps/relife-studio && python -m unittest discover -s tests"
+      ]
+    },
+    {
+      "id": "api",
+      "name": "Backend API (FastAPI)",
+      "kind": "service",
+      "paths": [
+        "services/api/"
+      ],
+      "consumers": [
+        "web-studio",
+        "circuit-studio"
+      ],
+      "on_change": [
+        "python -m pytest services/api/tests -q"
+      ]
+    },
+    {
+      "id": "circuit-studio",
+      "name": "Circuit Studio (Dash)",
+      "kind": "app",
+      "paths": [
+        "apps/circuit-studio/"
+      ],
+      "consumers": [],
+      "on_change": [
+        "Start it (just studio) and open http://127.0.0.1:8050"
+      ]
+    },
+    {
+      "id": "relife-studio",
+      "name": "ReLife BMS Studio (PySide6)",
+      "kind": "app",
+      "paths": [
+        "apps/relife-studio/"
+      ],
+      "consumers": [],
+      "on_change": [
+        "cd apps/relife-studio && python -m unittest discover -s tests"
+      ]
+    },
+    {
+      "id": "web-studio",
+      "name": "Web Studio (static JS ports of every engine)",
+      "kind": "app",
+      "paths": [
+        "apps/web-studio/"
+      ],
+      "consumers": [],
+      "on_change": [
+        "cd apps/web-studio && npm test"
+      ],
+      "regenerate_when_upstream_changes": [
+        "cd apps/web-studio && <ml-venv-python> tools/export_assets.py",
+        "cd apps/web-studio && <ml-venv-python> tools/make_golden.py",
+        "cd apps/web-studio && node tools/make_bundles.mjs",
+        "cd apps/web-studio && node tools/make_fleet_reports.mjs",
+        "cd apps/web-studio && npm test"
+      ]
+    }
+  ]
+}

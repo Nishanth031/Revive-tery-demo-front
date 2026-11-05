@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "REVIVE-TERY",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 300, "attrs": {} },
+    { "type": "chip-ina219", "id": "ina", "top": 20, "left": 40, "attrs": { "busVoltage": "3.7", "currentMa": "500" } },
+    { "type": "wokwi-ds18b20", "id": "temp1", "top": 220, "left": 60, "attrs": { "deviceID": "000000000001", "temperature": "28" } },
+    { "type": "wokwi-ds18b20", "id": "temp2", "top": 220, "left": 160, "attrs": { "deviceID": "000000000002", "temperature": "24" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 180, "left": 240, "rotate": 90, "attrs": { "value": "4700" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ina:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "ina:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "ina:SDA", "esp:21", "blue", [ "h0" ] ],
+    [ "ina:SCL", "esp:22", "yellow", [ "h0" ] ],
+    [ "temp1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "temp1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "temp1:DQ", "esp:4", "green", [ "v0" ] ],
+    [ "temp2:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "temp2:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "temp2:DQ", "esp:4", "green", [ "v0" ] ],
+    [ "r1:1", "esp:3V3", "red", [ "v0" ] ],
+    [ "r1:2", "esp:4", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

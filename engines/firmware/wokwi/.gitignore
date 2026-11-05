@@ -1,0 +1,3 @@
+build/
+captured_serial.log
+chips/*.wasm

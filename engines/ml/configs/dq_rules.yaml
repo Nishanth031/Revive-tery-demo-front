@@ -1,0 +1,52 @@
+# Data-quality thresholds. All values are engineering ASSUMPTIONS chosen for triage,
+# not standards. Each detector reports the threshold it used as provenance "assumed".
+sample_size:
+  min_rows: 10
+  min_duration_s: 600
+
+timestamps:
+  irregular_rel_tol: 0.10        # a step deviating >10 % from the median step is irregular
+  irregular_warn_fraction: 0.05  # >5 % irregular steps -> warn
+  gap_factor: 5.0                # step > 5x median step is a gap
+  gap_fail_fraction: 0.20        # gaps covering >20 % of the span -> fail
+
+sign_convention:
+  agree_fraction: 0.8            # >=80 % of informative intervals must agree to infer a convention
+  min_current_a_fraction_of_c: 0.01   # |I| below 0.01 C is treated as rest
+  power_rel_tol: 0.10            # |power - V*I| / |V*I| tolerance
+
+charge_balance:
+  min_soc_span_pts: 5.0          # need >=5 SOC points of movement to test
+  warn_rel: 0.10
+  fail_rel: 0.25
+  min_abs_pts: 2.0               # mismatch must also exceed 2 SOC points
+
+regen_sign:
+  regen_states: [REGENERATIVE_BRAKING, REGEN, CHARGING, CHARGE]
+  drive_states: [DRIVING, DISCHARGING, DISCHARGE]
+  fail_fraction: 0.5
+
+resistance:
+  # Plausible specific DC resistance of a single cell, R_cell * C_cell, in mOhm*Ah.
+  # Assumption: small cylindrical cells sit around 15-125 mOhm*Ah (e.g. A123 18650 LFP in the
+  # Severson data: ~18 mOhm on 1.1 Ah = ~20 mOhm*Ah); large prismatic cells ~50-100 mOhm*Ah.
+  # Range widened to 10-400 to avoid false alarms. Values below 10 are treated as implausible.
+  specific_min_mohm_ah: 10.0
+  specific_max_mohm_ah: 400.0
+  typical_new_specific_mohm_ah: 60.0   # used only to show the resistance-SOH ceiling
+  eol_resistance_factor: 2.0           # resistance doubling taken as end of life (assumed)
+
+sensor:
+  null_warn_fraction: 0.01
+  null_fail_fraction: 0.10
+  stuck_min_run: 6               # identical consecutive readings while current flows
+  spike_k_mad: 8.0
+  spike_window: 5
+  spike_min_abs: {voltage_v_per_cell: 0.15, temperature_c: 5.0, soc_pct: 5.0}
+  range: {cell_voltage_min: 0.5, cell_voltage_max: 5.0, temperature_min: -40.0,
+          temperature_max: 85.0, soc_min: 0.0, soc_max: 100.0, max_abs_c_rate: 10.0}
+  dropout_fail_fraction: 0.05
+
+estimate_disagreement:
+  warn_pts: 5.0
+  fail_pts: 20.0

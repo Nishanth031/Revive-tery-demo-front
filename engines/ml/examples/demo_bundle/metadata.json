@@ -1,0 +1,121 @@
+{
+  "asset_id": "DEMO-EV-PACK-001",
+  "chemistry": "NMC",
+  "rated_capacity_ah": 200.0,
+  "nominal_voltage_v": 355.2,
+  "min_voltage_v": 288.0,
+  "max_voltage_v": 403.2,
+  "series_cells": 96,
+  "parallel_cells": 40,
+  "data_provenance": "synthetic",
+  "current_sign_convention": "unknown",
+  "cell_model": "21700 cylindrical (illustrative)",
+  "cycle_count": 960,
+  "capacity_tests": [
+    {
+      "provenance": "synthetic",
+      "date": "2024-06-30",
+      "cycle_count": 120,
+      "measured_capacity_ah": 198.8,
+      "method": "Illustrative capacity check"
+    },
+    {
+      "provenance": "synthetic",
+      "date": "2024-12-31",
+      "cycle_count": 310,
+      "measured_capacity_ah": 197.2,
+      "method": "Illustrative capacity check"
+    },
+    {
+      "provenance": "synthetic",
+      "date": "2025-06-30",
+      "cycle_count": 520,
+      "measured_capacity_ah": 195.4,
+      "method": "Illustrative capacity check"
+    },
+    {
+      "provenance": "synthetic",
+      "date": "2025-12-31",
+      "cycle_count": 740,
+      "measured_capacity_ah": 194.0,
+      "method": "Illustrative capacity check"
+    },
+    {
+      "provenance": "synthetic",
+      "date": "2026-06-30",
+      "cycle_count": 960,
+      "measured_capacity_ah": 193.6,
+      "method": "Illustrative capacity check"
+    }
+  ],
+  "resistance_tests": [
+    {
+      "provenance": "synthetic",
+      "date": "2024-06-30",
+      "cycle_count": 120,
+      "resistance_mohm": 1.82,
+      "level": "pack",
+      "method": "Illustrative capacity check"
+    },
+    {
+      "provenance": "synthetic",
+      "date": "2024-12-31",
+      "cycle_count": 310,
+      "resistance_mohm": 1.91,
+      "level": "pack",
+      "method": "Illustrative capacity check"
+    },
+    {
+      "provenance": "synthetic",
+      "date": "2025-06-30",
+      "cycle_count": 520,
+      "resistance_mohm": 2.03,
+      "level": "pack",
+      "method": "Illustrative capacity check"
+    },
+    {
+      "provenance": "synthetic",
+      "date": "2025-12-31",
+      "cycle_count": 740,
+      "resistance_mohm": 2.14,
+      "level": "pack",
+      "method": "Illustrative capacity check"
+    },
+    {
+      "provenance": "synthetic",
+      "date": "2026-06-30",
+      "cycle_count": 960,
+      "resistance_mohm": 2.2,
+      "level": "pack",
+      "method": "Illustrative capacity check"
+    }
+  ],
+  "safety_events": [
+    {
+      "provenance": "synthetic",
+      "timestamp_utc": "2026-08-04T14:22:00Z",
+      "event_type": "CELL_TEMPERATURE_WARNING",
+      "severity": "LOW",
+      "status": "CLOSED",
+      "description": "observed 43.2 C; threshold 45.0 C warning threshold"
+    },
+    {
+      "provenance": "synthetic",
+      "timestamp_utc": "2026-09-12T09:10:00Z",
+      "event_type": "CELL_VOLTAGE_IMBALANCE",
+      "severity": "MEDIUM",
+      "status": "MONITORING",
+      "description": "observed 38 mV spread; threshold 50 mV service threshold"
+    },
+    {
+      "provenance": "synthetic",
+      "timestamp_utc": "2026-10-02T17:40:00Z",
+      "event_type": "INSULATION_RESISTANCE_CHECK",
+      "severity": "INFO",
+      "status": "CLOSED",
+      "description": "observed 1.8 MOhm; threshold 1.0 MOhm minimum example threshold"
+    }
+  ],
+  "notes": "SYNTHETIC DEMO \u2014 not a real vehicle or manufacturer specification",
+  "source": "REVIVE-TERY demo CSV bundle (ev_battery_demo_csv_bundle.zip), converted by revive_ml.convert"
+}

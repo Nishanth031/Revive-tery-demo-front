@@ -1,0 +1,96 @@
+# Economics inputs. Every number has a status:
+#   sourced      - taken from the cited source on the retrieval date (indicative; markets move)
+#   assumed      - engineering/literature-informed assumption, not a market quote
+#   PLACEHOLDER  - could not be sourced in this build; replace before any real decision
+# Currency: USD. Retrieval date for web sources: 2026-11-03 (via web search summaries of the
+# pages below; the pages themselves should be checked before use).
+currency: USD
+discount_rate: {value: 0.08, status: assumed, note: "real discount rate for a small storage project"}
+
+buy_new_benchmark:
+  stationary_pack_usd_per_kwh:
+    value: 70
+    status: sourced
+    source: "BloombergNEF 2025 Lithium-Ion Battery Price Survey (press release, Dec 2025): stationary storage pack average $70/kWh; overall average $108/kWh"
+    url: https://about.bnef.com/insights/clean-energy/lithium-ion-battery-pack-prices-fall-to-108-per-kilowatt-hour
+    retrieved: 2026-11-03
+  installed_system_usd_per_kwh:
+    value: 236
+    status: sourced
+    source: "BNEF Battery Storage System Cost Survey, US average turnkey system $236/kWh, as reported by energy-storage.news"
+    url: https://www.energy-storage.news/?p=91801
+    retrieved: 2026-11-03
+    note: "older survey than the pack price; turnkey system, not comparable with the pack figure"
+  new_system_life_years: {value: 15, status: assumed}
+  new_ev_pack_usd_per_kwh:
+    value: 108
+    status: sourced
+    source: "BloombergNEF 2025 Lithium-Ion Battery Price Survey: overall average pack price $108/kWh"
+    url: https://about.bnef.com/insights/clean-energy/lithium-ion-battery-pack-prices-fall-to-108-per-kilowatt-hour
+    retrieved: 2026-11-03
+    note: "pack level, excludes integration; used by the avoided_new_pack valuation (reuse in a vehicle)"
+  new_ev_pack_life_years: {value: 8, status: assumed, note: "typical EV battery warranty term; matches the 8-year warranties in the fleet registry"}
+
+second_life:
+  value_per_kwh_delivered:
+    value: 0.08
+    status: PLACEHOLDER
+    note: "USD per kWh discharged (avoided grid purchase / arbitrage spread). Site- and tariff-specific; replace with the user's tariff."
+  round_trip_efficiency: {value: 0.90, status: assumed}
+  # Region-aware tariff (P2.4). The engine uses `value_per_kwh_delivered` above unless a region is selected; global_default
+  # equals it, so existing decisions do not change. A region is added only with source, URL and retrieval date.
+  regions:
+    global_default: {value: 0.08, status: PLACEHOLDER, note: "same as value_per_kwh_delivered"}
+    us_residential_avoided_purchase:
+      value: 0.182
+      status: sourced
+      source: "EIA Short-Term Energy Outlook: forecast 2026 U.S. average residential electricity price ~18.2 cents/kWh (as summarised by web search; verify on the page)"
+      url: https://www.eia.gov/outlooks/steo/report/elec_coal_renew.php
+      retrieved: 2026-11-05
+      note: "avoided retail purchase for behind-the-meter storage; not an arbitrage spread; upper bound for residential use"
+    india_wholesale_dam:
+      value: 0.08
+      status: PLACEHOLDER
+      note: "IEX day-ahead market average clearing price Aug 2026 was INR 4.88/kWh (https://solarquarter.com/2026/09/03/iex-records-highest-ever-monthly-electricity-trading-volume-of-13938-mu-in-august-2026/, retrieved 2026-11-05); not used because the INR->USD rate and the arbitrage spread were not sourced"
+  testing_usd_per_kwh: {value: 10, status: PLACEHOLDER, note: "grading and capacity testing"}
+  refurbishment_usd_per_kwh: {value: 25, status: PLACEHOLDER, note: "BMS, enclosure, module rework"}
+  logistics_usd_per_kwh: {value: 5, status: PLACEHOLDER}
+  installation_usd_per_kwh: {value: 30, status: PLACEHOLDER}
+  max_service_years: {value: 15, status: assumed, note: "cap on second-life duration regardless of SOH"}
+
+recycling:
+  processing_cost_usd_per_kg_pack: {value: 1.0, status: PLACEHOLDER, note: "collection, discharge, dismantling, hydrometallurgy"}
+  prices_usd_per_tonne:
+    nickel:
+      value: 15695
+      status: sourced
+      source: "LME nickel cash settlement 23 Oct 2026 (Westmetall LME table)"
+      url: https://www.westmetall.com/en/markdaten.php?action=showtable
+      retrieved: 2026-11-03
+    cobalt:
+      value: 38910
+      status: sourced
+      source: "LME cobalt settlement 15 Oct 2026 (S&P Global corrections notice)"
+      url: https://www.spglobal.com/energy/en/pricing-benchmarks/our-methodology/corrections/20261015
+      retrieved: 2026-11-03
+    lithium_carbonate:
+      value: 19025
+      status: sourced
+      source: "Battery-grade lithium carbonate, ex-works China, 30 Sep 2026 (Benchmark Mineral Intelligence, as cited in secondary reporting); GFEX futures 12 Oct 2026 were ~104,740 CNY/t (~15,650 USD/t)"
+      url: https://www.intratec.us/solutions/primary-commodity-prices/commodity/lithium-carbonate-prices
+      retrieved: 2026-11-03
+      note: "indicative; sources disagree by basis (futures vs spot)"
+  lithium_carbonate_li_fraction: {value: 0.188, status: assumed, note: "stoichiometric Li mass fraction of Li2CO3"}
+  recovery_rate: {nickel: 0.95, cobalt: 0.95, lithium: 0.80, status: assumed, note: "hydrometallurgical recovery, literature-typical"}
+  payable_fraction: {nickel: 0.75, cobalt: 0.75, lithium: 0.60, status: PLACEHOLDER, note: "share of metal value paid to the battery owner"}
+  # Metal content in kg per kWh of pack energy. Illustrative, order-of-magnitude values consistent
+  # with public bill-of-materials models (e.g. Argonne BatPaC); status assumed.
+  composition_kg_per_kwh:
+    LFP: {nickel: 0.0, cobalt: 0.0, lithium: 0.09, status: assumed}
+    NMC: {nickel: 0.75, cobalt: 0.10, lithium: 0.11, status: "assumed (synthetic NMC811-like set)"}
+    NCA: {nickel: 0.80, cobalt: 0.08, lithium: 0.11, status: "assumed (synthetic NCA set)"}
+  pack_kg_per_kwh: {LFP: 6.5, NMC: 6.3, NCA: 6.0, status: assumed}
+
+sensitivity:
+  price_multipliers: [0.25, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 4.0, 6.0, 8.0, 12.0]
+  value_per_kwh_multipliers: [0.25, 0.5, 1.0, 1.5, 2.0]

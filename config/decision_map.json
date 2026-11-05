@@ -1,0 +1,54 @@
+{
+  "_comment": "Maps the ML engine's decision text to the problem-statement vocabulary (reuse / repurpose / recycle). Additive layer: engine logic is never changed. 'application_keys' must be filled from engines/ml/configs/workloads.yaml (look at the workload names/labels there).",
+  "version": 1,
+  "rules": [
+    {
+      "match_prefix": "Second-Life",
+      "application_keys_to_REUSE": [
+        "low_speed_ev"
+      ],
+      "application_keys_to_REPURPOSE": [
+        "residential_storage",
+        "commercial_peak_shaving",
+        "telecom_backup"
+      ],
+      "default_disposition": "REPURPOSE"
+    },
+    {
+      "match_prefix": "Recycle",
+      "disposition": "RECYCLE"
+    },
+    {
+      "match_prefix": "Reject (safety triage)",
+      "disposition": "RECYCLE"
+    },
+    {
+      "match_prefix": "Inspection required",
+      "disposition": "INSPECT"
+    },
+    {
+      "match_prefix": "Insufficient or untrustworthy data",
+      "disposition": "NO_DECISION"
+    }
+  ],
+  "labels": {
+    "REUSE": "Reuse: second life in a vehicle (low-speed EV)",
+    "REPURPOSE": "Repurpose: second life in stationary storage",
+    "RECYCLE": "Recycle: recover materials",
+    "INSPECT": "Inspect: manual inspection required before any decision",
+    "NO_DECISION": "No decision: data not sufficient or not trustworthy"
+  },
+  "registry_status_expectation": {
+    "_comment": "What the user's registry lifecycle_status (a plain SOH threshold rule) would expect the engine's disposition to be. Used only to compare the two in fleet_reports; it never changes a decision.",
+    "IN_SERVICE": [
+      "REUSE"
+    ],
+    "SECOND_LIFE_CANDIDATE": [
+      "REUSE",
+      "REPURPOSE"
+    ],
+    "END_OF_LIFE_RECYCLE": [
+      "RECYCLE"
+    ]
+  }
+}

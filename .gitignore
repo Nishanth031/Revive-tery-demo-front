@@ -1,3 +1,18 @@
-node_modules/
+# environments and caches
+.venv*/
+venvs/
 __pycache__/
 *.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+node_modules/
+# large or regenerable data
+engines/ml/data/processed/
+engines/ml/out/
+*.duckdb.wal
+data/db/*.backup-*.duckdb
+data/db/*.pre-cleanup-*.duckdb
+# local state
+.env
+*.log

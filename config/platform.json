@@ -1,0 +1,26 @@
+{
+  "_comment": "Platform-level settings only. Engine tunables stay in engines/ml/configs/*.yaml (single source of truth for the ML engine).",
+  "version": 1,
+  "python": "3.13",
+  "ports": {
+    "circuit_studio": 8050,
+    "api": 8000,
+    "web_static": 8080
+  },
+  "env": {
+    "REVIVE_DB": "path to a DuckDB file; default data/db/revive_tery.duckdb",
+    "REVIVE_PLATFORM_ROOT": "path to this folder; default derived from each module's location",
+    "REVIVE_ML_CACHE": "raw dataset cache; keep OUTSIDE OneDrive"
+  },
+  "venvs_dir_windows": "%USERPROFILE%\\venvs",
+  "safety": {
+    "hardware": "monitor-only",
+    "bench_max_voltage_v": 26,
+    "data_label": "synthetic unless provenance says measured"
+  },
+  "wokwi": {
+    "project_url": "",
+    "_comment": "Set to the shared wokwi.com project URL after importing engines/firmware/wokwi; empty disables the button. The web app makes no request to Wokwi unless the user clicks."
+  },
+  "bms": {}
+}

@@ -1,0 +1,12 @@
+{
+  "title": "REVIVE-TERY bundle telemetry (telemetry.csv or telemetry.parquet)",
+  "description": "Contract v1: column list, not JSON Schema. scripts/check_contracts.py checks CSV headers against it. Columns are never renamed by guessing; use an explicit mapping (see engines/ml PLAN.md).",
+  "required_columns": ["asset_id", "timestamp_utc", "voltage_v", "current_a", "temperature_c"],
+  "optional_columns": ["soc_pct", "min_temperature_c", "ambient_temperature_c", "power_kw", "operating_state", "bms_soh_pct"],
+  "notes": {
+    "timestamp_utc": "ISO-8601 UTC",
+    "current_a": "sign kept as recorded, never flipped; declare it in metadata.current_sign_convention",
+    "voltage_v": "pack level",
+    "temperature_c": "hottest cell is the conservative choice for the gate"
+  }
+}

@@ -1,0 +1,38 @@
+# Deterministic triage limits per chemistry (UL 1974-style triage, NOT certification).
+# Cell-level values; pack telemetry is divided by series count, so these act on the
+# pack-AVERAGE cell. A single weak cell can breach a limit that the average hides:
+# cell-level data is needed for anything beyond triage.
+#
+# Sources. The datasheet PDFs were NOT downloaded during this build; values are as commonly
+# published for these cells and must be checked against the actual datasheet before any use
+# beyond triage:
+#  [A123]  A123 Systems, APR18650M1A / ANR26650M1-B cell datasheets: charge 3.6 V,
+#          discharge cut-off 2.0 V, operating range about -30..55 degC. The Severson et al. (2019)
+#          protocol cycles APR18650M1A cells between 2.0 V and 3.6 V.
+#  [NMC]   Common NMC 18650/21700 datasheets (e.g. Samsung INR21700-50E, LG INR18650-MJ1):
+#          charge 4.2 V, discharge cut-off 2.5 V. The 2.75 V used here is a deliberately
+#          conservative triage floor (master prompt), above the 2.5 V cut-off.
+#  [NCA]   Panasonic NCR18650B datasheet: charge 4.2 V, discharge cut-off 2.5 V,
+#          discharge temperature up to 60 degC.
+#  [R2x]   Resistance doubling as end of life: a widely used ageing criterion; ASSUMED here.
+chemistries:
+  LFP:
+    cell_v_min: {value: 2.0, source: A123}
+    cell_v_max: {value: 3.65, source: "A123 (3.6 V charge + 0.05 V measurement tolerance, assumed)"}
+    temp_max_c: {value: 60.0, source: "A123 operating max 55 degC + 5 degC margin (assumed)"}
+    temp_min_c: {value: -30.0, source: A123}
+  NMC:
+    cell_v_min: {value: 2.75, source: "NMC (conservative triage floor)"}
+    cell_v_max: {value: 4.25, source: "NMC (4.2 V + 0.05 V tolerance, assumed)"}
+    temp_max_c: {value: 60.0, source: "NMC datasheets (discharge max 60 degC)"}
+    temp_min_c: {value: -20.0, source: "NMC datasheets (discharge min -20 degC)"}
+  NCA:
+    cell_v_min: {value: 2.5, source: NCA}
+    cell_v_max: {value: 4.25, source: "NCA (4.2 V + 0.05 V tolerance, assumed)"}
+    temp_max_c: {value: 60.0, source: NCA}
+    temp_min_c: {value: -20.0, source: NCA}
+common:
+  resistance_ratio_reject: {value: 2.0, source: R2x}
+  min_rows_beyond_limit: 1   # one sample beyond a hard limit is enough to reject (conservative)
+  open_safety_event_severities_quarantine: [HIGH, CRITICAL]
+wording: "UL 1974-style triage. This is a screening step, not UL certification or a safety approval."

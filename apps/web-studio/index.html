@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REVIVE-TERY Studio</title>
+  <meta name="description" content="REVIVE-TERY: second-life battery triage. The full ML engine, the BMS engine, the simulated ESP32 bench, the lite analyzer and the ReLife BMS Studio, all running in the browser on synthetic data.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230f7b6c'/%3E%3Cpath d='M9 6h6v13H9zM10.5 4h3v2h-3zM10.5 13l2.5-4v3h1.5l-2.5 4v-3z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/pro.css">
+  <script>
+    var t = null; try { t = localStorage.getItem("rt-theme"); } catch (e) { /* storage blocked */ }
+    document.documentElement.dataset.theme = t || "dark";   // dark by default, so the theme button works
+  </script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">R</div>
+        <div><div class="brand-name">REVIVE-TERY</div><div class="brand-sub">Second-life battery studio</div></div>
+      </div>
+      <nav class="nav" id="nav"></nav>
+      <div class="sidebar-foot">
+        All REVIVE-TERY data here is <b>synthetic</b>. Screening only: UL 1974-style triage, not certification.
+      </div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <button class="btn icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open navigation"></button>
+        <div class="title" id="page-title">REVIVE-TERY</div>
+        <div class="spacer"></div>
+        <span class="stamp" id="db-stamp"></span>
+        <span id="api-chip"></span>
+        <span class="pill warn" title="Every REVIVE-TERY dataset in this app is synthetic or simulated; results are screening only">Synthetic data / screening only</span>
+        <button class="btn icon-btn" id="theme-btn" type="button" aria-label="Toggle dark mode"></button>
+      </header>
+      <main class="content" id="content">
+        <div class="loading-screen"><div><span class="spinner"></span> Loading engines and models…</div></div>
+      </main>
+    </div>
+  </div>
+  <noscript><p style="padding:24px">REVIVE-TERY Studio needs JavaScript: every engine runs in your browser.</p></noscript>
+  <script src="assets/vendor/jszip.min.js" defer></script>
+  <script src="assets/vendor/xlsx.full.min.js" defer></script>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

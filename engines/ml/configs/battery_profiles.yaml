@@ -1,0 +1,136 @@
+# Battery characteristics and second-use fit, per chemistry family and brand (new file).
+#
+# EVERYTHING HERE IS AN ASSUMED PRIOR, not a measurement and not a trained result. The values are
+# qualitative scores in [0, 1] (1 = favourable) drawn from general battery literature, kept coarse on
+# purpose. They shape the ranking of second-use applications; the data from the uploaded battery
+# (state of health, resistance, safety events, economics) is always applied on top and can overrule them.
+# Calibrate with your own fleet outcomes before trusting differences smaller than ~0.15.
+#
+# Chemistries are limited to the three the engine has safety limits for (limits.yaml): LFP, NMC, NCA.
+
+chemistries:
+  LFP:
+    label: Lithium iron phosphate (LFP)
+    aliases: [lfp, lifepo4, lifepo, lithium iron phosphate, iron phosphate, lfp lithium]
+    scores:                       # all assumed
+      cycle_life: 0.95            # tolerates many cycles before fading
+      thermal_stability: 0.90     # high thermal-runaway onset
+      c_rate_tolerance: 0.60
+      energy_density: 0.45
+      cost_per_kwh: 0.85          # 1 = cheapest
+      soc_estimability: 0.40      # flat voltage curve makes voltage-based SOC hard
+    max_sustained_c_rate: 1.0     # assumed duty ceiling for second-life use
+    cycle_stress_ceiling: 2.0     # equivalent full cycles/day the chemistry is assumed to tolerate
+    strengths: [long cycle life, high thermal stability, low cost per kWh, tolerant of deep daily cycling]
+    cautions: [flat voltage curve, so voltage-based SOC estimates are weak and capacity tests matter,
+               lower energy density, so heavy for vehicles, capacity can look fine until a late knee]
+    affinity:                     # chemistry fit per workload key in workloads.yaml (assumed)
+      residential_storage: {fit: 1.00, why: stationary daily cycling plays to long cycle life and thermal safety}
+      commercial_peak_shaving: {fit: 0.95, why: frequent deep cycles favour cycle life; footprint is not critical}
+      telecom_backup: {fit: 0.90, why: rare shallow use is easy; stability matters for unattended sites}
+      low_speed_ev: {fit: 0.55, why: low energy density costs range and weight; cost and safety still help}
+  NMC:
+    label: Nickel manganese cobalt (NMC)
+    aliases: [nmc, nickel manganese cobalt, ncm, li nmc, linimncoo2]
+    scores:
+      cycle_life: 0.65
+      thermal_stability: 0.55
+      c_rate_tolerance: 0.80
+      energy_density: 0.85
+      cost_per_kwh: 0.55
+      soc_estimability: 0.80
+    max_sustained_c_rate: 1.5
+    cycle_stress_ceiling: 1.2
+    strengths: [high energy density, good power capability, sloped voltage curve gives usable SOC estimates]
+    cautions: [lower thermal-runaway margin than LFP, moderate cycle life, fade can accelerate when hot or
+               deeply cycled every day]
+    affinity:
+      residential_storage: {fit: 0.80, why: works well at gentle daily duty; keep depth of discharge moderate}
+      commercial_peak_shaving: {fit: 0.70, why: deep frequent cycling stresses NMC faster than LFP}
+      telecom_backup: {fit: 0.75, why: rare use suits it, but temperature control matters at remote sites}
+      low_speed_ev: {fit: 0.90, why: energy density and power suit vehicle duty}
+  NCA:
+    label: Nickel cobalt aluminium (NCA)
+    aliases: [nca, nickel cobalt aluminium, nickel cobalt aluminum, linicoalo2]
+    scores:
+      cycle_life: 0.55
+      thermal_stability: 0.45
+      c_rate_tolerance: 0.80
+      energy_density: 0.90
+      cost_per_kwh: 0.50
+      soc_estimability: 0.80
+    max_sustained_c_rate: 1.5
+    cycle_stress_ceiling: 1.0
+    strengths: [very high energy density, strong power capability]
+    cautions: [least thermal margin of the three, so cooling and monitoring are essential, shorter cycle life,
+               sensitive to heat and to high state of charge storage]
+    affinity:
+      residential_storage: {fit: 0.65, why: usable at gentle duty with good thermal management}
+      commercial_peak_shaving: {fit: 0.55, why: deep frequent cycling and heat are hard on NCA}
+      telecom_backup: {fit: 0.65, why: rare shallow use limits the stress; site temperature must be controlled}
+      low_speed_ev: {fit: 0.85, why: energy density and power suit vehicle duty}
+
+# Brand / maker / family names that can appear in file names, sheet names or cell columns.
+# "chemistry" is what that name usually means; "ambiguous" means the maker sells several chemistries,
+# so the name alone is NOT treated as proof (the user is asked, or the data must say).
+brands:
+  - name: "BYD"
+    aliases: ["byd", "blade", "byd blade", "blade battery"]
+    chemistry: "LFP"
+    ambiguous: false
+    note: "BYD Blade cells are LFP; long cycle life and high thermal stability favour stationary storage"
+  - name: "CATL"
+    aliases: ["catl", "contemporary amperex"]
+    chemistry: null
+    ambiguous: true
+    note: "CATL sells both LFP and NMC; the chemistry must come from the data or the user"
+  - name: "CALB"
+    aliases: ["calb"]
+    chemistry: "LFP"
+    ambiguous: false
+    note: "mainly LFP prismatic cells"
+  - name: "EVE"
+    aliases: ["eve energy", "eve cell"]
+    chemistry: "LFP"
+    ambiguous: true
+    note: "mostly LFP for storage, but also makes NMC cylindrical cells"
+  - name: "Gotion"
+    aliases: ["gotion", "guoxuan"]
+    chemistry: "LFP"
+    ambiguous: true
+    note: "LFP and NMC lines exist"
+  - name: "LG Energy Solution"
+    aliases: ["lg energy", "lg chem", "lges", "lg"]
+    chemistry: "NMC"
+    ambiguous: true
+    note: "mostly NMC pouch and cylindrical cells for EVs; also makes some LFP"
+  - name: "Samsung SDI"
+    aliases: ["samsung sdi", "samsung"]
+    chemistry: "NMC"
+    ambiguous: true
+    note: "mostly NMC or NCA prismatic and cylindrical cells"
+  - name: "SK On"
+    aliases: ["sk on", "sk innovation"]
+    chemistry: "NMC"
+    ambiguous: true
+    note: "mostly NMC pouch cells"
+  - name: "Panasonic"
+    aliases: ["panasonic"]
+    chemistry: "NCA"
+    ambiguous: true
+    note: "NCA cylindrical cells for some vehicles; also NMC"
+  - name: "Tesla"
+    aliases: ["tesla"]
+    chemistry: null
+    ambiguous: true
+    note: "packs vary by model (NCA, NMC or LFP); the chemistry must come from the data or the user"
+  - name: "Tata"
+    aliases: ["tata", "tata motors"]
+    chemistry: null
+    ambiguous: true
+    note: "pack chemistry varies by model; confirm it"
+  - name: "Generic Li-ion"
+    aliases: ["li ion", "lithium ion", "lithium-ion", "liion", "li-ion"]
+    chemistry: null
+    ambiguous: true
+    note: "Li-ion names the whole family, not a chemistry; the chemistry is needed to apply the right limits"

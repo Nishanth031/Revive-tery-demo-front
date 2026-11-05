@@ -1,0 +1,35 @@
+# Default second-life workloads (illustrative duty assumptions, provenance "assumed").
+# Users can replace them with `revive-ml assess ... --workloads my.yaml`.
+# min_soh_pct: SOH below which the application is no longer served (assumed).
+# valuation_mode: energy_arbitrage (default: delivered kWh x tariff, capped by buy-new storage) |
+#                 avoided_new_pack (reuse in a vehicle: the new pack it replaces over its service years)
+workloads:
+  residential_storage:
+    label: Residential solar storage
+    daily_dod: 0.8
+    ambient_c: 25
+    c_rate: 0.3
+    cycles_per_day: 1.0
+    min_soh_pct: 60
+  commercial_peak_shaving:
+    label: Commercial peak shaving
+    daily_dod: 0.9
+    ambient_c: 30
+    c_rate: 0.5
+    cycles_per_day: 1.5
+    min_soh_pct: 65
+  telecom_backup:
+    label: Telecom backup
+    daily_dod: 0.5
+    ambient_c: 30
+    c_rate: 0.2
+    cycles_per_day: 0.1
+    min_soh_pct: 60
+  low_speed_ev:
+    label: Low-speed EV
+    valuation_mode: avoided_new_pack   # value = the new vehicle pack it replaces (economics.yaml buy_new_benchmark.new_ev_pack_usd_per_kwh)
+    daily_dod: 0.8
+    ambient_c: 30
+    c_rate: 1.0
+    cycles_per_day: 1.0
+    min_soh_pct: 65

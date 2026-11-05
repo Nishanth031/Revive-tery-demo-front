@@ -1,0 +1,6 @@
+name: 'Readings keep flowing (ambient may be null without the second sensor)'
+version: 1
+author: 'REVIVE-TERY'
+steps:
+  - wait-serial: '"ambient":'
+# TODO verify: Wokwi scenarios cannot remove a part at run time; run with temp2 deleted from diagram.json to see "ambient":null.

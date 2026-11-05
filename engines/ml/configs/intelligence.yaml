@@ -1,0 +1,116 @@
+# Upload-understanding lexicon for revive_ml.intelligence (new file; nothing else reads it).
+#
+# The column mapper is a small trained classifier (character n-gram TF-IDF + logistic regression).
+# It is trained at first use from the phrases below, so teaching it a new header means adding a
+# phrase here, not editing code. Headers it is not confident about are reported as unmapped; the
+# mapper never guesses a column into the data.
+
+mapping:
+  accept_score: 0.55        # combined (header + values) score needed to map a column
+  min_header_prob: 0.40     # a column whose NAME the model does not recognise is never mapped by values alone
+  header_weight: 0.65       # share of the score that comes from the header; the rest is "do the values fit"
+  sample_rows: 5000         # rows looked at when judging values
+
+# canonical field -> phrases that mean it (the model generalises to spelling, case, prefixes and unit suffixes)
+fields:
+  battery_id:
+    phrases: [battery id, asset id, cell id, pack id, barcode, serial number, serial no, sample id, device id,
+              unit id, battery name, cell name, battery, cell, pack, vin, module id]
+  timestamp_utc:
+    phrases: [timestamp, timestamp utc, datetime, date time, time utc, date and time, recorded at, logged at,
+              measurement time, time stamp, utc time, sample time]
+  test_time_s:
+    phrases: [test time, time, elapsed time, time s, time sec, running time, relative time, step time,
+              seconds, test time s, duration, t]
+  cycle_index:
+    phrases: [cycle, cycle index, cycle number, cycle no, cycle count, cycle id, charge cycle, loop,
+              cycle num, n cycles]
+  voltage_v:
+    phrases: [voltage, pack voltage, cell voltage, terminal voltage, battery voltage, volt, volts, v,
+              voltage measured, batt voltage, vpack, vcell, u, ucell]
+  current_a:
+    phrases: [current, pack current, battery current, current measured, amps, amperes, i, batt current,
+              ipack, charge current, discharge current, a]
+  temperature_c:
+    phrases: [temperature, temp, cell temperature, max cell temp, battery temperature, temperature measured,
+              pack temperature, surface temperature, tmax, t cell, temp c, degc]
+  capacity_ah:
+    phrases: [capacity, discharge capacity, measured capacity, capacity ah, q discharge, qd, qdischarge,
+              remaining capacity, full capacity, cap, ah, available capacity]
+  soc_pct:
+    phrases: [soc, state of charge, soc percent, charge level, battery level, soc pct, stateofcharge, soc %]
+
+# headers that look battery-ish but are NOT one of the fields above (so they are never forced into one)
+other:
+  phrases: [ambient temperature, ambient temp, ambient, min cell temp, minimum cell temperature, power, power kw,
+            power w, energy, energy kwh, operating state, state, mode, status, step, step index, step number,
+            soh, state of health, bms soh, notes, note, comment, comments, description, index, row, row id,
+            unnamed 0, id, flag, quality, voltage imbalance, cell delta, resistance, internal resistance,
+            charge capacity, charge energy, discharge energy, data class, provenance, source, file, vehicle id,
+            odometer, speed, latitude, longitude, humidity, pressure]
+
+# unit suffix words used while learning, per field (the actual unit conversion is decided in mapper.py)
+unit_words:
+  voltage_v: [v, volt, mv]
+  current_a: [a, amp, ma]
+  temperature_c: [c, degc, celsius, f, k]
+  capacity_ah: [ah, mah]
+  soc_pct: [pct, percent]
+  test_time_s: [s, sec, ms, min, h]
+
+# key/value metadata tables (for example "chemistry,LFP" or a battery_asset-style sheet)
+spec_fields:
+  chemistry:
+    phrases: [chemistry, battery chemistry, cell chemistry, chem, type, battery type, cathode, technology]
+  brand:
+    phrases: [brand, manufacturer, make, maker, vendor, supplier, oem, cell manufacturer, battery maker]
+  cell_model:
+    phrases: [cell model, cell type, model, cell format, product name, part number, cell name]
+  rated_capacity_ah:
+    phrases: [rated capacity, nominal capacity, nominal capacity ah, rated capacity ah, design capacity,
+              capacity rating, nameplate capacity, capacity]
+  nominal_voltage_v:
+    phrases: [nominal voltage, rated voltage, nominal voltage v, pack voltage nominal, voltage nominal]
+  series_cells:
+    phrases: [series cells, cells in series, series count, number of series cells, s count, series]
+  parallel_cells:
+    phrases: [parallel cells, cells in parallel, parallel count, number of parallel cells, p count, parallel]
+  configuration:
+    phrases: [series parallel configuration, configuration, pack configuration, cell configuration, layout, topology]
+  rated_energy_kwh:
+    phrases: [nominal energy, rated energy, energy kwh, pack energy, nominal energy kwh]
+spec_other:
+  phrases: [asset id, vehicle id, battery id, pack id, manufacture date, commissioning date, warranty end date,
+            demo status, status, notes, comment, mass, pack mass kg, weight, cell count, max voltage, min voltage,
+            max voltage v, min voltage v, owner, location, vin, odometer, serial number]
+
+# ---------------------------------------------------------------------------------------------------------------
+# revive_ml.insight (P2). Heuristics, labelled as such in every output.
+confidence:
+  label: heuristic
+  # points out of 100 added by each factor (weights sum to 100)
+  weights: {data_quality: 25, in_distribution: 20, interval_width: 20, gate: 15, telemetry_length: 10, provenance: 10}
+  interval_width_full: 0.5       # (upper - lower) / median at or below this earns the full interval points
+  interval_width_zero: 2.0       # at or above this earns none
+  telemetry_rows_full: 1000      # rows that earn the full telemetry-length points
+  provenance_points: {measured: 1.0, simulated: 0.6, synthetic: 0.4}
+  gate_points: {Pass: 1.0, Quarantine: 0.3, Reject: 0.0}
+  levels: {High: 75, Medium: 50}   # score >= High -> High, >= Medium -> Medium, else Low
+
+robustness:
+  tariff: [0.04, 0.06, 0.08, 0.10, 0.12, 0.16, 0.20]       # USD per kWh delivered
+  metal_mult: [0.5, 1.0, 1.5, 2.0, 3.0]
+  cost_mult: [0.5, 1.0, 1.5, 2.0]
+  new_cost: [150, 236, 300]                                 # installed system USD/kWh
+
+break_even:
+  max_evaluations: 40
+  tariff_range: [0.0, 1.0]
+  metal_mult_range: [0.0, 20.0]
+  cost_mult_range: [0.0, 10.0]
+  new_cost_range: [0.0, 1000.0]
+  discount_rate_range: [0.0, 0.5]
+
+
+insight:
+  state_model_chemistry: LFP       # the state/RUL model is trained on LFP (Severson) cells; see docs/model_cards/state_rul.md

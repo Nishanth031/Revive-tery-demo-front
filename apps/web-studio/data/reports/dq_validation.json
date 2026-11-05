@@ -1,0 +1,292 @@
+{
+  "n_clean_bundles": 100,
+  "note": "All bundles are SYNTHETIC (revive_ml.synth) with randomised chemistry (LFP/NMC), sampling step (1-30 s), SOH, ambient temperature and noise. Rates show the detectors work on the faults they were designed for; they are not field performance figures.",
+  "detection": {
+    "sign_flip_vs_declared": {
+      "detector": "sign_convention",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "fail": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "charge_balance_mismatch": {
+      "detector": "charge_balance",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "fail": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "regen_wrong_sign": {
+      "detector": "regen_sign",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "fail": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "implausible_resistance": {
+      "detector": "resistance",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "inconclusive": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "duplicate_timestamps": {
+      "detector": "timestamps",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "fail": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "non_monotonic_time": {
+      "detector": "timestamps",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "fail": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "large_gap": {
+      "detector": "timestamps",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "fail": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "irregular_steps": {
+      "detector": "timestamps",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "warn": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "null_voltage": {
+      "detector": "sensor_nulls",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "fail": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "voltage_dropout": {
+      "detector": "sensor_dropouts",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "warn": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "stuck_voltage": {
+      "detector": "sensor_stuck",
+      "detected": 99,
+      "trials": 100,
+      "statuses": {
+        "fail": 99,
+        "pass": 1
+      },
+      "detection_rate": {
+        "value": 0.99,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "temperature_spike": {
+      "detector": "sensor_spikes",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "warn": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "out_of_range_temperature": {
+      "detector": "sensor_range",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "fail": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "temperature_missing": {
+      "detector": "temperature_missing",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "fail": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "capacity_test_disagrees": {
+      "detector": "estimate_disagreement",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "fail": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    },
+    "mislabelled_measured": {
+      "detector": "provenance",
+      "detected": 100,
+      "trials": 100,
+      "statuses": {
+        "fail": 100
+      },
+      "detection_rate": {
+        "value": 1.0,
+        "provenance": "synthetic",
+        "note": "on injected faults in synthetic bundles"
+      }
+    }
+  },
+  "false_positive_rate_per_detector": {
+    "sample_size": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "provenance": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "timestamps": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "sign_convention": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "charge_balance": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "regen_sign": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "resistance": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "sensor_nulls": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "sensor_dropouts": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "sensor_stuck": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "sensor_spikes": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "sensor_range": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "temperature_missing": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    },
+    "estimate_disagreement": {
+      "value": 0.0,
+      "provenance": "synthetic",
+      "flagged": 0
+    }
+  },
+  "clean_bundles_marked_not_ready": {
+    "value": 0.0,
+    "provenance": "synthetic"
+  },
+  "seeds": "held-out 1000..1099 (development used 0..39)"
+}

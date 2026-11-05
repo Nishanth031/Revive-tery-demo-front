@@ -1,0 +1,351 @@
+asset_id,component,material,estimated_mass_kg,mass_fraction_pct,recovery_route,recovery_potential_note,data_class
+DEMO-EV-PACK-002,Cathode active material,NMC oxide,65,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-002,Anode active material,Graphite,49,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-002,Current collectors,Copper and aluminium,57,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-002,Electrolyte and separator,Electrolyte salts/solvents and polymer,32,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-002,"Housing, busbars and cooling","Steel, aluminium, polymers",202,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-LFP-PACK-004,Cathode active material,LFP (lithium iron phosphate),43,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-LFP-PACK-004,Anode active material,Graphite,32,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-LFP-PACK-004,Current collectors,Copper and aluminium,38,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-LFP-PACK-004,Electrolyte and separator,Electrolyte salts/solvents and polymer,22,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-LFP-PACK-004,"Housing, busbars and cooling","Steel, aluminium, polymers",135,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-LFP-PACK-005,Cathode active material,LFP (lithium iron phosphate),58,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-LFP-PACK-005,Anode active material,Graphite,43,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-LFP-PACK-005,Current collectors,Copper and aluminium,50,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-LFP-PACK-005,Electrolyte and separator,Electrolyte salts/solvents and polymer,29,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-LFP-PACK-005,"Housing, busbars and cooling","Steel, aluminium, polymers",180,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-007,Cathode active material,NCA oxide,72,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-007,Anode active material,Graphite,54,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-007,Current collectors,Copper and aluminium,63,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-007,Electrolyte and separator,Electrolyte salts/solvents and polymer,36,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-007,"Housing, busbars and cooling","Steel, aluminium, polymers",225,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-001,Cathode active material,NMC oxide,72,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-001,Anode active material,Graphite,54,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-001,Current collectors,Copper and aluminium,63,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-001,Electrolyte and separator,Electrolyte salts/solvents and polymer,36,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-001,"Housing, busbars and cooling","Steel, aluminium, polymers",225,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-002,Cathode active material,LFP (lithium iron phosphate),258,20.4,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-002,Anode active material,Graphite,168,13.3,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-002,Current collectors,Copper and aluminium,159,12.6,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-002,Electrolyte and separator,Electrolyte salts/solvents and polymer,92,7.3,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-002,"Housing, busbars and cooling","Steel, aluminium, polymers",587,46.5,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-003,Cathode active material,NCA oxide,89,15.5,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-003,Anode active material,Graphite,67,11.7,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-003,Current collectors,Copper and aluminium,82,14.2,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-003,Electrolyte and separator,Electrolyte salts/solvents and polymer,50,8.6,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-003,"Housing, busbars and cooling","Steel, aluminium, polymers",288,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-004,Cathode active material,NMC oxide,9,15.5,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-004,Anode active material,Graphite,8,12.6,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-004,Current collectors,Copper and aluminium,9,14.8,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-004,Electrolyte and separator,Electrolyte salts/solvents and polymer,4,7.1,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-004,"Housing, busbars and cooling","Steel, aluminium, polymers",31,50.1,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-005,Cathode active material,NMC oxide,7,15.8,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-005,Anode active material,Graphite,5,12.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-005,Current collectors,Copper and aluminium,7,14.6,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-005,Electrolyte and separator,Electrolyte salts/solvents and polymer,4,8.7,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-005,"Housing, busbars and cooling","Steel, aluminium, polymers",22,48.8,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-006,Cathode active material,LFP (lithium iron phosphate),62,21.6,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-006,Anode active material,Graphite,40,14.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-006,Current collectors,Copper and aluminium,34,11.8,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-006,Electrolyte and separator,Electrolyte salts/solvents and polymer,22,7.7,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-006,"Housing, busbars and cooling","Steel, aluminium, polymers",128,44.7,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-007,Cathode active material,NMC oxide,159,16.1,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-007,Anode active material,Graphite,115,11.6,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-007,Current collectors,Copper and aluminium,130,13.2,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-007,Electrolyte and separator,Electrolyte salts/solvents and polymer,74,7.5,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-007,"Housing, busbars and cooling","Steel, aluminium, polymers",510,51.6,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-008,Cathode active material,NMC oxide,4,15.5,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-008,Anode active material,Graphite,3,12.4,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-008,Current collectors,Copper and aluminium,4,14.9,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-008,Electrolyte and separator,Electrolyte salts/solvents and polymer,2,8.5,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-008,"Housing, busbars and cooling","Steel, aluminium, polymers",13,48.7,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-009,Cathode active material,NCA oxide,40,16.7,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-009,Anode active material,Graphite,31,12.8,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-009,Current collectors,Copper and aluminium,34,14.1,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-009,Electrolyte and separator,Electrolyte salts/solvents and polymer,20,8.1,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-009,"Housing, busbars and cooling","Steel, aluminium, polymers",116,48.3,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-010,Cathode active material,LFP (lithium iron phosphate),144,21.4,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-010,Anode active material,Graphite,89,13.2,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-010,Current collectors,Copper and aluminium,79,11.7,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-010,Electrolyte and separator,Electrolyte salts/solvents and polymer,52,7.7,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-010,"Housing, busbars and cooling","Steel, aluminium, polymers",308,45.9,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-011,Cathode active material,NMC oxide,328,15.9,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-011,Anode active material,Graphite,242,11.7,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-011,Current collectors,Copper and aluminium,289,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-011,Electrolyte and separator,Electrolyte salts/solvents and polymer,176,8.5,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-011,"Housing, busbars and cooling","Steel, aluminium, polymers",1030,49.9,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-012,Cathode active material,LFP (lithium iron phosphate),71,20.7,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-012,Anode active material,Graphite,50,14.6,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-012,Current collectors,Copper and aluminium,39,11.5,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-012,Electrolyte and separator,Electrolyte salts/solvents and polymer,29,8.5,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-012,"Housing, busbars and cooling","Steel, aluminium, polymers",153,44.7,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-013,Cathode active material,NMC oxide,58,16.5,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-013,Anode active material,Graphite,43,12.2,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-013,Current collectors,Copper and aluminium,48,13.6,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-013,Electrolyte and separator,Electrolyte salts/solvents and polymer,27,7.7,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-013,"Housing, busbars and cooling","Steel, aluminium, polymers",175,50.1,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-014,Cathode active material,LFP (lithium iron phosphate),190,21.5,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-014,Anode active material,Graphite,122,13.8,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-014,Current collectors,Copper and aluminium,106,12.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-014,Electrolyte and separator,Electrolyte salts/solvents and polymer,72,8.1,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-014,"Housing, busbars and cooling","Steel, aluminium, polymers",393,44.5,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-015,Cathode active material,LFP (lithium iron phosphate),132,20.0,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-015,Anode active material,Graphite,86,13.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-015,Current collectors,Copper and aluminium,82,12.4,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-015,Electrolyte and separator,Electrolyte salts/solvents and polymer,47,7.1,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-015,"Housing, busbars and cooling","Steel, aluminium, polymers",313,47.4,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-016,Cathode active material,NMC oxide,3,15.8,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-016,Anode active material,Graphite,2,11.4,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-016,Current collectors,Copper and aluminium,3,13.3,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-016,Electrolyte and separator,Electrolyte salts/solvents and polymer,2,8.5,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-016,"Housing, busbars and cooling","Steel, aluminium, polymers",10,51.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-017,Cathode active material,NMC oxide,3,16.7,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-017,Anode active material,Graphite,2,12.2,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-017,Current collectors,Copper and aluminium,2,14.1,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-017,Electrolyte and separator,Electrolyte salts/solvents and polymer,1,7.4,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-017,"Housing, busbars and cooling","Steel, aluminium, polymers",8,49.6,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-018,Cathode active material,NCA oxide,54,16.7,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-018,Anode active material,Graphite,42,12.9,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-018,Current collectors,Copper and aluminium,42,13.1,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-018,Electrolyte and separator,Electrolyte salts/solvents and polymer,24,7.4,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-018,"Housing, busbars and cooling","Steel, aluminium, polymers",161,49.9,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-019,Cathode active material,NMC oxide,3,15.1,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-019,Anode active material,Graphite,2,11.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-019,Current collectors,Copper and aluminium,3,14.5,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-019,Electrolyte and separator,Electrolyte salts/solvents and polymer,2,7.6,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-019,"Housing, busbars and cooling","Steel, aluminium, polymers",11,51.8,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-020,Cathode active material,NMC oxide,59,15.9,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-020,Anode active material,Graphite,44,11.7,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-020,Current collectors,Copper and aluminium,49,13.2,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-020,Electrolyte and separator,Electrolyte salts/solvents and polymer,28,7.5,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-020,"Housing, busbars and cooling","Steel, aluminium, polymers",193,51.7,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-021,Cathode active material,NCA oxide,30,15.4,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-021,Anode active material,Graphite,25,12.7,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-021,Current collectors,Copper and aluminium,26,13.4,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-021,Electrolyte and separator,Electrolyte salts/solvents and polymer,14,7.4,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-021,"Housing, busbars and cooling","Steel, aluminium, polymers",100,51.1,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-022,Cathode active material,LFP (lithium iron phosphate),197,20.5,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-022,Anode active material,Graphite,126,13.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-022,Current collectors,Copper and aluminium,123,12.8,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-022,Electrolyte and separator,Electrolyte salts/solvents and polymer,80,8.3,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-022,"Housing, busbars and cooling","Steel, aluminium, polymers",436,45.3,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-023,Cathode active material,NMC oxide,174,17.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-023,Anode active material,Graphite,123,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-023,Current collectors,Copper and aluminium,139,13.6,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-023,Electrolyte and separator,Electrolyte salts/solvents and polymer,76,7.4,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-023,"Housing, busbars and cooling","Steel, aluminium, polymers",512,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-024,Cathode active material,NMC oxide,124,15.5,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-024,Anode active material,Graphite,97,12.2,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-024,Current collectors,Copper and aluminium,116,14.5,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-024,Electrolyte and separator,Electrolyte salts/solvents and polymer,57,7.1,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-024,"Housing, busbars and cooling","Steel, aluminium, polymers",405,50.7,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-025,Cathode active material,LFP (lithium iron phosphate),109,21.6,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-025,Anode active material,Graphite,74,14.7,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-025,Current collectors,Copper and aluminium,66,13.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-025,Electrolyte and separator,Electrolyte salts/solvents and polymer,37,7.4,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-025,"Housing, busbars and cooling","Steel, aluminium, polymers",219,43.3,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-026,Cathode active material,NMC oxide,4,15.3,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-026,Anode active material,Graphite,3,11.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-026,Current collectors,Copper and aluminium,3,13.4,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-026,Electrolyte and separator,Electrolyte salts/solvents and polymer,2,7.2,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-026,"Housing, busbars and cooling","Steel, aluminium, polymers",14,53.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-027,Cathode active material,NMC oxide,8,15.6,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-027,Anode active material,Graphite,6,12.6,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-027,Current collectors,Copper and aluminium,8,14.9,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-027,Electrolyte and separator,Electrolyte salts/solvents and polymer,4,7.7,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-027,"Housing, busbars and cooling","Steel, aluminium, polymers",25,49.2,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-028,Cathode active material,NMC oxide,206,15.4,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-028,Anode active material,Graphite,162,12.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-028,Current collectors,Copper and aluminium,187,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-028,Electrolyte and separator,Electrolyte salts/solvents and polymer,115,8.6,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-028,"Housing, busbars and cooling","Steel, aluminium, polymers",666,49.8,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-029,Cathode active material,NMC oxide,83,15.2,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-029,Anode active material,Graphite,66,12.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-029,Current collectors,Copper and aluminium,80,14.8,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-029,Electrolyte and separator,Electrolyte salts/solvents and polymer,47,8.6,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-029,"Housing, busbars and cooling","Steel, aluminium, polymers",268,49.3,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-030,Cathode active material,LFP (lithium iron phosphate),160,20.1,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-030,Anode active material,Graphite,107,13.5,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-030,Current collectors,Copper and aluminium,100,12.6,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-030,Electrolyte and separator,Electrolyte salts/solvents and polymer,64,8.1,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-030,"Housing, busbars and cooling","Steel, aluminium, polymers",363,45.7,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-031,Cathode active material,NMC oxide,103,16.3,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-031,Anode active material,Graphite,80,12.6,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-031,Current collectors,Copper and aluminium,84,13.3,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-031,Electrolyte and separator,Electrolyte salts/solvents and polymer,53,8.4,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-031,"Housing, busbars and cooling","Steel, aluminium, polymers",314,49.5,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-032,Cathode active material,NCA oxide,91,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-032,Anode active material,Graphite,73,12.8,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-032,Current collectors,Copper and aluminium,84,14.7,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-032,Electrolyte and separator,Electrolyte salts/solvents and polymer,44,7.7,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-032,"Housing, busbars and cooling","Steel, aluminium, polymers",279,48.9,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-033,Cathode active material,NMC oxide,67,15.8,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-033,Anode active material,Graphite,51,12.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-033,Current collectors,Copper and aluminium,57,13.3,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-033,Electrolyte and separator,Electrolyte salts/solvents and polymer,31,7.4,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-033,"Housing, busbars and cooling","Steel, aluminium, polymers",218,51.4,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-034,Cathode active material,LFP (lithium iron phosphate),224,21.9,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-034,Anode active material,Graphite,148,14.5,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-034,Current collectors,Copper and aluminium,119,11.6,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-034,Electrolyte and separator,Electrolyte salts/solvents and polymer,84,8.2,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-034,"Housing, busbars and cooling","Steel, aluminium, polymers",447,43.7,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-035,Cathode active material,NCA oxide,39,15.1,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-035,Anode active material,Graphite,33,12.7,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-035,Current collectors,Copper and aluminium,36,13.9,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-035,Electrolyte and separator,Electrolyte salts/solvents and polymer,21,8.2,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-035,"Housing, busbars and cooling","Steel, aluminium, polymers",130,50.1,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-036,Cathode active material,NCA oxide,25,16.8,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-036,Anode active material,Graphite,18,12.3,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-036,Current collectors,Copper and aluminium,22,14.4,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-036,Electrolyte and separator,Electrolyte salts/solvents and polymer,11,7.6,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-036,"Housing, busbars and cooling","Steel, aluminium, polymers",73,48.9,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-037,Cathode active material,NMC oxide,28,16.2,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-037,Anode active material,Graphite,21,12.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-037,Current collectors,Copper and aluminium,26,14.9,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-037,Electrolyte and separator,Electrolyte salts/solvents and polymer,15,8.6,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-037,"Housing, busbars and cooling","Steel, aluminium, polymers",84,48.2,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-038,Cathode active material,LFP (lithium iron phosphate),13,20.7,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-038,Anode active material,Graphite,9,13.4,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-038,Current collectors,Copper and aluminium,7,11.3,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-038,Electrolyte and separator,Electrolyte salts/solvents and polymer,5,8.4,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-038,"Housing, busbars and cooling","Steel, aluminium, polymers",30,46.2,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-039,Cathode active material,NCA oxide,29,16.4,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-039,Anode active material,Graphite,22,12.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-039,Current collectors,Copper and aluminium,25,14.1,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-039,Electrolyte and separator,Electrolyte salts/solvents and polymer,14,7.7,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-039,"Housing, busbars and cooling","Steel, aluminium, polymers",88,49.7,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-040,Cathode active material,LFP (lithium iron phosphate),13,21.9,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-040,Anode active material,Graphite,8,13.4,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-040,Current collectors,Copper and aluminium,7,12.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-040,Electrolyte and separator,Electrolyte salts/solvents and polymer,5,8.2,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-040,"Housing, busbars and cooling","Steel, aluminium, polymers",26,44.6,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-041,Cathode active material,NMC oxide,64,15.2,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-041,Anode active material,Graphite,48,11.4,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-041,Current collectors,Copper and aluminium,58,13.7,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-041,Electrolyte and separator,Electrolyte salts/solvents and polymer,37,8.7,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-041,"Housing, busbars and cooling","Steel, aluminium, polymers",214,50.9,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-042,Cathode active material,NMC oxide,48,16.6,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-042,Anode active material,Graphite,37,12.8,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-042,Current collectors,Copper and aluminium,41,14.3,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-042,Electrolyte and separator,Electrolyte salts/solvents and polymer,21,7.1,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-042,"Housing, busbars and cooling","Steel, aluminium, polymers",143,49.2,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-043,Cathode active material,LFP (lithium iron phosphate),31,20.1,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-043,Anode active material,Graphite,22,14.5,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-043,Current collectors,Copper and aluminium,20,12.7,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-043,Electrolyte and separator,Electrolyte salts/solvents and polymer,12,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-043,"Housing, busbars and cooling","Steel, aluminium, polymers",69,44.7,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-044,Cathode active material,NMC oxide,194,16.3,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-044,Anode active material,Graphite,139,11.7,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-044,Current collectors,Copper and aluminium,168,14.1,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-044,Electrolyte and separator,Electrolyte salts/solvents and polymer,103,8.7,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-044,"Housing, busbars and cooling","Steel, aluminium, polymers",583,49.1,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-045,Cathode active material,NMC oxide,2,16.3,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-045,Anode active material,Graphite,2,11.6,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-045,Current collectors,Copper and aluminium,2,13.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-045,Electrolyte and separator,Electrolyte salts/solvents and polymer,1,7.6,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-045,"Housing, busbars and cooling","Steel, aluminium, polymers",8,51.5,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-046,Cathode active material,NMC oxide,11,16.3,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-046,Anode active material,Graphite,7,11.4,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-046,Current collectors,Copper and aluminium,9,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-046,Electrolyte and separator,Electrolyte salts/solvents and polymer,5,7.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-046,"Housing, busbars and cooling","Steel, aluminium, polymers",33,51.2,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-047,Cathode active material,NMC oxide,97,16.6,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-047,Anode active material,Graphite,71,12.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-047,Current collectors,Copper and aluminium,88,15.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-047,Electrolyte and separator,Electrolyte salts/solvents and polymer,50,8.5,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-047,"Housing, busbars and cooling","Steel, aluminium, polymers",280,47.8,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-048,Cathode active material,LFP (lithium iron phosphate),271,20.3,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-048,Anode active material,Graphite,199,14.9,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-048,Current collectors,Copper and aluminium,158,11.8,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-048,Electrolyte and separator,Electrolyte salts/solvents and polymer,103,7.7,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-048,"Housing, busbars and cooling","Steel, aluminium, polymers",604,45.2,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-049,Cathode active material,LFP (lithium iron phosphate),72,20.6,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-049,Anode active material,Graphite,51,14.4,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-049,Current collectors,Copper and aluminium,45,12.7,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-049,Electrolyte and separator,Electrolyte salts/solvents and polymer,26,7.5,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-049,"Housing, busbars and cooling","Steel, aluminium, polymers",157,44.8,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-050,Cathode active material,LFP (lithium iron phosphate),4,20.9,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-050,Anode active material,Graphite,3,13.9,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-050,Current collectors,Copper and aluminium,2,12.2,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-050,Electrolyte and separator,Electrolyte salts/solvents and polymer,2,7.8,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-050,"Housing, busbars and cooling","Steel, aluminium, polymers",9,45.2,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-051,Cathode active material,NMC oxide,3,15.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-051,Anode active material,Graphite,2,11.7,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-051,Current collectors,Copper and aluminium,3,14.7,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-051,Electrolyte and separator,Electrolyte salts/solvents and polymer,1,7.2,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-051,"Housing, busbars and cooling","Steel, aluminium, polymers",9,51.3,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-052,Cathode active material,NMC oxide,129,15.3,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-052,Anode active material,Graphite,102,12.1,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-052,Current collectors,Copper and aluminium,124,14.7,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-052,Electrolyte and separator,Electrolyte salts/solvents and polymer,72,8.5,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-BUS-PACK-052,"Housing, busbars and cooling","Steel, aluminium, polymers",416,49.4,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-053,Cathode active material,LFP (lithium iron phosphate),68,21.0,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-053,Anode active material,Graphite,45,13.8,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-053,Current collectors,Copper and aluminium,41,12.6,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-053,Electrolyte and separator,Electrolyte salts/solvents and polymer,25,7.7,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-053,"Housing, busbars and cooling","Steel, aluminium, polymers",145,44.8,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-054,Cathode active material,NMC oxide,2,15.4,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-054,Anode active material,Graphite,2,11.5,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-054,Current collectors,Copper and aluminium,2,13.8,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-054,Electrolyte and separator,Electrolyte salts/solvents and polymer,1,8.6,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-2W-PACK-054,"Housing, busbars and cooling","Steel, aluminium, polymers",7,50.8,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-055,Cathode active material,LFP (lithium iron phosphate),141,20.5,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-055,Anode active material,Graphite,100,14.5,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-055,Current collectors,Copper and aluminium,77,11.2,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-055,Electrolyte and separator,Electrolyte salts/solvents and polymer,51,7.4,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-055,"Housing, busbars and cooling","Steel, aluminium, polymers",320,46.4,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-056,Cathode active material,LFP (lithium iron phosphate),94,20.1,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-056,Anode active material,Graphite,61,13.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-056,Current collectors,Copper and aluminium,54,11.5,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-056,Electrolyte and separator,Electrolyte salts/solvents and polymer,40,8.6,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-056,"Housing, busbars and cooling","Steel, aluminium, polymers",218,46.8,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-057,Cathode active material,NMC oxide,68,15.6,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-057,Anode active material,Graphite,55,12.6,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-057,Current collectors,Copper and aluminium,63,14.5,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-057,Electrolyte and separator,Electrolyte salts/solvents and polymer,38,8.6,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-057,"Housing, busbars and cooling","Steel, aluminium, polymers",213,48.7,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-058,Cathode active material,LFP (lithium iron phosphate),11,21.4,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-058,Anode active material,Graphite,8,14.4,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-058,Current collectors,Copper and aluminium,6,11.2,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-058,Electrolyte and separator,Electrolyte salts/solvents and polymer,4,7.3,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-3W-PACK-058,"Housing, busbars and cooling","Steel, aluminium, polymers",24,45.7,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-059,Cathode active material,LFP (lithium iron phosphate),76,21.0,Hydrometallurgical / direct recycling,Lower critical-metal value than NMC/NCA; lithium recovery focus,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-059,Anode active material,Graphite,54,14.9,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-059,Current collectors,Copper and aluminium,46,12.8,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-059,Electrolyte and separator,Electrolyte salts/solvents and polymer,29,8.1,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-ESS-PACK-059,"Housing, busbars and cooling","Steel, aluminium, polymers",157,43.3,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-060,Cathode active material,NMC oxide,63,15.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-060,Anode active material,Graphite,52,12.4,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-060,Current collectors,Copper and aluminium,61,14.5,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-060,Electrolyte and separator,Electrolyte salts/solvents and polymer,36,8.5,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-EV-PACK-060,"Housing, busbars and cooling","Steel, aluminium, polymers",209,49.6,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-01,Cathode active material,NMC oxide,72,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-01,Anode active material,Graphite,54,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-01,Current collectors,Copper and aluminium,63,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-01,Electrolyte and separator,Electrolyte salts/solvents and polymer,36,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-FLAW-01,"Housing, busbars and cooling","Steel, aluminium, polymers",225,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-02,Cathode active material,NMC oxide,72,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-02,Anode active material,Graphite,54,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-02,Current collectors,Copper and aluminium,63,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-02,Electrolyte and separator,Electrolyte salts/solvents and polymer,36,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-FLAW-02,"Housing, busbars and cooling","Steel, aluminium, polymers",225,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-03,Cathode active material,NMC oxide,72,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-03,Anode active material,Graphite,54,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-03,Current collectors,Copper and aluminium,63,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-03,Electrolyte and separator,Electrolyte salts/solvents and polymer,36,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-FLAW-03,"Housing, busbars and cooling","Steel, aluminium, polymers",225,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-04,Cathode active material,NMC oxide,72,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-04,Anode active material,Graphite,54,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-04,Current collectors,Copper and aluminium,63,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-04,Electrolyte and separator,Electrolyte salts/solvents and polymer,36,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-FLAW-04,"Housing, busbars and cooling","Steel, aluminium, polymers",225,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-05,Cathode active material,NMC oxide,72,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-05,Anode active material,Graphite,54,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-05,Current collectors,Copper and aluminium,63,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-05,Electrolyte and separator,Electrolyte salts/solvents and polymer,36,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-FLAW-05,"Housing, busbars and cooling","Steel, aluminium, polymers",225,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-06,Cathode active material,NMC oxide,72,16.0,Hydrometallurgical / pyrometallurgical,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-06,Anode active material,Graphite,54,12.0,Mechanical separation / thermal processing,Illustrative material category; actual composition varies,SYNTHETIC ESTIMATE
+DEMO-FLAW-06,Current collectors,Copper and aluminium,63,14.0,Mechanical separation and metal refining,Combined estimate,SYNTHETIC ESTIMATE
+DEMO-FLAW-06,Electrolyte and separator,Electrolyte salts/solvents and polymer,36,8.0,Specialist treatment,Requires controlled handling,SYNTHETIC ESTIMATE
+DEMO-FLAW-06,"Housing, busbars and cooling","Steel, aluminium, polymers",225,50.0,Disassembly and material recycling,Combined estimate,SYNTHETIC ESTIMATE

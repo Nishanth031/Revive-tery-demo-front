@@ -1,0 +1,14 @@
+# REVIVE-TERY backend. Python 3.13 (the ML engine is built and tested on 3.13).
+# Install the ML engine from its folder:   pip install -e "../../revive-tery-ml"
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+pydantic>=2.6
+duckdb==2.0.0
+pandas>=2.2
+numpy>=2.0
+openpyxl>=3.1
+pyserial==3.5
+# tests
+pytest>=8
+httpx>=0.27

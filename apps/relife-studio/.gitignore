@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Local data: saved battery profiles, and databases with their automatic backups
+battery_catalog.json
+*.duckdb
+*.duckdb.wal
+
+# Secrets: API keys, tokens and credentials must never be committed
+.env
+.env.*
+!.env.example
+*.env
+secrets.json
+secrets.toml
+credentials.json
+*credentials*.json
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+api_keys.*
+.streamlit/secrets.toml
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

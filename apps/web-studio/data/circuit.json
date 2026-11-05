@@ -1,0 +1,725 @@
+{
+ "generated_from": "engines/firmware/wokwi/diagram.json + circuit_meta.json (tools/wokwi_to_circuit.mjs)",
+ "max_bus_voltage_v": 26,
+ "components": [
+  {
+   "id": "battery",
+   "title": "BATTERY (1S 18650 in holder)",
+   "kind": "battery",
+   "optional": false,
+   "recommended": false,
+   "conditional": null,
+   "wokwi": null,
+   "pins": [
+    {
+     "id": "bat_pos",
+     "label": "B+",
+     "x": 110,
+     "y": 110,
+     "side": "right"
+    },
+    {
+     "id": "bat_neg",
+     "label": "B−",
+     "x": 110,
+     "y": 210,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "fuse",
+   "title": "FUSE (inline holder)",
+   "kind": "fuse",
+   "optional": true,
+   "recommended": true,
+   "conditional": null,
+   "wokwi": null,
+   "pins": [
+    {
+     "id": "fuse_a",
+     "label": "IN",
+     "x": 170,
+     "y": 70,
+     "side": "left"
+    },
+    {
+     "id": "fuse_b",
+     "label": "OUT",
+     "x": 230,
+     "y": 70,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "load",
+   "title": "TEST LOAD (power resistor)",
+   "kind": "load",
+   "optional": false,
+   "recommended": false,
+   "conditional": null,
+   "wokwi": null,
+   "pins": [
+    {
+     "id": "load_pos",
+     "label": "L+",
+     "x": 110,
+     "y": 330,
+     "side": "right"
+    },
+    {
+     "id": "load_neg",
+     "label": "L−",
+     "x": 110,
+     "y": 400,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "switch",
+   "title": "SWITCH (manual SPST)",
+   "kind": "switch",
+   "optional": true,
+   "recommended": true,
+   "conditional": null,
+   "wokwi": null,
+   "pins": [
+    {
+     "id": "sw_a",
+     "label": "1",
+     "x": 200,
+     "y": 250,
+     "side": "right"
+    },
+    {
+     "id": "sw_b",
+     "label": "2",
+     "x": 200,
+     "y": 300,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "ina219",
+   "title": "INA219 VOLTAGE/CURRENT",
+   "kind": "sensor",
+   "optional": false,
+   "recommended": false,
+   "conditional": null,
+   "wokwi": "ina",
+   "pins": [
+    {
+     "id": "ina_vin_pos",
+     "label": "VIN+",
+     "x": 290,
+     "y": 90,
+     "side": "left"
+    },
+    {
+     "id": "ina_vin_neg",
+     "label": "VIN−",
+     "x": 290,
+     "y": 170,
+     "side": "left"
+    },
+    {
+     "id": "ina_vcc",
+     "label": "VCC",
+     "x": 430,
+     "y": 60,
+     "side": "right"
+    },
+    {
+     "id": "ina_gnd",
+     "label": "GND",
+     "x": 430,
+     "y": 110,
+     "side": "right"
+    },
+    {
+     "id": "ina_sda",
+     "label": "SDA",
+     "x": 430,
+     "y": 160,
+     "side": "right"
+    },
+    {
+     "id": "ina_scl",
+     "label": "SCL",
+     "x": 430,
+     "y": 210,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "c1",
+   "title": "C1 100 nF",
+   "kind": "capacitor",
+   "optional": true,
+   "recommended": true,
+   "conditional": null,
+   "wokwi": null,
+   "pins": [
+    {
+     "id": "c1_a",
+     "label": "+",
+     "x": 470,
+     "y": 40,
+     "side": "right"
+    },
+    {
+     "id": "c1_b",
+     "label": "−",
+     "x": 470,
+     "y": 85,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "ds18b20",
+   "title": "DS18B20 CELL (index 0)",
+   "kind": "sensor",
+   "optional": false,
+   "recommended": false,
+   "conditional": null,
+   "wokwi": "temp1",
+   "pins": [
+    {
+     "id": "ds_vdd",
+     "label": "VDD",
+     "x": 430,
+     "y": 320,
+     "side": "right"
+    },
+    {
+     "id": "ds_dq",
+     "label": "DQ",
+     "x": 430,
+     "y": 370,
+     "side": "right"
+    },
+    {
+     "id": "ds_gnd",
+     "label": "GND",
+     "x": 430,
+     "y": 420,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "ds18b20_amb",
+   "title": "DS18B20 AMBIENT (index 1)",
+   "kind": "sensor",
+   "optional": true,
+   "recommended": true,
+   "conditional": null,
+   "wokwi": "temp2",
+   "pins": [
+    {
+     "id": "ds2_vdd",
+     "label": "VDD",
+     "x": 430,
+     "y": 470,
+     "side": "right"
+    },
+    {
+     "id": "ds2_dq",
+     "label": "DQ",
+     "x": 430,
+     "y": 520,
+     "side": "right"
+    },
+    {
+     "id": "ds2_gnd",
+     "label": "GND",
+     "x": 430,
+     "y": 570,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "c2",
+   "title": "C2 100 nF",
+   "kind": "capacitor",
+   "optional": true,
+   "recommended": true,
+   "conditional": null,
+   "wokwi": null,
+   "pins": [
+    {
+     "id": "c2_a",
+     "label": "+",
+     "x": 470,
+     "y": 300,
+     "side": "right"
+    },
+    {
+     "id": "c2_b",
+     "label": "−",
+     "x": 470,
+     "y": 440,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "r1",
+   "title": "R1 4.7 kΩ",
+   "kind": "passive",
+   "optional": false,
+   "recommended": false,
+   "conditional": null,
+   "wokwi": "r1",
+   "pins": [
+    {
+     "id": "r1_a",
+     "label": "A",
+     "x": 560,
+     "y": 300,
+     "side": "right"
+    },
+    {
+     "id": "r1_b",
+     "label": "B",
+     "x": 560,
+     "y": 360,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "r_i2c",
+   "title": "R2/R3 4.7 kΩ I2C pull-ups (only if the breakout has none)",
+   "kind": "passive",
+   "optional": true,
+   "recommended": false,
+   "conditional": "check your INA219 breakout",
+   "wokwi": null,
+   "pins": [
+    {
+     "id": "ri_sda",
+     "label": "SDA",
+     "x": 600,
+     "y": 160,
+     "side": "right"
+    },
+    {
+     "id": "ri_scl",
+     "label": "SCL",
+     "x": 600,
+     "y": 210,
+     "side": "right"
+    },
+    {
+     "id": "ri_vcc",
+     "label": "3V3",
+     "x": 600,
+     "y": 110,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "esp32",
+   "title": "ESP32 DevKit",
+   "kind": "mcu",
+   "optional": false,
+   "recommended": false,
+   "conditional": null,
+   "wokwi": "esp",
+   "pins": [
+    {
+     "id": "esp_3v3",
+     "label": "3V3",
+     "x": 700,
+     "y": 60,
+     "side": "left"
+    },
+    {
+     "id": "esp_gnd",
+     "label": "GND",
+     "x": 700,
+     "y": 130,
+     "side": "left"
+    },
+    {
+     "id": "esp_21",
+     "label": "GPIO21",
+     "x": 700,
+     "y": 200,
+     "side": "left"
+    },
+    {
+     "id": "esp_22",
+     "label": "GPIO22",
+     "x": 700,
+     "y": 270,
+     "side": "left"
+    },
+    {
+     "id": "esp_4",
+     "label": "GPIO4",
+     "x": 700,
+     "y": 340,
+     "side": "left"
+    },
+    {
+     "id": "esp_usb",
+     "label": "USB",
+     "x": 840,
+     "y": 200,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "c3",
+   "title": "C3 10 µF (if the board has none)",
+   "kind": "capacitor",
+   "optional": true,
+   "recommended": false,
+   "conditional": "most DevKits already have one",
+   "wokwi": null,
+   "pins": [
+    {
+     "id": "c3_a",
+     "label": "+",
+     "x": 760,
+     "y": 20,
+     "side": "right"
+    },
+    {
+     "id": "c3_b",
+     "label": "−",
+     "x": 800,
+     "y": 20,
+     "side": "right"
+    }
+   ]
+  },
+  {
+   "id": "laptop",
+   "title": "LAPTOP",
+   "kind": "host",
+   "optional": false,
+   "recommended": false,
+   "conditional": null,
+   "wokwi": null,
+   "pins": [
+    {
+     "id": "pc_usb",
+     "label": "USB",
+     "x": 960,
+     "y": 200,
+     "side": "left"
+    }
+   ]
+  }
+ ],
+ "wires": [
+  {
+   "from": "ina_vcc",
+   "to": "esp_3v3",
+   "type": "logic",
+   "color": "red",
+   "description": "Sensor power from the ESP32",
+   "waypoints": [
+    "h0"
+   ],
+   "wokwi": [
+    "ina:VCC",
+    "esp:3V3"
+   ]
+  },
+  {
+   "from": "ina_gnd",
+   "to": "esp_gnd",
+   "type": "ground",
+   "color": "black",
+   "description": "Sensor ground",
+   "waypoints": [
+    "h0"
+   ],
+   "wokwi": [
+    "ina:GND",
+    "esp:GND.1"
+   ]
+  },
+  {
+   "from": "ina_sda",
+   "to": "esp_21",
+   "type": "i2c",
+   "color": "blue",
+   "description": "I2C data",
+   "waypoints": [
+    "h0"
+   ],
+   "wokwi": [
+    "ina:SDA",
+    "esp:21"
+   ]
+  },
+  {
+   "from": "ina_scl",
+   "to": "esp_22",
+   "type": "i2c_scl",
+   "color": "yellow",
+   "description": "I2C clock",
+   "waypoints": [
+    "h0"
+   ],
+   "wokwi": [
+    "ina:SCL",
+    "esp:22"
+   ]
+  },
+  {
+   "from": "ds_vdd",
+   "to": "esp_3v3",
+   "type": "logic",
+   "color": "red",
+   "description": "Temperature sensor power",
+   "waypoints": [
+    "v0"
+   ],
+   "wokwi": [
+    "temp1:VCC",
+    "esp:3V3"
+   ]
+  },
+  {
+   "from": "ds_gnd",
+   "to": "esp_gnd",
+   "type": "ground",
+   "color": "black",
+   "description": "Temperature sensor ground",
+   "waypoints": [
+    "v0"
+   ],
+   "wokwi": [
+    "temp1:GND",
+    "esp:GND.1"
+   ]
+  },
+  {
+   "from": "ds_dq",
+   "to": "esp_4",
+   "type": "onewire",
+   "color": "green",
+   "description": "1-Wire temperature data (cell sensor)",
+   "waypoints": [
+    "v0"
+   ],
+   "wokwi": [
+    "temp1:DQ",
+    "esp:4"
+   ]
+  },
+  {
+   "from": "ds2_vdd",
+   "to": "esp_3v3",
+   "type": "logic",
+   "color": "red",
+   "description": "Ambient sensor power",
+   "waypoints": [
+    "v0"
+   ],
+   "wokwi": [
+    "temp2:VCC",
+    "esp:3V3"
+   ]
+  },
+  {
+   "from": "ds2_gnd",
+   "to": "esp_gnd",
+   "type": "ground",
+   "color": "black",
+   "description": "Ambient sensor ground",
+   "waypoints": [
+    "v0"
+   ],
+   "wokwi": [
+    "temp2:GND",
+    "esp:GND.1"
+   ]
+  },
+  {
+   "from": "ds2_dq",
+   "to": "esp_4",
+   "type": "onewire",
+   "color": "green",
+   "description": "1-Wire data, same bus (ambient sensor, shares R1)",
+   "waypoints": [
+    "v0"
+   ],
+   "wokwi": [
+    "temp2:DQ",
+    "esp:4"
+   ]
+  },
+  {
+   "from": "r1_a",
+   "to": "esp_3v3",
+   "type": "logic",
+   "color": "red",
+   "description": "Pull-up resistor to 3.3 V",
+   "waypoints": [
+    "v0"
+   ],
+   "wokwi": [
+    "r1:1",
+    "esp:3V3"
+   ]
+  },
+  {
+   "from": "r1_b",
+   "to": "esp_4",
+   "type": "onewire",
+   "color": "green",
+   "description": "Pull-up on the 1-Wire data line",
+   "waypoints": [
+    "v0"
+   ],
+   "wokwi": [
+    "r1:2",
+    "esp:4"
+   ]
+  },
+  {
+   "from": "bat_pos",
+   "to": "fuse_a",
+   "type": "power",
+   "description": "Battery positive into the fuse (rated below the 3.2 A range)",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "fuse_b",
+   "to": "ina_vin_pos",
+   "type": "power",
+   "description": "Fused positive into the current sensor",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "ina_vin_neg",
+   "to": "sw_a",
+   "type": "power",
+   "description": "Current sensor out to the manual disconnect switch",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "sw_b",
+   "to": "load_pos",
+   "type": "power",
+   "description": "Switch to the test load",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "load_neg",
+   "to": "bat_neg",
+   "type": "ground",
+   "description": "Test load back to battery negative",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "bat_neg",
+   "to": "esp_gnd",
+   "type": "ground",
+   "description": "Common ground at one point, needed for the voltage reading",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "c1_a",
+   "to": "ina_vcc",
+   "type": "logic",
+   "description": "100 nF decoupling at the INA219 VCC",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "c1_b",
+   "to": "ina_gnd",
+   "type": "ground",
+   "description": "100 nF decoupling to INA219 GND",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "c2_a",
+   "to": "ds_vdd",
+   "type": "logic",
+   "description": "100 nF decoupling at the DS18B20 VDD",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "c2_b",
+   "to": "ds_gnd",
+   "type": "ground",
+   "description": "100 nF decoupling to DS18B20 GND",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "ri_vcc",
+   "to": "esp_3v3",
+   "type": "logic",
+   "description": "I2C pull-ups to 3.3 V (only if the breakout has none)",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "ri_sda",
+   "to": "esp_21",
+   "type": "i2c",
+   "description": "Pull-up on SDA (conditional)",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "ri_scl",
+   "to": "esp_22",
+   "type": "i2c_scl",
+   "description": "Pull-up on SCL (conditional)",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "c3_a",
+   "to": "esp_3v3",
+   "type": "logic",
+   "description": "10 µF bulk at the 3V3 pin (if the board has none)",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "c3_b",
+   "to": "esp_gnd",
+   "type": "ground",
+   "description": "10 µF bulk to GND",
+   "waypoints": [],
+   "wokwi": null
+  },
+  {
+   "from": "esp_usb",
+   "to": "pc_usb",
+   "type": "usb",
+   "description": "Telemetry to the laptop. Monitor-only: nothing is sent back",
+   "waypoints": [],
+   "wokwi": null
+  }
+ ],
+ "legend": []
+}

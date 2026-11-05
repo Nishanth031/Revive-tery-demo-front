@@ -1,0 +1,76 @@
+event_id,asset_id,timestamp_utc,event_type,severity,observed_value,threshold_value,status,operator_action,data_class
+EVT-004,DEMO-EV-PACK-002,2026-10-02T17:40:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.9 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-006,DEMO-LFP-PACK-004,2026-10-02T17:40:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.9 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-007,DEMO-LFP-PACK-005,2026-09-12T09:10:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,52 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-009,DEMO-EV-PACK-007,2026-10-20T12:15:00Z,CELL_OVER_TEMPERATURE,CRITICAL,64 C,60.0 C critical threshold,OPEN,Pack isolated; do not return to service before inspection,SYNTHETIC
+EVT-001,DEMO-EV-PACK-001,2026-08-04T14:22:00Z,CELL_TEMPERATURE_WARNING,LOW,43.2 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-002,DEMO-EV-PACK-001,2026-09-12T09:10:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,38 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-003,DEMO-EV-PACK-001,2026-10-02T17:40:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.8 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-004,DEMO-BUS-PACK-002,2026-06-29T17:04:00Z,INSULATION_RESISTANCE_CHECK,INFO,2.0 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-005,DEMO-BUS-PACK-002,2026-10-13T12:00:00Z,CELL_TEMPERATURE_WARNING,LOW,43.4 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-006,DEMO-EV-PACK-003,2026-08-03T05:11:00Z,CELL_TEMPERATURE_WARNING,LOW,43.6 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-007,DEMO-3W-PACK-004,2026-09-11T10:29:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,33 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-008,DEMO-ESS-PACK-007,2026-06-30T06:26:00Z,CELL_VOLTAGE_IMBALANCE,HIGH,63 mV spread,50 mV service threshold,OPEN,Pack flagged for service inspection and rebalancing,SYNTHETIC
+EVT-009,DEMO-ESS-PACK-007,2026-07-28T09:55:00Z,CELL_VOLTAGE_IMBALANCE,HIGH,55 mV spread,50 mV service threshold,OPEN,Pack flagged for service inspection and rebalancing,SYNTHETIC
+EVT-010,DEMO-2W-PACK-008,2026-10-11T16:39:00Z,CELL_TEMPERATURE_WARNING,LOW,43.4 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-011,DEMO-EV-PACK-009,2026-09-17T22:00:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,42 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-012,DEMO-EV-PACK-010,2026-08-15T17:16:00Z,CELL_TEMPERATURE_WARNING,LOW,43.2 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-013,DEMO-ESS-PACK-011,2026-07-23T04:45:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.5 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-014,DEMO-EV-PACK-013,2026-09-06T12:27:00Z,CELL_VOLTAGE_IMBALANCE,HIGH,59 mV spread,50 mV service threshold,OPEN,Pack flagged for service inspection and rebalancing,SYNTHETIC
+EVT-015,DEMO-EV-PACK-013,2026-08-11T10:04:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.6 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-016,DEMO-EV-PACK-014,2026-09-16T14:46:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,43 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-017,DEMO-EV-PACK-014,2026-08-12T09:16:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,46 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-018,DEMO-EV-PACK-015,2026-07-20T16:38:00Z,CELL_TEMPERATURE_WARNING,LOW,43.4 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-019,DEMO-EV-PACK-015,2026-06-06T05:37:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.8 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-020,DEMO-2W-PACK-016,2026-07-06T00:07:00Z,CELL_TEMPERATURE_WARNING,LOW,43.6 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-021,DEMO-2W-PACK-016,2026-06-07T02:19:00Z,CELL_TEMPERATURE_WARNING,LOW,44.1 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-022,DEMO-EV-PACK-018,2026-09-26T05:14:00Z,CELL_TEMPERATURE_WARNING,LOW,44.0 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-023,DEMO-EV-PACK-018,2026-08-19T09:32:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.7 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-024,DEMO-2W-PACK-019,2026-07-22T08:55:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,39 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-025,DEMO-2W-PACK-019,2026-08-16T17:25:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,31 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-026,DEMO-2W-PACK-019,2026-06-20T01:44:00Z,INSULATION_RESISTANCE_CHECK,INFO,2.4 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-027,DEMO-EV-PACK-020,2026-09-23T09:40:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.6 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-028,DEMO-EV-PACK-020,2026-10-18T08:28:00Z,CELL_TEMPERATURE_WARNING,LOW,44.2 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-029,DEMO-EV-PACK-020,2026-08-29T20:50:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,32 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-030,DEMO-ESS-PACK-022,2026-10-11T18:25:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,41 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-031,DEMO-ESS-PACK-022,2026-07-17T17:28:00Z,INSULATION_RESISTANCE_CHECK,INFO,2.2 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-032,DEMO-ESS-PACK-023,2026-07-23T02:11:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,30 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-033,DEMO-2W-PACK-026,2026-06-07T17:04:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,40 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-034,DEMO-3W-PACK-027,2026-10-27T02:45:00Z,CELL_TEMPERATURE_WARNING,LOW,43.3 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-035,DEMO-3W-PACK-027,2026-07-03T13:31:00Z,CELL_TEMPERATURE_WARNING,LOW,44.7 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-036,DEMO-EV-PACK-029,2026-07-26T18:55:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.6 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-037,DEMO-BUS-PACK-030,2026-09-03T05:36:00Z,INSULATION_RESISTANCE_CHECK,INFO,3.1 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-038,DEMO-BUS-PACK-030,2026-09-02T03:19:00Z,CELL_TEMPERATURE_WARNING,LOW,43.1 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-039,DEMO-BUS-PACK-030,2026-10-16T09:41:00Z,CELL_VOLTAGE_IMBALANCE,HIGH,57 mV spread,50 mV service threshold,OPEN,Pack flagged for service inspection and rebalancing,SYNTHETIC
+EVT-040,DEMO-EV-PACK-033,2026-07-02T22:25:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,33 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-041,DEMO-EV-PACK-033,2026-07-05T19:52:00Z,CELL_TEMPERATURE_WARNING,LOW,44.7 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-042,DEMO-EV-PACK-035,2026-06-12T02:52:00Z,INSULATION_RESISTANCE_CHECK,INFO,2.4 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-043,DEMO-EV-PACK-035,2026-06-15T17:10:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,30 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-044,DEMO-EV-PACK-037,2026-08-09T05:13:00Z,INSULATION_RESISTANCE_CHECK,INFO,2.0 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-045,DEMO-EV-PACK-039,2026-10-05T06:47:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.4 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-046,DEMO-EV-PACK-039,2026-10-03T22:30:00Z,CELL_VOLTAGE_IMBALANCE,HIGH,63 mV spread,50 mV service threshold,OPEN,Pack flagged for service inspection and rebalancing,SYNTHETIC
+EVT-047,DEMO-3W-PACK-040,2026-09-09T12:25:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,38 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-048,DEMO-3W-PACK-040,2026-09-11T03:48:00Z,CELL_TEMPERATURE_WARNING,LOW,44.3 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-049,DEMO-EV-PACK-041,2026-09-18T16:53:00Z,INSULATION_RESISTANCE_CHECK,INFO,1.5 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-050,DEMO-ESS-PACK-043,2026-07-29T05:11:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,40 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-051,DEMO-ESS-PACK-043,2026-08-09T20:49:00Z,CELL_VOLTAGE_IMBALANCE,HIGH,59 mV spread,50 mV service threshold,OPEN,Pack flagged for service inspection and rebalancing,SYNTHETIC
+EVT-052,DEMO-BUS-PACK-044,2026-06-08T21:45:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,42 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-053,DEMO-BUS-PACK-044,2026-07-06T04:59:00Z,CELL_VOLTAGE_IMBALANCE,HIGH,59 mV spread,50 mV service threshold,OPEN,Pack flagged for service inspection and rebalancing,SYNTHETIC
+EVT-054,DEMO-BUS-PACK-044,2026-08-09T05:26:00Z,CELL_TEMPERATURE_WARNING,LOW,44.7 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-055,DEMO-3W-PACK-046,2026-08-16T14:49:00Z,CELL_TEMPERATURE_WARNING,LOW,44.9 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-056,DEMO-EV-PACK-049,2026-06-24T12:45:00Z,INSULATION_RESISTANCE_CHECK,INFO,2.4 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-057,DEMO-2W-PACK-050,2026-07-29T15:38:00Z,CELL_TEMPERATURE_WARNING,LOW,44.1 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-058,DEMO-2W-PACK-051,2026-06-12T20:24:00Z,CELL_VOLTAGE_IMBALANCE,HIGH,63 mV spread,50 mV service threshold,OPEN,Pack flagged for service inspection and rebalancing,SYNTHETIC
+EVT-059,DEMO-2W-PACK-051,2026-06-17T18:55:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,49 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-060,DEMO-2W-PACK-051,2026-09-21T20:19:00Z,INSULATION_RESISTANCE_CHECK,INFO,3.0 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-061,DEMO-BUS-PACK-052,2026-07-07T18:02:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,46 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-062,DEMO-BUS-PACK-052,2026-09-18T07:27:00Z,INSULATION_RESISTANCE_CHECK,INFO,3.1 MOhm,1.0 MOhm minimum example threshold,CLOSED,Routine check passed,SYNTHETIC
+EVT-063,DEMO-2W-PACK-054,2026-07-23T05:14:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,48 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-064,DEMO-ESS-PACK-055,2026-08-27T00:54:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,34 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-065,DEMO-ESS-PACK-055,2026-08-18T14:30:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,49 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-066,DEMO-EV-PACK-056,2026-06-29T18:53:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,42 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-067,DEMO-EV-PACK-056,2026-07-06T12:02:00Z,CELL_TEMPERATURE_WARNING,LOW,43.0 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-068,DEMO-EV-PACK-056,2026-06-04T03:24:00Z,CELL_TEMPERATURE_WARNING,LOW,43.9 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-069,DEMO-3W-PACK-058,2026-07-02T17:19:00Z,CELL_TEMPERATURE_WARNING,LOW,44.5 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC
+EVT-070,DEMO-3W-PACK-058,2026-06-21T15:10:00Z,CELL_VOLTAGE_IMBALANCE,MEDIUM,32 mV spread,50 mV service threshold,MONITORING,Flagged for next scheduled inspection,SYNTHETIC
+EVT-071,DEMO-EV-PACK-060,2026-08-03T09:40:00Z,CELL_TEMPERATURE_WARNING,LOW,44.8 C,45.0 C warning threshold,CLOSED,Cooling demand increased; temperature returned to normal,SYNTHETIC

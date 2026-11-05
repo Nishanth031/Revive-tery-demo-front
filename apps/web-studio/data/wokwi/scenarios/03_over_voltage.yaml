@@ -1,0 +1,10 @@
+name: 'Bus voltage above 26 V withholds readings'
+version: 1
+author: 'REVIVE-TERY'
+steps:
+  - wait-serial: '# INA219 ready'
+  - set-control:
+      part-id: ina
+      control: busVoltage
+      value: 27
+  - wait-serial: '# OVER 26 V'

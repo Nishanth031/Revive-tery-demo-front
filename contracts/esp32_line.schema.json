@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ESP32 serial line (one per second, 115200 baud)",
+  "description": "Contract v1.1, backward compatible (v1.0 lines with only voltage/current/temperature stay valid). Lines starting with '#' are firmware messages, not telemetry (v1.1 adds info lines '# fw=', '# hb', '# boot', '# ds18b20', and a throttled repeat suffix ' (x<n>)'). Producer: engines/firmware. Consumers: engines/bms/bms_engine.py parse_telemetry_line, apps/web-studio assets/js/engines/bms.js. temperature/ambient -127 means a disconnected DS18B20 and is read as null.",
+  "type": "object",
+  "required": [
+    "voltage",
+    "current"
+  ],
+  "properties": {
+    "voltage": {
+      "type": "number",
+      "description": "volts, INA219 bus voltage (rated 26 V)"
+    },
+    "current": {
+      "type": "number",
+      "description": "amps, INA219 (range 3.2 A)"
+    },
+    "temperature": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "degrees C, DS18B20; null when missing"
+    },
+    "ambient": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "v1.1, optional: degrees C from a second DS18B20 on the same 1-Wire bus (index 1); null when absent. Maps to the telemetry contract's ambient_temperature_c."
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "v1.1, optional: counter per telemetry line, wraps at 2^32. Gaps are counted as dropped lines."
+    },
+    "t_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "v1.1, optional: millis() at sampling time on the ESP32."
+    },
+    "crc": {
+      "type": "string",
+      "pattern": "^[0-9A-F]{2}$",
+      "description": "v1.1, optional, always the last key: CRC-8 (poly 0x07, init 0x00, no reflection, no final xor) over the exact bytes from '{' up to but not including ',\"crc\"', two upper-case hex digits. A wrong crc: the line is skipped and counted as crc_errors, never logged as a measurement."
+    }
+  },
+  "additionalProperties": true
+}

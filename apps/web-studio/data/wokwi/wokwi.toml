@@ -1,0 +1,11 @@
+# Wokwi project config (VS Code extension and wokwi-cli). Paths are relative to this file.
+# The firmware is produced by `just fw-build` (arduino-cli compile --output-dir build).
+[wokwi]
+version = 1
+firmware = 'build/sketch.ino.bin'
+elf = 'build/sketch.ino.elf'
+
+# The INA219 custom chip (not built here: see README.md)
+[[chip]]
+name = 'ina219'
+binary = 'chips/ina219.chip.wasm'

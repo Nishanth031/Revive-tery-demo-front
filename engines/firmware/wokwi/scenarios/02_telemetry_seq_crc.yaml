@@ -1,0 +1,8 @@
+name: 'Telemetry lines carry seq and crc'
+version: 1
+author: 'REVIVE-TERY'
+steps:
+  - wait-serial: '"seq":0,'
+  - wait-serial: '"seq":1,'
+  - wait-serial: '"crc":"'
+# seq increments and every crc is checked by scripts/wokwi_check.py on the captured serial log
