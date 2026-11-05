@@ -1,0 +1,96 @@
+/* Skin for the embedded engine studio (studio/). Injected by pages/studio.js into the studio document; it re-tokenises
+   the studio's own CSS variables to the REVIVE·TERY palette and hides the studio chrome. Engine code is untouched. */
+@import url("tokens.css");
+
+html.rf-embed {
+  --bg: transparent !important; --surface: rgba(31, 4, 9, .55) !important; --surface-2: rgba(46, 7, 19, .72) !important;
+  --border: rgba(244, 238, 227, .12) !important; --border-strong: rgba(244, 238, 227, .26) !important;
+  --text: #F4EEE3 !important; --text-2: #E7DFD0 !important; --text-3: #B9AF9C !important;
+  --accent: #8FBFA9 !important; --accent-2: #B4D3C4 !important; --accent-soft: rgba(31, 107, 79, .28) !important; --on-accent: #04170F !important;
+  --good: #8FBFA9 !important; --good-soft: rgba(31, 107, 79, .26) !important;
+  --warn: #E7DFD0 !important; --warn-soft: rgba(231, 223, 208, .10) !important;
+  --bad: #C98A97 !important; --bad-soft: rgba(138, 31, 56, .32) !important;
+  --info: #E7DFD0 !important; --info-soft: rgba(244, 238, 227, .08) !important; --violet: #C98A97 !important;
+  --p-measured: #8FBFA9 !important; --p-synthetic: #C98A97 !important; --p-modelled: #E7DFD0 !important; --p-assumed: #B9AF9C !important;
+  --c1: #8FBFA9 !important; --c2: #C98A97 !important; --c3: #E7DFD0 !important; --c4: #1F6B4F !important; --c5: #8A1F38 !important; --c6: #B9AF9C !important;
+  --d-reuse: #8FBFA9 !important; --d-repurpose: #1F6B4F !important; --d-recycle: #8A1F38 !important; --d-inspect: #E7DFD0 !important; --d-nodecision: #B9AF9C !important;
+  --shadow: none !important; --radius: 2px !important; --radius-sm: 2px !important; --radius-lg: 2px !important;
+  --sans: "Manrope", "Segoe UI", sans-serif !important; --glass: none !important;
+  color-scheme: dark; background: transparent !important;
+}
+html.rf-embed body { background: transparent !important; color: var(--text); font-family: var(--sans); overflow: hidden; }
+html.rf-embed body::before, html.rf-embed body::after, html.rf-embed .app::before { display: none !important; }
+
+/* studio chrome off: the REVIVE·TERY shell provides navigation, status and the honesty ribbon */
+html.rf-embed .sidebar, html.rf-embed .topbar { display: none !important; }
+html.rf-embed .app { display: block !important; min-height: 0 !important; background: none !important; }
+html.rf-embed .main { margin: 0 !important; padding: 0 !important; background: none !important; }
+html.rf-embed .content { padding: 0 !important; max-width: none !important; }
+
+/* editorial typography */
+html.rf-embed h1, html.rf-embed h2, html.rf-embed h3, html.rf-embed .card-title, html.rf-embed .section-title {
+  font-family: "Cormorant", Georgia, serif !important; font-weight: 400 !important; letter-spacing: -0.01em;
+}
+html.rf-embed h2, html.rf-embed .card-title { font-size: 1.6rem !important; }
+html.rf-embed .stat .value, html.rf-embed .kpi .value, html.rf-embed .big { font-family: "Cormorant", Georgia, serif !important; font-weight: 300 !important; }
+html.rf-embed td, html.rf-embed .num, html.rf-embed .value { font-variant-numeric: tabular-nums; }
+
+/* surfaces: hairlines, no shadows, no rounded pills */
+html.rf-embed .card, html.rf-embed .panel, html.rf-embed .banner, html.rf-embed .tile, html.rf-embed .box {
+  background: rgba(31, 4, 9, .5) !important; border: 1px solid var(--border) !important; box-shadow: none !important;
+  border-radius: 2px !important; backdrop-filter: none !important;
+}
+html.rf-embed .btn {
+  border-radius: 0 !important; border: 1px solid var(--border-strong) !important; background: transparent !important; color: var(--text) !important;
+  text-transform: uppercase; letter-spacing: .1em; font-size: .74rem; font-weight: 600; min-height: 40px; box-shadow: none !important;
+  transition: background .5s cubic-bezier(.16, 1, .3, 1), color .5s cubic-bezier(.16, 1, .3, 1);
+}
+html.rf-embed .btn:hover, html.rf-embed .btn.primary { background: #F4EEE3 !important; color: #2E0713 !important; border-color: #F4EEE3 !important; }
+html.rf-embed .btn.primary:hover { background: #8FBFA9 !important; border-color: #8FBFA9 !important; color: #04170F !important; }
+html.rf-embed .pill, html.rf-embed .chip, html.rf-embed .badge { border-radius: 0 !important; letter-spacing: .12em; text-transform: uppercase; font-size: .62rem !important; }
+html.rf-embed input, html.rf-embed select, html.rf-embed textarea {
+  border-radius: 0 !important; background: rgba(31, 4, 9, .6) !important; border: 1px solid var(--border-strong) !important; color: var(--text) !important;
+}
+html.rf-embed .tabs button, html.rf-embed .tab { border-radius: 0 !important; }
+html.rf-embed table th { letter-spacing: .14em; text-transform: uppercase; font-size: .64rem; color: var(--text-3); }
+html.rf-embed :focus-visible { outline: 2px solid #F4EEE3 !important; outline-offset: 2px; }
+html.rf-embed ::selection { background: #5C0F22; color: #F4EEE3; }
+
+/* ---------------------------------------------------------------- circuit: blueprint board in the palette */
+html.rf-embed .cv {
+  --w-power: #C98A97; --w-ground: #B9AF9C; --w-sda: #8FBFA9; --w-scl: #E7DFD0; --w-onewire: #1F6B4F; --w-usb: #8A7F70;
+  --pcb: #0B3D2C; --pcb-blue: #0B3D2C;
+  position: relative; padding: 18px; border: 1px solid var(--border);
+  background:
+    linear-gradient(rgba(244, 238, 227, .045) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, rgba(244, 238, 227, .045) 1px, transparent 1px) 0 0 / 24px 24px,
+    radial-gradient(120% 90% at 30% 0%, rgba(11, 61, 44, .55), rgba(31, 4, 9, .85));
+}
+html.rf-embed .cv svg { filter: drop-shadow(0 18px 30px rgba(4, 23, 15, .45)); }
+html.rf-embed .cv .wire { stroke-width: 2.4; }
+html.rf-embed .cv .wire.hot { stroke-width: 4; }
+html.rf-embed .cv .flow { stroke: #F4EEE3; opacity: .7; stroke-dasharray: 3 12; }
+html.rf-embed .cv .pin circle { fill: #E7DFD0; stroke: #2E0713; }
+html.rf-embed .cv .ttl { font-family: "Manrope", sans-serif; letter-spacing: .08em; text-transform: uppercase; font-size: 9.5px; fill: #F4EEE3; }
+html.rf-embed .cv .tagbg { fill: #F4EEE3; }
+html.rf-embed .cv .tag { fill: #2E0713; }
+html.rf-embed .cv .led.on { fill: #8FBFA9; filter: drop-shadow(0 0 5px #8FBFA9); }
+html.rf-embed .cv .tip { background: #2E0713; color: #F4EEE3; border: 1px solid rgba(244, 238, 227, .24); border-radius: 0; }
+@keyframes cvpulse { 0%, 100% { filter: none; } 50% { filter: drop-shadow(0 0 7px #C98A97); } }
+/* part bodies: hard-coded greys/blues of the parts re-tinted to palette shades (presentation only) */
+html.rf-embed .cv [fill="#111827"], html.rf-embed .cv [fill="#1f2937"] { fill: #1F0409; }
+html.rf-embed .cv [fill="#334155"], html.rf-embed .cv [fill="#4b5563"] { fill: #2E0713; }
+html.rf-embed .cv [fill="#14532d"], html.rf-embed .cv [fill="#1d4ed8"] { fill: #0B3D2C; }
+html.rf-embed .cv [fill="#9ca3af"], html.rf-embed .cv [fill="#a1a1aa"], html.rf-embed .cv [fill="#94a3b8"], html.rf-embed .cv [fill="#cbd5e1"] { fill: #B9AF9C; }
+html.rf-embed .cv [fill="#e5e7eb"], html.rf-embed .cv [fill="#d4d4d8"], html.rf-embed .cv [fill="#e0f2fe"], html.rf-embed .cv [fill="#bfdbfe"] { fill: #E7DFD0; }
+html.rf-embed .cv [fill="#ef4444"], html.rf-embed .cv [fill="#e5484d"], html.rf-embed .cv [fill="#ff4d4f"], html.rf-embed .cv [fill="#fca5a5"] { fill: #8A1F38; }
+html.rf-embed .cv [fill="#eab308"], html.rf-embed .cv [fill="#facc15"], html.rf-embed .cv [fill="#fbbf24"], html.rf-embed .cv [fill="#ca8a04"], html.rf-embed .cv [fill="#d97706"], html.rf-embed .cv [fill="#f97316"] { fill: #C98A97; }
+html.rf-embed .cv [fill="#7c3aed"] { fill: #5C0F22; }
+html.rf-embed .cv [fill="#3ee6c1"] { fill: #8FBFA9; }
+html.rf-embed .cv [stroke="#4b5563"], html.rf-embed .cv [stroke="#334155"], html.rf-embed .cv [stroke="#52525b"] { stroke: #5C0F22; }
+html.rf-embed .cv .legend span { text-transform: uppercase; letter-spacing: .12em; font-size: .62rem; color: var(--text-3); }
+html.rf-embed .cv .legend i { border-radius: 0; height: 2px; }
+
+/* the shell already titles the page: drop the studio's duplicate page heading (its notes and controls stay) */
+html.rf-embed .page-head > h1, html.rf-embed .page-head > h2:first-child { display: none !important; }
+html.rf-embed .page-head { margin-top: 0 !important; }

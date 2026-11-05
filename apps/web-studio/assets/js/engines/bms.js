@@ -104,8 +104,10 @@ export class BMSEngine {
       if (dSoc >= MIN_DELTA_SOC_PCT) {
         this.soh_live_pct = calculateSoh(this.discharged_ah / (dSoc / 100.0), this.rated_capacity_ah);
         this.soh_basis = BASIS_PARTIAL;
+        return;
       }
-      return;
+      // reported SOC not tracking the discharge (stuck while > MIN_DELTA_SOC_PCT of rated was counted): lower bound
+      if (this.discharged_ah < this.rated_capacity_ah * MIN_DELTA_SOC_PCT / 100.0) return;
     }
     this.soh_live_pct = calculateSoh(this.discharged_ah, this.rated_capacity_ah); // a lower bound
     this.soh_basis = BASIS_LOWER_BOUND;

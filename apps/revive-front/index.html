@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REVIVE·TERY</title>
+  <meta name="description" content="Assess a retired EV battery pack and decide: reuse, repurpose or recycle, with the reasons attached. Synthetic data, screening only.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#1F0409">
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%235C0F22'/%3E%3Crect x='11' y='7' width='10' height='20' rx='5' fill='none' stroke='%23F4EEE3' stroke-width='2'/%3E%3Crect x='13' y='4' width='6' height='3' fill='%23F4EEE3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/vendor/lenis/lenis.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layers.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script type="importmap">
+    { "imports": { "three": "./assets/vendor/three/three.module.js", "three/addons/": "./assets/vendor/three/addons/" } }
+  </script>
+  <script src="assets/vendor/gsap/gsap.min.js" defer></script>
+  <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/gsap/SplitText.min.js" defer></script>
+  <script src="assets/vendor/gsap/Flip.min.js" defer></script>
+  <script src="assets/vendor/gsap/ScrollToPlugin.min.js" defer></script>
+  <script src="assets/vendor/lenis/lenis.min.js" defer></script>
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#l3">Skip to content</a>
+
+  <!-- L0: shader background -->
+  <div id="l0" aria-hidden="true"></div>
+  <!-- L1: 3D battery pack -->
+  <div id="l1" aria-hidden="true"></div>
+  <!-- L2: parallax decor -->
+  <div id="l2" aria-hidden="true">
+    <div class="gridlines" data-speed="0.15"></div>
+    <div class="orbit o1" data-speed="-0.25"></div>
+    <div class="orbit o2" data-speed="0.35"></div>
+    <div class="numeral" data-speed="0.55" id="decor-numeral"></div>
+    <div class="cell" style="left:8vw;top:72vh" data-speed="0.8"></div>
+    <div class="cell" style="left:46vw;top:120vh" data-speed="1.2"></div>
+    <div class="cell" style="right:12vw;top:90vh" data-speed="0.6"></div>
+  </div>
+  <!-- L3: content -->
+  <main id="l3" tabindex="-1"></main>
+  <!-- L4: grain + vignette -->
+  <div id="l4" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <!-- L5: chrome -->
+  <header class="chrome topnav">
+    <a class="brand" href="#/" aria-label="REVIVE·TERY home"><b>REVIVE</b><i>·</i>TERY</a>
+    <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    <nav class="navlinks" id="navlinks" aria-label="Main">
+      <a href="#/">Home</a>
+      <a href="#/fleet">Command Center</a>
+      <a href="#/plan">Fleet plan</a>
+      <a href="#/analyze">Analyze</a>
+      <a href="#/circuit" data-group="circuit hardware bms live engine dqlab history bench">Engines</a>
+      <a href="#/evidence">Evidence</a>
+    </nav>
+    <div class="status-chip" id="status-chip" role="status" aria-live="polite" data-mode="snapshot"><span class="dot"></span><span class="txt">Connecting…</span></div>
+  </header>
+  <div class="chrome rail" aria-hidden="true"><div class="fill"></div></div>
+  <div class="chrome ribbon" aria-label="Data notice"><span>Synthetic data · Screening only</span><span class="hide-sm">Placeholder prices</span></div>
+  <!-- L6: loader + curtain -->
+  <div id="l6">
+    <div class="loader" id="loader" role="status" aria-live="polite">
+      <div>
+        <div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="count num" id="loader-count">0</div>
+        <div class="lbl label">Assembling the pack</div>
+      </div>
+    </div>
+    <div class="curtain" id="curtain" aria-hidden="true"><i></i><i></i></div>
+  </div>
+  <noscript><p style="padding:120px 24px">REVIVE·TERY needs JavaScript to draw the fleet.</p></noscript>
+</body>
+</html>

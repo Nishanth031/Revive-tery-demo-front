@@ -326,7 +326,11 @@ class BMSEngine:
                 capacity_ah = self.discharged_ah / (delta_soc / 100.0)
                 self.soh_live_pct = calculate_soh(capacity_ah, self.rated_capacity_ah)
                 self.soh_basis = BASIS_PARTIAL
-            return
+                return
+            # The reported SOC has not moved, yet more than MIN_DELTA_SOC_PCT of rated capacity has been counted out:
+            # it is not tracking this discharge, so fall back to the lower bound instead of waiting forever.
+            if self.discharged_ah < self.rated_capacity_ah * MIN_DELTA_SOC_PCT / 100.0:
+                return
 
         # No independent SOC. The pack has delivered at least this much, so it's a lower bound.
         self.soh_live_pct = calculate_soh(self.discharged_ah, self.rated_capacity_ah)

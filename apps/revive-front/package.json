@@ -1,0 +1,12 @@
+{
+  "name": "revive-front",
+  "private": true,
+  "version": "1.0.0",
+  "description": "REVIVE-TERY luxury front end: static ES modules, vendored libraries, no build step.",
+  "type": "module",
+  "scripts": {
+    "sync": "node tools/sync_snapshot.mjs",
+    "serve": "python -m http.server 8090",
+    "mock-sse": "node tools/mock_sse.mjs"
+  }
+}

@@ -1,0 +1,53 @@
+/* REVIVE-TERY design tokens: maroon, half-white paper, dark green. No other hues. */
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-garamond-latin-300-normal.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-garamond-latin-300-italic.woff2") format("woff2"); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("../fonts/manrope-latin-wght-normal.woff2") format("woff2"); font-weight: 200 800; font-style: normal; font-display: swap; }
+
+:root {
+  --maroon-950: #1F0409;
+  --maroon-900: #2E0713;
+  --maroon-700: #5C0F22;
+  --maroon-500: #8A1F38;
+  --maroon-300: #C98A97;
+  --green-950: #04170F;
+  --green-800: #0B3D2C;
+  --green-600: #1F6B4F;
+  --green-300: #8FBFA9;
+  --paper-100: #F4EEE3;
+  --paper-200: #E7DFD0;
+  --paper-400: #B9AF9C;
+
+  --hair: rgba(244, 238, 227, 0.12);
+  --hair-strong: rgba(244, 238, 227, 0.24);
+  --hair-paper: rgba(46, 7, 19, 0.16);
+  --glass: rgba(31, 4, 9, 0.55);
+
+  --d-repurpose: var(--green-600);
+  --d-reuse: var(--green-300);
+  --d-recycle: var(--maroon-500);
+  --d-inspect: var(--paper-200);
+  --d-none: var(--paper-400);
+
+  --serif: "Cormorant", "Cormorant Garamond", Georgia, serif;
+  --sans: "Manrope", "Manrope Variable", "Segoe UI", sans-serif;
+
+  --fs-hero: clamp(3.4rem, 10.5vw, 11rem);
+  --fs-h1: clamp(2.6rem, 6.4vw, 6.4rem);
+  --fs-h2: clamp(2rem, 4.2vw, 4rem);
+  --fs-h3: clamp(1.4rem, 2.2vw, 2rem);
+  --fs-body: clamp(1rem, 1.05vw, 1.125rem);
+  --fs-small: 0.875rem;
+  --fs-label: 0.72rem;
+
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px; --s5: 48px; --s6: 64px; --s7: 96px; --s8: 128px; --s9: 192px;
+  --gutter: clamp(16px, 4vw, 56px);
+  --maxw: 1320px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);       /* expo.out */
+  --ease-io: cubic-bezier(0.77, 0, 0.175, 1);      /* power4.inOut */
+  --t-micro: 0.45s;
+  --t-enter: 1.1s;
+}
