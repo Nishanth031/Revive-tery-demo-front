@@ -6,9 +6,9 @@
 
 | | |
 |---|---|
-| Repository | [Nishanth031/Revive-tery-demo-front](https://github.com/Nishanth031/Revive-tery-demo-front) |
-| Pitch deck | `BuildX_Pitch_Deck_Template.pptx` (BuildX template, 8 slides; see [Pitch deck](#pitch-deck)) |
-| Business model | `BX125_BMC.pdf` (Business Model Canvas, 7 pages, dated 5 Nov 2026; see [Business model](#business-model)) |
+| Repository | [Nishanth031/Revive-tery-demo-front](https://github.com/Nishanth031/ReviveTery) |
+| Pitch deck | see [Pitch deck](#pitch-deck)) |
+| Business model | [Business model](#business-model)) |
 
 > **Honesty note.** All data in this repository is synthetic or simulated. Results show that the pipeline works, not anything about a real battery. Prices and tariffs are placeholders. Hardware is monitor-only and low-voltage only (never an EV pack).
 
